@@ -1,0 +1,13 @@
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\bin\Debug\netstandard2.0\salmorn.Services.deps.json
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\bin\Debug\netstandard2.0\salmorn.Services.dll
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\bin\Debug\netstandard2.0\salmorn.Services.pdb
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\bin\Debug\netstandard2.0\salmorn.IServices.dll
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\bin\Debug\netstandard2.0\salmorn.Models.dll
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\bin\Debug\netstandard2.0\salmorn.IServices.pdb
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\bin\Debug\netstandard2.0\salmorn.Models.pdb
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\obj\Debug\netstandard2.0\salmorn.Services.csprojResolveAssemblyReference.cache
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\obj\Debug\netstandard2.0\salmorn.Services.csproj.CoreCompileInputs.cache
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\obj\Debug\netstandard2.0\salmorn.Services.AssemblyInfoInputs.cache
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\obj\Debug\netstandard2.0\salmorn.Services.AssemblyInfo.cs
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\obj\Debug\netstandard2.0\salmorn.Services.dll
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Services\obj\Debug\netstandard2.0\salmorn.Services.pdb

@@ -1,0 +1,46 @@
+﻿
+.row {
+    display: block;
+    width: 100%;
+}
+
+c-1 {
+    float: left;
+    width: 10%;
+}
+c-2 {
+    float: left;
+    width: 20%;
+}
+c-3 {
+    float: left;
+    width: 30%;
+}
+c-4 {
+    float: left;
+    width: 40%;
+}
+c-5 {
+    float: left;
+    width: 50%;
+}
+c-6 {
+    float: left;
+    width: 60%;
+}
+c-7 {
+    float: left;
+    width: 70%;
+}
+c-8 {
+    float: left;
+    width: 80%;
+}
+c-9 {
+    float: left;
+    width: 90%;
+}
+c-10 {
+    float: left;
+    width: 100%;
+}

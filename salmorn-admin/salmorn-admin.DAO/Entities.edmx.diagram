@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44e54485edb144ebafd98b759f362734" Name="Diagram1">
+        <EntityTypeShape EntityType="SalmornDBModel.C__EFMigrationsHistory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SalmornDBModel.C_Test" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SalmornDBModel.L_FileUpload" Width="1.5" PointX="3.75" PointY="20.125" />
+        <EntityTypeShape EntityType="SalmornDBModel.M_PostType" Width="1.5" PointX="8.75" PointY="9.875" />
+        <EntityTypeShape EntityType="SalmornDBModel.M_Product" Width="1.5" PointX="0.75" PointY="6.25" />
+        <EntityTypeShape EntityType="SalmornDBModel.M_Product_Image" Width="1.5" PointX="6" PointY="12.5" />
+        <EntityTypeShape EntityType="SalmornDBModel.S_Role" Width="1.5" PointX="5.75" PointY="15.625" />
+        <EntityTypeShape EntityType="SalmornDBModel.S_RoleMapping" Width="1.5" PointX="8" PointY="1.5" />
+        <EntityTypeShape EntityType="SalmornDBModel.S_User" Width="1.5" PointX="5.75" PointY="1" />
+        <EntityTypeShape EntityType="SalmornDBModel.T_CustomerOneTime" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SalmornDBModel.T_Order" Width="1.5" PointX="3" PointY="5.75" />
+        <EntityTypeShape EntityType="SalmornDBModel.T_Order_D" Width="1.5" PointX="3" PointY="16.5" />
+        <EntityTypeShape EntityType="SalmornDBModel.T_PaymentNotification" Width="1.5" PointX="6" PointY="19.875" />
+        <EntityTypeShape EntityType="SalmornDBModel.T_Post" Width="1.5" PointX="11" PointY="9" />
+        <EntityTypeShape EntityType="SalmornDBModel.T_ProductStocks" Width="1.5" PointX="3" PointY="3" />
+        <EntityTypeShape EntityType="SalmornDBModel.T_Shipping" Width="1.5" PointX="5.25" PointY="7" />
+        <EntityTypeShape EntityType="SalmornDBModel.T_Shipping_D" Width="1.5" PointX="10" PointY="5.5" />
+        <EntityTypeShape EntityType="SalmornDBModel.T_Shipping_H" Width="1.5" PointX="7.75" PointY="5" />
+        <AssociationConnector Association="SalmornDBModel.FK_M_Product_Image_L_FileUpload" />
+        <AssociationConnector Association="SalmornDBModel.FK_T_PaymentNotification_L_FileUpload" />
+        <AssociationConnector Association="SalmornDBModel.FK_T_Post_M_PostType" />
+        <AssociationConnector Association="SalmornDBModel.FK_M_Product_Image_M_Product" />
+        <AssociationConnector Association="SalmornDBModel.FK_T_Order_D_M_Product" />
+        <AssociationConnector Association="SalmornDBModel.FK_T_Order_M_Product" />
+        <AssociationConnector Association="SalmornDBModel.FK_T_ProductStocks_M_Product" />
+        <AssociationConnector Association="SalmornDBModel.FK_S_RoleMapping_S_RoleMapping" />
+        <AssociationConnector Association="SalmornDBModel.FK_S_RoleMapping_S_User" />
+        <AssociationConnector Association="SalmornDBModel.FK_T_Shipping_T_Order" />
+        <AssociationConnector Association="SalmornDBModel.FK_T_Shipping_D_T_Shipping_H" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

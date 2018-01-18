@@ -1,0 +1,16 @@
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.Test.deps.json
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.Test.runtimeconfig.json
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.Test.runtimeconfig.dev.json
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.Test.dll
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.Test.pdb
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.Models.dll
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.Models.pdb
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\obj\Debug\netcoreapp2.0\salmorn.Test.csprojResolveAssemblyReference.cache
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\obj\Debug\netcoreapp2.0\salmorn.Test.csproj.CoreCompileInputs.cache
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\obj\Debug\netcoreapp2.0\salmorn.Test.AssemblyInfoInputs.cache
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\obj\Debug\netcoreapp2.0\salmorn.Test.AssemblyInfo.cs
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\obj\Debug\netcoreapp2.0\salmorn.Test.dll
+C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.Test\obj\Debug\netcoreapp2.0\salmorn.Test.pdb

@@ -1,0 +1,133 @@
+<!--<template>
+    <div class="main-nav">
+        <div class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">salmorn</a>
+            </div>
+            <div class="clearfix"></div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <router-link to="/" :exact="true">
+                            <span class="glyphicon glyphicon-home"></span> Home
+                        </router-link>
+                    </li>
+                    <li>
+                        <router-link to="/counter">
+                            <span class="glyphicon glyphicon-education"></span> Counter
+                        </router-link>
+                    </li>
+                    <li>
+                        <router-link to="/fetchdata">
+                            <span class="glyphicon glyphicon-th-list"></span> Fetch data
+                        </router-link>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>-->
+
+
+
+
+
+<template>
+    <section class="left-menu">
+        <div class="logo-top">
+            <img src="contents/images/logo-white.png" />
+        </div>
+        <i class="fa fa-bars fa-lg btn-menu" onclick="toggleMenu()"></i>
+        <div class="user-box-top" onclick="toggleUser()">
+            <div class="user-info">
+                <div class="user-img" style="background-image: url(contents/images/top-slider/01.jpg)"></div>
+                <div class="user-name">Orn BNK48</div>
+                <div class="clear-fix"></div>
+            </div>
+            <ul id="toggleUser">
+                <li>Profile</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+        <div class="cart-box-top">
+            <div class="cart-icon">
+                <i class="fa fa-shopping-cart"></i>
+                <label>10</label>
+            </div>
+        </div>
+        <ul id="toggleMenu">
+            <li class="logo">
+                <!--<a href="index.html"><img src="contents/images/logo.png" /></a>-->
+                <router-link to="/" :exact="true">
+                    <img src="contents/images/logo.png" />
+                </router-link>
+            </li>
+            <li class="line"></li>
+            <li class="menu-item">
+                <!--<a href="index.html">Home</a>-->
+                <router-link to="/" :exact="true">
+                    Home
+                </router-link>
+            </li>
+
+            <li class="menu-item">
+                <router-link to="/counter">
+                    <span class="glyphicon glyphicon-education"></span> Counter
+                </router-link>
+            </li>
+
+            <li class="menu-item">
+                <router-link to="/news">
+                    News / Activities
+                </router-link>
+                <!--<a href="news.html">News / Activities</a>-->
+            </li>
+            <li class="menu-item">
+                <router-link to="/goods">
+                    Goods
+                </router-link>
+                <!--<a href="goods.html">Goods</a>-->
+            </li>
+            <li class="menu-item">
+                <router-link to="/galleries">
+                    Gallery
+                </router-link>
+                <!--<a href="gallery.html">Gallery</a>-->
+            </li>
+            <li class="menu-item">
+                <router-link to="/live">
+                    Salmorn live
+                </router-link>
+                <!--<a href="live.html">Salmorn live</a>-->
+            </li>
+
+            <li class="user">
+                <div class="user-box">
+                    <div class="user-info">
+                        <div class="user-img" style="background-image: url(contents/images/top-slider/01.jpg)"></div>
+                        <div class="user-name">Orn BNK48</div>
+                        <div class="clear-fix"></div>
+                    </div>
+                    <button class="btn btn-danger">Logout</button>
+                </div>
+            </li>
+            <li class="cart">
+                <div class="cart-box">
+                    <div class="cart-icon">
+                        <i class="fa fa-shopping-cart"></i>
+                        <label>10</label>
+                    </div>
+                </div>
+            </li>
+            <li class="close-menu-btn"><i class="fa fa-close" onclick="toggleMenu()"></i></li>
+        </ul>
+    </section>
+</template>
+
+<style src="./navmenu.css" ></style>

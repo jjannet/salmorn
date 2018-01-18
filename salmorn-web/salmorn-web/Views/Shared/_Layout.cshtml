@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - แซลม่อน</title>
+    <base href="~/" />
+
+    <link rel="stylesheet" href="~/contents/css/reset.css" />
+    <!--<link rel="stylesheet" href="assets/css/bootstrap.min.css" />-->
+    <link rel="stylesheet" href="~/assets/css/icons.css" />
+    <link rel="stylesheet" href="~/contents/css/font.css" />
+    <link rel="stylesheet" href="~/contents/css/site.css" />
+    <link rel="stylesheet" href="~/contents/css/grid-layout.css" />
+
+    <link rel="stylesheet" href="~/contents/css/contents/card-box.css" />
+    <link rel="stylesheet" href="~/contents/css/contents/content-box.css" />
+    <link rel="stylesheet" href="~/contents/css/contents/form-control.css" />
+</head>
+<body>
+
+    @RenderBody()
+
+    <script src="~/dist/vendor.js" asp-append-version="true"></script>
+
+    <script type="text/javascript">
+
+            var toggleMenu = function () {
+                var menu = document.getElementById('toggleMenu');
+                if (!menu.classList.contains('active')) {
+                    menu.className += " active";
+                } else {
+                    menu.classList.remove("active");
+                }
+            }
+
+            var toggleUser = function () {
+                var menu = document.getElementById('toggleUser');
+                if (!menu.classList.contains('active')) {
+                    menu.className += " active";
+                } else {
+                    menu.classList.remove("active");
+                }
+            }
+
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

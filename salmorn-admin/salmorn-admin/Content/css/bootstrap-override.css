@@ -1,0 +1,37 @@
+﻿
+.card-title {
+    font-weight:bold;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.loading-box {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(250,250,250, 0.8);
+}
+
+    .loading-box > img {
+        position: fixed;
+        width: 150px;
+        height: 126px;
+        top: 50%;
+        left: 50%;
+        margin-top: -63px;
+        margin-left: -75px;
+    }
+
+
+tr.active {
+    background-color: #fff9d1;
+}

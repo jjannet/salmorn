@@ -1,0 +1,181 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\Commons\local-storage.ts" />
+    <None Remove="ClientApp\Commons\shipping-cart.ts" />
+    <None Remove="ClientApp\components\goods\goods-item\goods-item.ts" />
+    <None Remove="ClientApp\components\goods\goods.ts" />
+    <None Remove="ClientApp\components\models\masters\file-upload.ts" />
+    <None Remove="ClientApp\components\models\masters\post-type.ts" />
+    <None Remove="ClientApp\components\models\masters\product-image.ts" />
+    <None Remove="ClientApp\components\models\masters\product.ts" />
+    <None Remove="ClientApp\components\models\storage\cart.ts" />
+    <None Remove="ClientApp\components\models\systems\role-mapping.ts" />
+    <None Remove="ClientApp\components\models\systems\role.ts" />
+    <None Remove="ClientApp\components\models\systems\user.ts" />
+    <None Remove="ClientApp\components\models\transactions\order.ts" />
+    <None Remove="ClientApp\components\models\transactions\post.ts" />
+    <None Remove="ClientApp\components\models\transactions\shipping.ts" />
+    <None Remove="ClientApp\components\news\news.ts" />
+    <None Remove="ClientApp\components\Utils\view-format.ts" />
+    <None Remove="ClientApp\plugins\http-common.ts" />
+    <None Remove="ClientApp\routes.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\css\bootstrap.min.css" />
+    <None Include="wwwroot\assets\css\icons.css" />
+    <None Include="wwwroot\assets\css\icons.css.map" />
+    <None Include="wwwroot\assets\css\style.css" />
+    <None Include="wwwroot\assets\css\style.css.map" />
+    <None Include="wwwroot\assets\css\style_dark.css" />
+    <None Include="wwwroot\assets\css\style_dark.css.map" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\assets\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\assets\fonts\ionicons.eot" />
+    <None Include="wwwroot\assets\fonts\ionicons.svg" />
+    <None Include="wwwroot\assets\fonts\ionicons.ttf" />
+    <None Include="wwwroot\assets\fonts\ionicons.woff" />
+    <None Include="wwwroot\assets\fonts\materialdesignicons-webfont.eot" />
+    <None Include="wwwroot\assets\fonts\materialdesignicons-webfont.svg" />
+    <None Include="wwwroot\assets\fonts\materialdesignicons-webfont.ttf" />
+    <None Include="wwwroot\assets\fonts\materialdesignicons-webfont.woff" />
+    <None Include="wwwroot\assets\fonts\materialdesignicons-webfont.woff2" />
+    <None Include="wwwroot\assets\fonts\themify.eot" />
+    <None Include="wwwroot\assets\fonts\themify.svg" />
+    <None Include="wwwroot\assets\fonts\themify.ttf" />
+    <None Include="wwwroot\assets\fonts\themify.woff" />
+    <None Include="wwwroot\assets\fonts\weathericons-regular-webfont.eot" />
+    <None Include="wwwroot\assets\fonts\weathericons-regular-webfont.svg" />
+    <None Include="wwwroot\assets\fonts\weathericons-regular-webfont.ttf" />
+    <None Include="wwwroot\assets\fonts\weathericons-regular-webfont.woff" />
+    <None Include="wwwroot\assets\fonts\weathericons-regular-webfont.woff2" />
+    <None Include="wwwroot\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\assets\js\detect.js" />
+    <None Include="wwwroot\assets\js\fastclick.js" />
+    <None Include="wwwroot\assets\js\jquery.app.js" />
+    <None Include="wwwroot\assets\js\jquery.blockUI.js" />
+    <None Include="wwwroot\assets\js\jquery.core.js" />
+    <None Include="wwwroot\assets\js\jquery.min.js" />
+    <None Include="wwwroot\assets\js\jquery.nicescroll.js" />
+    <None Include="wwwroot\assets\js\jquery.scrollTo.min.js" />
+    <None Include="wwwroot\assets\js\jquery.slimscroll.js" />
+    <None Include="wwwroot\assets\js\modernizr.min.js" />
+    <None Include="wwwroot\assets\js\popper.min.js" />
+    <None Include="wwwroot\assets\js\skycons.min.js" />
+    <None Include="wwwroot\assets\js\tether.min.js" />
+    <None Include="wwwroot\assets\js\waves.js" />
+    <None Include="wwwroot\assets\js\wow.min.js" />
+    <None Include="wwwroot\contents\css\bootstrap-overide.css" />
+    <None Include="wwwroot\contents\css\contents\card-box.css" />
+    <None Include="wwwroot\contents\css\contents\content-box.css" />
+    <None Include="wwwroot\contents\css\contents\form-control.css" />
+    <None Include="wwwroot\contents\css\font.css" />
+    <None Include="wwwroot\contents\css\grid-layout.css" />
+    <None Include="wwwroot\contents\css\reset.css" />
+    <None Include="wwwroot\contents\css\site.css" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Bold Italic ver 1.00.otf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Bold Italic ver 1.00.ttf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Bold Slant ver 1.00.otf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Bold Slant ver 1.00.ttf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Bold ver 1.00.otf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Bold ver 1.00.ttf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Light Italic ver 1.00.otf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Light Italic ver 1.00.ttf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Light Slant ver 1.00.otf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Light Slant ver 1.00.ttf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Light ver 1.00.otf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Light ver 1.00.ttf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Regular Italic ver 1.00.otf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Regular Italic ver 1.00.ttf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Regular ver 1.00 Slant.otf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Regular ver 1.00 Slant.ttf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Regular ver 1.00.otf" />
+    <None Include="wwwroot\contents\fonts\Superspace\Superspace Regular ver 1.00.ttf" />
+    <None Include="wwwroot\contents\images\logo-white.png" />
+    <None Include="wwwroot\contents\images\logo.png" />
+    <None Include="wwwroot\contents\images\top-slider\01.jpg" />
+    <None Include="wwwroot\contents\images\top-slider\02.JPG" />
+    <None Include="wwwroot\contents\images\top-slider\top-img-slider-overlay.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\salmorn.Core\salmorn.Core.csproj" />
+    <ProjectReference Include="..\salmorn.Security.Bearer.Helpers\salmorn.Security.Bearer.Helpers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\Commons\local-storage.ts" />
+    <TypeScriptCompile Include="ClientApp\Commons\shipping-cart.ts" />
+    <TypeScriptCompile Include="ClientApp\components\goods\goods-item\goods-item.ts" />
+    <TypeScriptCompile Include="ClientApp\components\goods\goods.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\logs\file-upload.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\masters\post-type.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\masters\product-image.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\masters\product.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\storage\cart.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\systems\role-mapping.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\systems\role.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\systems\user.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\transactions\payment-notification.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\transactions\order.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\transactions\post.ts" />
+    <TypeScriptCompile Include="ClientApp\components\models\transactions\shipping.ts" />
+    <TypeScriptCompile Include="ClientApp\components\news\news.ts" />
+    <TypeScriptCompile Include="ClientApp\components\Utils\view-format.ts" />
+    <TypeScriptCompile Include="ClientApp\plugins\http-common.ts" />
+    <TypeScriptCompile Include="ClientApp\routes.ts" />
+  </ItemGroup>
+
+  <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+
+    <!-- In development, the dist files won't exist on the first run or when cloning to
+         a different machine, so rebuild them if not already present. -->
+    <Message Importance="high" Text="Performing first-run Webpack build..." />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec Command="npm install" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>

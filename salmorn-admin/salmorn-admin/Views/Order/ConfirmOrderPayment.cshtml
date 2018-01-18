@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "ยืนยัน Order ว่าการจ่ายเงินถูกต้อง";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section ng-controller="ConfirmOrderPaymentController" ng-init="initialScreen('@Url.Action("Index", "Order")')">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-box">
+                <div class="row">
+
+                    <div class="col-12 text-right">
+                       <button type="button" class="btn btn-default" ng-click="back()">ย้อนกลับ</button>
+                    </div>
+
+
+                </div>
+                <!-- end row -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-lg-3 col-xs-12" ng-repeat="o in orders">
+            <!-- Simple card -->
+            <div class="card m-b-20">
+                <a href="{{ o.payment.file.fileName }}" class="image-link">
+                    <img class="card-img-top img-fluid" src="{{o.payment.file.fileName}}" alt="Card image cap"
+                         onerror="this.src='/Content/images/errors/no-product-image.png';" ng-init="initImagePopup()" />
+                </a>
+
+                <div class="card-body">
+                    <h5 class="card-title">Order code: {{o.code}}</h5>
+                    <hr />
+                    <p class="card-text">
+                        รหัสสินค้า: <label style="font-weight: bold;">{{o.product.code}}</label>
+                    </p>
+                    <p class="card-text">
+                        ชื่อสินค้า: <label style="font-weight: bold;">{{o.product.name}}</label>
+                    </p>
+                    <hr />
+                    <p class="card-text">
+                        วันที่โอนเงิน: <label style="font-weight: bold;">{{o.payment.paymentDate | date: 'dd/MM/yyyy'}}</label>
+                    </p>
+                    <p class="card-text">
+                        เวลาโอนเงิน: <label style="font-weight: bold;">{{o.payment.paymentDate | date: 'HH:mm'}}</label>
+                    </p>
+                    <p class="card-text">
+                        จำนวนเงินที่โอน: <label style="font-weight: bold;">{{o.payment.money | number}} บาท</label>
+                    </p>
+                    <hr />
+                    <p class="card-text">
+                        ราคาต่อหน่วย: <label style="font-weight: bold;">{{o.unitPrice | number}} บาท</label>
+                    </p>
+                    <p class="card-text">
+                        จำนวนที่สั่งซื้อ: <label style="font-weight: bold;">{{o.qty | number}} {{o.product.unitName}}</label>
+                    </p>
+                    <p class="card-text">
+                        ราคาสินค้า: <label style="font-weight: bold;">{{o.totalProductPrice | number}} บาท</label>
+                    </p>
+                    <p class="card-text">
+                        ค่าจัดส่งสินค้า: <label style="font-weight: bold;">{{o.shippingPrice | number}} บาท</label>
+                    </p>
+                    <hr />
+                    <p class="card-text">
+                        รวมราคาทั้งสิ้น: <label style="font-weight: bold; color: red;">{{o.totalPrice | number}} บาท</label>
+                    </p>
+                    <hr />
+                    <a href="#" ng-click="confirmOrder(o)" class="btn btn-primary">Confirm การจ่ายเงิน</a>
+                    <a href="#" ng-click="cancelOrder(o)" class="btn btn-danger">ยกเลิก Order</a>
+                </div>
+            </div>
+        </div><!-- end col -->
+
+    </div>
+    
+</section>
+
+
+@section Styles {
+    <link href="~/plugins/magnific-popup/dist/magnific-popup.css" rel="stylesheet" />
+}
+
+@section Scripts {
+
+<script src="~/plugins/magnific-popup/dist/jquery.magnific-popup.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/Content/js/controllers/ConfirmOrderPayment.js"></script>
+
+}

@@ -1,0 +1,55 @@
+﻿<template>
+
+    <div>
+        <content class="web-welcome">
+            <div class="web-welcome-title">SALMORN GOODS</div>
+            <div class="web-welcome-detail">
+                <p>มาเป็นส่วนหนึ่งของแซวม่อนด้วยการเป็นเจ้าของ GOODS</p>
+            </div>
+        </content>
+
+        <div class="content-box ">
+            <div class="content-box-body" style="padding-top: 30px;">
+
+                <div class="product-box" v-for="p in products"> 
+                    <img src="contents/images/top-slider/01.jpg" />
+                    <div class="product-box-title">
+                        เปิดแล้ว!!! Pre-Order SALMORN T-Shirt
+                    </div>
+                    <ul>
+                        <li><b>ราคา: </b> {{ formatPrice(p.price) }} บาท</li>
+                        <li v-if="p.">{{preStart}} </li>
+                        <li><b>ระยะเวลา pre-order: </b> ไม่กำหนด</li>
+                        <li style="padding: 10px 0px;">
+                            <button class="btn btn-main">Buy it now</button>
+                            <button class="btn"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </li>
+                        <li><a href="#">Click เพื่อดูรายละเอียด</a></li>
+                    </ul>
+                </div>
+
+
+                <!--<div class="product-box">
+                    <img src="contents/images/top-slider/01.jpg" />
+                    <div class="product-box-title">
+                        เปิดแล้ว!!! Pre-Order SALMORN T-Shirt
+                    </div>
+                    <ul>
+                        <li><b>ราคา: </b> 299 บาท</li>
+                        <li><b>ระยะเวลา pre-order: </b> ไม่กำหนด</li>
+                        <li style="padding: 10px 0px;">
+                            <button class="btn btn-main">Buy it now</button>
+                            <button class="btn"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </li>
+                        <li><a href="#">Click เพื่อดูรายละเอียด</a></li>
+                    </ul>
+                </div>-->
+
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<script src="./goods.ts"></script>
