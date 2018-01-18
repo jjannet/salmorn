@@ -2978,11 +2978,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Projects\\My Projects\\Salmorn\\salmorn-web\\salmorn.Services\\salmorn.Services.csproj",
+      "projectUniqueName": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Services\\salmorn.Services.csproj",
       "projectName": "salmorn.Services",
-      "projectPath": "C:\\Projects\\My Projects\\Salmorn\\salmorn-web\\salmorn.Services\\salmorn.Services.csproj",
+      "projectPath": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Services\\salmorn.Services.csproj",
       "packagesPath": "C:\\Users\\jiraw\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\My Projects\\Salmorn\\salmorn-web\\salmorn.Services\\obj\\",
+      "outputPath": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3001,8 +3001,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Projects\\My Projects\\Salmorn\\salmorn-web\\salmorn.IServices\\salmorn.IServices.csproj": {
-              "projectPath": "C:\\Projects\\My Projects\\Salmorn\\salmorn-web\\salmorn.IServices\\salmorn.IServices.csproj"
+            "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.IServices\\salmorn.IServices.csproj": {
+              "projectPath": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.IServices\\salmorn.IServices.csproj"
             }
           }
         }

@@ -9,3 +9,14 @@ C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.IServices\obj\Debug\netstand
 C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.IServices\obj\Debug\netstandard2.0\salmorn.IServices.AssemblyInfo.cs
 C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.IServices\obj\Debug\netstandard2.0\salmorn.IServices.dll
 C:\Projects\My Projects\Salmorn\salmorn-web\salmorn.IServices\obj\Debug\netstandard2.0\salmorn.IServices.pdb
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\bin\Debug\netstandard2.0\salmorn.IServices.deps.json
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\bin\Debug\netstandard2.0\salmorn.IServices.dll
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\bin\Debug\netstandard2.0\salmorn.IServices.pdb
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\bin\Debug\netstandard2.0\salmorn.Models.dll
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\bin\Debug\netstandard2.0\salmorn.Models.pdb
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\obj\Debug\netstandard2.0\salmorn.IServices.csprojResolveAssemblyReference.cache
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\obj\Debug\netstandard2.0\salmorn.IServices.csproj.CoreCompileInputs.cache
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\obj\Debug\netstandard2.0\salmorn.IServices.AssemblyInfoInputs.cache
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\obj\Debug\netstandard2.0\salmorn.IServices.AssemblyInfo.cs
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\obj\Debug\netstandard2.0\salmorn.IServices.dll
+C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\obj\Debug\netstandard2.0\salmorn.IServices.pdb

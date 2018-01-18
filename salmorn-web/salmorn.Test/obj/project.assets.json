@@ -6597,11 +6597,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Projects\\My Projects\\Salmorn\\salmorn-web\\salmorn.Test\\salmorn.Test.csproj",
+      "projectUniqueName": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Test\\salmorn.Test.csproj",
       "projectName": "salmorn.Test",
-      "projectPath": "C:\\Projects\\My Projects\\Salmorn\\salmorn-web\\salmorn.Test\\salmorn.Test.csproj",
+      "projectPath": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Test\\salmorn.Test.csproj",
       "packagesPath": "C:\\Users\\jiraw\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\My Projects\\Salmorn\\salmorn-web\\salmorn.Test\\obj\\",
+      "outputPath": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6620,8 +6620,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Projects\\My Projects\\Salmorn\\salmorn-web\\salmorn.Models\\salmorn.Models.csproj": {
-              "projectPath": "C:\\Projects\\My Projects\\Salmorn\\salmorn-web\\salmorn.Models\\salmorn.Models.csproj"
+            "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Models\\salmorn.Models.csproj": {
+              "projectPath": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Models\\salmorn.Models.csproj"
             }
           }
         }
