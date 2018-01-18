@@ -1,0 +1,159 @@
+﻿
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.image-box {
+    display: block;
+    position: relative;
+    float: left;
+    border: 1px solid #ccc;
+    height: 150px;
+    width: 150px;
+    padding: 4px;
+    margin: 5px;
+}
+
+    .image-box > .remove-img {
+        display: none;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 25px;
+        background: rgba(150, 150, 150, 0.7);
+        cursor: pointer;
+        color: #FFF;
+        font-weight: bold;
+        transition: 0.2s background;
+    }
+
+.remove-img:hover {
+    background: rgba(180, 180, 180, 0.7);
+}
+
+.image-box:hover > .remove-img {
+    display: block;
+}
+
+.image-box > a > img, .image-box > img {
+    display: block;
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+}
+
+.image-box.selected {
+    border: 3px solid #a7e174;
+    padding: 2px;
+}
+
+.image-box > i {
+    display: none;
+}
+
+.image-box.selected > i {
+    display: block;
+    position: absolute;
+    top: 5px;
+    font-size: 40px;
+    color: #a7e174;
+}
+
+
+.loading-box {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(250,250,250, 0.8);
+}
+
+    .loading-box > img {
+        position: fixed;
+        width: 150px;
+        height: 126px;
+        top: 50%;
+        left: 50%;
+        margin-top: -63px;
+        margin-left: -75px;
+    }
+
+.ScreenLoading {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 9999;
+    background: rgba(255,255,255,1);
+}
+
+    .ScreenLoading > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -25px;
+        margin-top: -25px;
+        width: 50px;
+        height: 50px;
+    }
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+}
+
+input.ng-invalid {
+    border-color: red;
+}
+
+li.pre-order-item {
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(222, 186, 226);
+    color: white;
+}
+
+h5.product-name {
+    font-size: 20px;
+}
+li.active-item {
+    text-align: center;
+    font-weight: bold;
+    background-color: #8fdd9a;
+    color: white;
+}

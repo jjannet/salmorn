@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html ng-app="shop-manage">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salmorn - @ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/Content/BackEnd/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/BackEnd/assets/css/icons.css" />
+    <link rel="stylesheet" href="~/Content/BackEnd/assets/css/style.css" />
+    <link rel="stylesheet" href="~/Content/plugins/dropzone/dist/dropzone.css" />
+    <link rel="stylesheet" href="~/Content/ShopManage/css/site.css" />
+
+
+    @RenderSection("Styles", required: false)
+
+    <script type="text/javascript" src="~/Content/BackEnd/assets/js/modernizr.min.js"></script>
+
+</head>
+<body>
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        @Html.Partial("ShopBackEnd/_Header")
+
+
+        @Html.Partial("ShopBackEnd/_Menu")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <h4 class="page-title"><i class="ti-home" style="margin-right: 10px;"></i>@ViewData["Title"]</h4>
+                                @*<ol class="breadcrumb float-right">
+                                    <li class="breadcrumb-item"><a href="#">Minton</a></li>
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>*@
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @RenderBody()
+
+
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end content -->
+
+            <footer class="footer">
+                2016 - 2017 © Minton <span class="hide-phone">- Coderthemes.com</span>
+            </footer>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <div class="loading-box"><img src="~/Content/images/giphy.gif" /></div>
+
+    <script>
+        var resizefunc = [];
+    </script>
+
+    <script src="~/js/angular.min.js"></script>
+    <script src="~/js/angular.img-fallback.min.js"></script>
+
+    <script src="~/Content/ShopManage/pages/app.js" ></script>
+
+    <!-- Plugins  -->
+    <script src="~/Content/BackEnd/assets/js/jquery.min.js"></script>
+    <script src="~/Content/BackEnd/assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+    <script src="~/Content/BackEnd/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/BackEnd/assets/js/detect.js"></script>
+    <script src="~/Content/BackEnd/assets/js/fastclick.js"></script>
+    <script src="~/Content/BackEnd/assets/js/jquery.slimscroll.js"></script>
+    <script src="~/Content/BackEnd/assets/js/jquery.blockUI.js"></script>
+    <script src="~/Content/BackEnd/assets/js/waves.js"></script>
+    <script src="~/Content/BackEnd/assets/js/wow.min.js"></script>
+    <script src="~/Content/BackEnd/assets/js/jquery.nicescroll.js"></script>
+    <script src="~/Content/BackEnd/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Content/plugins/switchery/switchery.min.js"></script>
+    <script type="text/javascript" src="~/Content/plugins/dropzone/dist/dropzone.js"></script>
+
+    <!-- Notification js -->
+    <script src="~/Content/plugins/notifyjs/dist/notify.min.js"></script>
+    <script src="~/Content/plugins/notifications/notify-metro.js"></script>
+
+    <!-- Counter Up  -->
+    <script src="~/Content/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/Content/plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!-- circliful Chart -->
+    <script src="~/Content/plugins/jquery-circliful/js/jquery.circliful.min.js"></script>
+    <script src="~/Content/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- skycons -->
+    <script src="~/Content/plugins/skyicons/skycons.min.js" type="text/javascript"></script>
+
+    <!-- Page js  -->
+    <script src="~/Content/BackEnd/assets/pages/jquery.dashboard.js"></script>
+
+    <!-- Custom main Js -->
+    <script src="~/Content/Shared/Master.js"></script>
+    <script src="~/Content/BackEnd/assets/js/jquery.core.js"></script>
+    <script src="~/Content/BackEnd/assets/js/jquery.app.js"></script>
+    <script src="~/Content/Shared/JHttp.js"></script>
+
+    <script type="text/javascript" src="~/Content/ShopManage/js/scripts.js" ></script>
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+        });
+
+        // BEGIN SVG WEATHER ICON
+        if (typeof Skycons !== 'undefined') {
+            var icons = new Skycons(
+                { "color": "#3bafda" },
+                { "resizeClear": true }
+            ),
+                list = [
+                    "clear-day", "clear-night", "partly-cloudy-day",
+                    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                    "fog"
+                ],
+                i;
+
+            for (i = list.length; i--;)
+                icons.set(list[i], list[i]);
+            icons.play();
+        };
+
+    </script>
+
+    @RenderSection("Modals", required: false)
+
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="plugins\**" />
+    <Compile Remove="wwwroot\Content\less\**" />
+    <Compile Remove="wwwroot\plugins\**" />
+    <Content Remove="plugins\**" />
+    <Content Remove="wwwroot\Content\less\**" />
+    <Content Remove="wwwroot\plugins\**" />
+    <EmbeddedResource Remove="plugins\**" />
+    <EmbeddedResource Remove="wwwroot\Content\less\**" />
+    <EmbeddedResource Remove="wwwroot\plugins\**" />
+    <None Remove="plugins\**" />
+    <None Remove="wwwroot\Content\less\**" />
+    <None Remove="wwwroot\plugins\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dropzone" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SalmornSRV.Core\SalmornSRV.Core.csproj" />
+    <ProjectReference Include="..\SalmornSRV.IDataAccess\SalmornSRV.IService.csproj" />
+    <ProjectReference Include="..\SalmornSRV.Models\SalmornSRV.Models.csproj" />
+    <ProjectReference Include="..\SalmornSRV.Security.Bearer.Helpers\SalmornSRV.Security.Bearer.Helpers.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Products";
+    Layout = "~/Views/Shared/_ShopBackEndLayout.cshtml";
+}
+
+<section ng-controller="ProductsController" ng-init="initialScreen()">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-box">
+                <div class="row">
+                    <div class="col-lg-12 text-right">
+                        @*<button class="btn btn-primary" ng-click="test()">บันทึกและเพิ่มสินค้ารายการอื่น</button>*@
+                        <button class="btn btn-primary" type="button" ng-click="createProduct()">สร้างสินค้า</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-lg-3 col-xs-12" ng-repeat="p in products">
+
+            <div class="card m-b-20">
+                <img class="card-img-top img-fluid" src="{{ p.image.fileName }}" />
+                <div class="card-body">
+                    <h5 class="card-title product-name">{{ p.product.name }}</h5>
+                    <p class="card-text" ng-bind-html="p.product.detail">
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item active-item" ng-hide="!p.product.isActive">แสดงสินค้าที่หน้าเว็บ</li>
+                    <li class="list-group-item pre-order-item" ng-hide="!p.product.isPreOrder">เป็นสินค้า Pre-Order</li>
+                    <li class="list-group-item">ราคา {{numberWithCommas(p.product.price)}} บาท</li>
+                    <li class="list-group-item">ค่าขนส่ง {{numberWithCommas(p.product.shippintPriceRate)}} บาท ต่อจำนวน {{numberWithCommas(p.product.qtyShippingPriceCeiling)}} ชิ้น</li>
+                    <li class="list-group-item"ng-hide="!p.product.isPreOrder">
+                        pre-order เริ่ม {{p.product.preStart | date : 'dd/MM/yyyy'}} 
+                        <i ng-hide="!p.product.preEnd" style="font-style: normal;">ถึง {{ p.product.preEnd | date : 'dd/MM/yyyy' }}</i>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="../ManageShop/Product/{{p.product.id}}" class="card-link">แก้ไข</a>
+                    <a href="#" class="card-link" style="color: red;" ng-click="deleteProduct(p.product.id)">ลบสินค้าถาวร</a>
+                </div>
+            </div>
+
+        </div><!-- end col -->
+    </div>
+
+
+</section>
+
+@section scripts {
+    <script type="text/javascript" src="~/Content/ShopManage/pages/Controllers/products.js"></script>
+}
