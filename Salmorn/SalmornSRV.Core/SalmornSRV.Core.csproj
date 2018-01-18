@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Tools\**" />
+    <EmbeddedResource Remove="Tools\**" />
+    <None Remove="Tools\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
+    <PackageReference Include="SkiaSharp" Version="1.59.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SalmornSRV.DataAccess\SalmornSRV.Service.csproj" />
+    <ProjectReference Include="..\SalmornSRV.IDataAccess\SalmornSRV.IService.csproj" />
+    <ProjectReference Include="..\SalmornSRV.Security.Bearer.Helpers\SalmornSRV.Security.Bearer.Helpers.csproj" />
+  </ItemGroup>
+
+</Project>
