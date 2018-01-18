@@ -1,0 +1,109 @@
+﻿<html>
+
+<head>
+
+    <link rel="stylesheet" href="../contents/css/reset.css" />
+    <!--<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />-->
+    <!--<link rel="stylesheet" href="../contents/css/bootstrap-overide.css" />-->
+    <link rel="stylesheet" href="../assets/css/icons.css" />
+    <link rel="stylesheet" href="../contents/css/font.css" />
+    <link rel="stylesheet" href="../contents/css/site.css" />
+    <link rel="stylesheet" href="../contents/css/grid-layout.css" />
+
+    <link rel="stylesheet" href="../contents/css/contents/card-box.css" />
+    <link rel="stylesheet" href="../contents/css/contents/content-box.css" />
+    <link rel="stylesheet" href="../contents/css/contents/form-control.css" />
+
+</head>
+
+<body>
+
+
+    <section class="container-body">
+        <content class="web-welcome">
+            <div class="web-welcome-title">ADMINISTRATOR | SHIPPINGS</div>
+        </content>
+
+        <div class="content-box">
+            <div class="content-box-body">
+
+
+
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </section>
+    <section class="left-menu">
+        <div class="logo-top">
+            <img src="../contents/images/logo-white.png" />
+        </div>
+        <i class="fa fa-bars fa-lg btn-menu" onclick="toggleMenu()"></i>
+        <div class="user-box-top" onclick="toggleUser()">
+            <div class="user-info">
+                <div class="user-img" style="background-image: url(../contents/images/top-slider/01.jpg)"></div>
+                <div class="user-name">Orn BNK48</div>
+                <div class="clear-fix"></div>
+            </div>
+            <ul id="toggleUser">
+                <li>Profile</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+        <div class="cart-box-top">
+            <div class="cart-icon">
+                <i class="fa fa-shopping-cart"></i>
+                <label>10</label>
+            </div>
+        </div>
+        <ul id="toggleMenu">
+            <li class="logo">
+                <a href="dashboard.html"><img src="../contents/images/logo.png" /></a>
+            </li>
+            <li class="line"></li>
+            <li class="menu-item"><a href="dashboard.html">Dashboard</a></li>
+            <li class="menu-item"><a href="products.html">Products</a></li>
+            <li class="menu-item"><a href="orders.html">Orders</a></li>
+            <li class="menu-item"><a href="shippings.html">Shippings</a></li>
+            <li class="menu-item"><a href="post.html">Post</a></li>
+            <li class="menu-item"><a href="../index.html" target="_blank">Go to website</a></li>
+
+            <li class="user" style="bottom: 0px;">
+                <div class="user-box">
+                    <div class="user-info">
+                        <div class="user-img" style="background-image: url(../contents/images/top-slider/01.jpg)"></div>
+                        <div class="user-name">Orn BNK48</div>
+                        <div class="clear-fix"></div>
+                    </div>
+                    <button class="btn">Logout</button>
+                </div>
+            </li>
+            <li class="close-menu-btn"><i class="fa fa-close" onclick="toggleMenu()"></i></li>
+        </ul>
+    </section>
+
+
+
+    <script type="text/javascript">
+
+        var toggleMenu = function () {
+            var menu = document.getElementById('toggleMenu');
+            if (!menu.classList.contains('active')) {
+                menu.className += " active";
+            } else {
+                menu.classList.remove("active");
+            }
+        }
+
+        var toggleUser = function () {
+            var menu = document.getElementById('toggleUser');
+            if (!menu.classList.contains('active')) {
+                menu.className += " active";
+            } else {
+                menu.classList.remove("active");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
