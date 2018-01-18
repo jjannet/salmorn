@@ -307,7 +307,6 @@ content.top-img-slider {
 div.top-img-slide-overlay {
     display: block;
     width: 100%;
-    height: 350px;
     background-image: url(../images/top-slider/top-img-slider-overlay.png);
     background-repeat: repeat;
     background-size: 10px;
@@ -315,12 +314,10 @@ div.top-img-slide-overlay {
 
 content.top-img-slider > h3 {
     display: block;
-    font-size: 50px;
-    position: absolute;
-    top: 50px;
-    right: 50px;
     font-weight: lighter;
     color: white;
+    position: absolute;
+    top: 50px;
 }
 
     content.top-img-slider > h3 > i {
@@ -329,7 +326,25 @@ content.top-img-slider > h3 {
     }
 
 
-
+    @media (max-width: 900px) {
+        content.top-img-slider > h3 {
+            font-size: 30px;
+            right: 50px;
+        }
+        div.top-img-slide-overlay, content.top-img-slider {
+            height: 250px;
+        }
+    }
+    
+    @media (min-width: 900px) {
+        content.top-img-slider > h3 {
+            font-size: 50px;
+            right: 50px;
+        }
+        div.top-img-slide-overlay, content.top-img-slider {
+            height: 350px;
+        }
+    }
 
 
 

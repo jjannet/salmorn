@@ -21,69 +21,17 @@
       </div>
   </div>
   <ul id="toggleMenu">
-      <li class="logo">
-          <!--<a href="index.html"><img src="contents/images/logo.png" /></a>-->
-          <a routerLink="/" >
-              <img src="contents/images/logo.png" />
-          </a>
-      </li>
-      <li class="line"></li>
-      <li class="menu-item">
-          <!--<a href="index.html">Home</a>-->
-          <a routerLink="/" >
-              Home
-          </a>
-      </li>
+    <li class="logo">
+        <a  (click)="enterLink('/')"  href="javascript:void(0)"><img src="contents/images/logo.png" /></a>
+    </li>
+    <li class="line"></li>
 
-      <li class="menu-item">
-          <a to="/counter">
-              <span class="glyphicon glyphicon-education"></span> Counter
-          </a>
-      </li>
+    <li app-menu-router-item *ngFor="let menue of menues" [item]="menue"  class="menu-item"></li >
 
-      <li class="menu-item">
-          <a to="/news">
-              News / Activities
-          </a>
-          <!--<a href="news.html">News / Activities</a>-->
-      </li>
-      <li class="menu-item">
-          <a to="/goods">
-              Goods
-          </a>
-          <!--<a href="goods.html">Goods</a>-->
-      </li>
-      <li class="menu-item">
-          <a to="/galleries">
-              Gallery
-          </a>
-          <!--<a href="gallery.html">Gallery</a>-->
-      </li>
-      <li class="menu-item">
-          <a to="/live">
-              Salmorn live
-          </a>
-          <!--<a href="live.html">Salmorn live</a>-->
-      </li>
+    
 
-      <li class="user">
-          <div class="user-box">
-              <div class="user-info">
-                  <div class="user-img" style="background-image: url(contents/images/top-slider/01.jpg)"></div>
-                  <div class="user-name">Orn BNK48</div>
-                  <div class="clear-fix"></div>
-              </div>
-              <button class="btn btn-danger">Logout</button>
-          </div>
-      </li>
-      <li class="cart">
-          <div class="cart-box">
-              <div class="cart-icon">
-                  <i class="fa fa-shopping-cart"></i>
-                  <label>10</label>
-              </div>
-          </div>
-      </li>
-      <li class="close-menu-btn"><i class="fa fa-close" onclick="toggleMenu()"></i></li>
-  </ul>
+    <li app-user-box class="user"></li>
+    <li app-cart-box class="cart"></li>
+    <li class="close-menu-btn"><i class="fa fa-close" onclick="toggleMenu()"></i></li>
+</ul>
 </section>
