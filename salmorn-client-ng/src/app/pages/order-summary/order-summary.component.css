@@ -1,0 +1,51 @@
+.container {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+}
+.title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.order-items, .order-summary {
+    display: block;
+}
+
+.order-items {
+    background-color: #fffafd;
+    border: 1px solid #f3deec;
+}
+
+.order-summary {
+    padding: 2%;
+    background-color: #fffafd;
+    border: 1px solid #f3deec;
+}
+
+@media only screen and (max-width: 1200px) {
+    .order-items {
+        width: 100%;
+        padding: 2%;
+    }
+    
+    .order-summary {
+        width: 100%;
+        padding: 2%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .order-items {
+        float: left;
+        width: 64%;
+    }
+    
+    .order-summary {
+        float: right;
+        width: 30%;
+    }
+}
+

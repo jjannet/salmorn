@@ -1,19 +1,23 @@
 <div class="goods-detail-header">
   <div class="goods-detail-header-order">
     <div class="goods-detail-header-order-image">
-      <img src="contents/images/top-slider/01.jpg" />
+      <img [src]="getImagePath(product)" (error)="errorHandler($event)" />
     </div>
     <div class="goods-detail-header-order-title">
-      <h1>Pre-Order BNK48 Merry Christmas 2017 Photoset (5 Random Photo Per Set)</h1>
-      <p>16 มกราคม 2561 เวลา 12.00น. - 22 มกราคม 2561 เวลา 12.00 น.</p>
+      <h1>{{ product?.name }}</h1>
+      <p>
+        {{ product?.preStart | date:'dd MMMM yyyy เวลา HH:mm น.' }} -
+        <label [hidden]="product?.preEnd == null">{{ product?.preEnd | date:'dd MMMM yyyy เวลา HH:mm น.' }}</label>
+        <label [hidden]="product?.preEnd != null">ไม่มีกำหนด</label>
+      </p>
       <div class="goods-detail-header-order-detail">
         <div class="row">
           <div class="goods-detail-header-order-detail-price">
-            250 บาท
+            {{ product?.price | number }} บาท
           </div>
           <div class="goods-detail-header-order-detail-qty">
-            <span>จำนวน</span>
-            <input type="number" min="1" value="1" />
+            <span>จำนวน </span>
+            <input type="number" id="orderQty" [(ngModel)]="orderQty" />
           </div>
           <div style="clear:both"></div>
         </div>
@@ -28,6 +32,8 @@
   </div>
 </div>
 
-<div class="goods-detail">
-    <div data-v-7e8fd02c="" class="product__detail block-primary"><div data-v-7e8fd02c=""><p style="text-align: center;"><img src="https://kadnud.s3-ap-southeast-1.amazonaws.com/bnk48/product_media/od-merry-christmas-2017-photoset/b6c249b2-bae0-436a-8864-c1d63e30a57c.png"><br></p><p style="text-align: center;"><img src="https://kadnud.s3-ap-southeast-1.amazonaws.com/bnk48/product_media/od-merry-christmas-2017-photoset/1de98b21-38a7-42cb-8d0f-5c3a915f397a.png"><br></p><h5><div style="text-align: center;"><span style="color: inherit; font-family: inherit; font-size: 1.25rem;">BNK48 Merry Christmas 2017 Photoset</span></div><div style="text-align: center;"><span style="color: inherit; font-family: inherit; font-size: 1.25rem;">( 5 Random Photo Per Set )</span></div></h5><h5><div style="text-align: center;"><span style="color: inherit; font-family: inherit; font-size: 1.25rem;">รูปของสมาชิกวง BNK 48</span></div><div style="text-align: center;"><span style="color: inherit; font-family: inherit; font-size: 1.25rem;">มีทั้งหมด 28 คน</span></div></h5><h5><div style="text-align: center;"><span style="color: inherit; font-family: inherit; font-size: 1.25rem;">รูปจำนวน 5 ใบต่อการสุ่ม 1 ครั้ง</span></div><div style="text-align: center;"><span style="color: inherit; font-family: inherit; font-size: 1.25rem;">(ใน 1 สมาชิกจะมี 3 แบบ รวมทั้งหมดมี 84 แบบ)</span></div><p style="text-align: center;"><img src="https://kadnud.s3-ap-southeast-1.amazonaws.com/bnk48/product_media/od-merry-christmas-2017-photoset/066371cf-388b-40fb-9433-c6772f3e1f6b.png"><span style="color: inherit; font-family: inherit; font-size: 1.25rem;"></span></p></h5></div> <div data-v-7e8fd02c="" class="alert alert--danger text-left"><strong data-v-7e8fd02c="">หมายเหตุ</strong> <div data-v-7e8fd02c=""><p style="margin-top: 0;">คำนวณค่าจัดส่งแบบ Flat rate โดยการสั่งซื้อทุกๆ 20 ชิ้นจะเสียค่าจัดส่งครั้งละ 70 บาท</p><p><b>ตัวอย่าง</b><br>สินค้า 1 - 20 ชิ้น ค่าจัดส่ง 70 บาท<br>สินค้า 21 - 40 ชิ้น ค่าจัดส่ง 140 บาท</p><p><b>วันที่จัดส่งสินค้า</b><br>ระหว่างวันที่ 20 กุมภาพันธ์ พ.ศ. 2561 - วันที่ 23 กุมภาพันธ์ พ.ศ. 2561และคาดว่าจะได้รับสินค้าประมาณวันที่ 21 - 28 กุมภาพันธ์ 2561</p><p><b>รับสินค้าด้วยตัวเองที่ BNK48 Digital Live Studio<br></b>ตั้งแต่วันที่ 20 กุมภาพันธ์เป็นต้นไป ไม่มีค่าจัดส่ง <br>(ไม่สามารถให้ผู้อื่นรับแทนได้ ชื่อผู้รับจะต้องตรงกับชื่อที่ใช้ในการสั่งสินค้าเท่านั้น)</p><p><b>*หมายเหตุ</b> <u>ในกรณีจัดส่ง ไม่สามารถส่งรวมกับสินค้าอื่น ๆ นอกจาก BNK48 Merry Christmas 2017 Photoset ได้และกรุณาตรวจสอบชื่อ ที่อยู่ และเบอร์โทรศัพท์ให้ถูกต้องครบถ้วนก่อนกดยืนยันสั่งสินค้า เมื่อกดยืนยันแล้ว จะไม่สามารถเปลี่ยนแปลงข้อมูลใด ๆ ได้ไม่ว่ากรณีใด ๆ ก็ตาม</u></p></div></div></div>
+<div class="goods-detail" [innerHTML]="product?.detail">
+</div>
+
+<div class="goods-note" [innerHTML]="product?.note">
 </div>

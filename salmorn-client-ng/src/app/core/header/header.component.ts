@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
 
   images: string[] = [
     '../contents/images/top-slider/01.jpg',
-    '../contents/images/top-slider/02.jpg',
+    '../contents/images/top-slider/02.JPG',
     '../contents/images/top-slider/03.jpg',
   ];
 

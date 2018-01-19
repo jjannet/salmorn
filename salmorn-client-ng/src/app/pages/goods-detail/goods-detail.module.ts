@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { GoodsDetailComponent } from './goods-detail.component';
 import { GoodsDetailRouterModule } from './goods-detail-route';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
-    CommonModule, GoodsDetailRouterModule
+    FormsModule,CommonModule, GoodsDetailRouterModule
   ],
   providers: [],
   declarations: [GoodsDetailComponent]

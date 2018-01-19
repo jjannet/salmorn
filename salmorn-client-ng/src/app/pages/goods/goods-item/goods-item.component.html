@@ -1,0 +1,20 @@
+<img [src]="getImagePath(product)" (error)="errorHandler($event)" />
+<div class="product-box-title">
+  {{ product.name }}
+</div>
+<ul>
+  <li>
+    <b>ราคา: </b> {{ product.price | number }} บาท</li>
+  <li [hidden]="product.preStart == null">{{ product.preStart | date:'dd MMMM yyyy' }} -
+    <label [hidden]="product.preEnd == null">{{ product.preEnd | date:'dd MMMM yyyy' }}</label>
+    <label [hidden]="product.preEnd != null">ไม่มีกำหนด</label>
+  </li>
+  <li style="padding: 10px 0px;">
+    <button class="btn btn-main">Buy it now</button>
+    <button class="btn">
+      <i class="fa fa-shopping-cart"></i>Add to cart</button>
+  </li>
+  <li>
+    <a (click)="viewDetail(product)" href="javascript:void(0)">Click เพื่อดูรายละเอียด</a>
+  </li>
+</ul>

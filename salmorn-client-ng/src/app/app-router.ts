@@ -36,6 +36,12 @@ export const routes: Routes =
         },
         
         {
+            path: 'summary',
+            loadChildren: 'app/pages/order-summary/order-summary.module#OrderSummaryModule',
+            pathMatch: 'full'
+        },
+        
+        {
             path: 'gallery',
             loadChildren: 'app/pages/gallery/gallery.module#GalleryModule',
             pathMatch: 'full'

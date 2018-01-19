@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="title">ตะกร้าสินค้าของคุณ</div>
+  <div class="order-box">
+    <div class="order-items">
+      <app-order-item *ngFor="let cart of carts" [cart]="cart" (qtyChanged)="qtyChanged($event)"></app-order-item>
+    </div>
+    <div class="order-summary">
+      summary
+    </div>
+    <div style="clear:both"></div>
+  </div>
+
+</div>

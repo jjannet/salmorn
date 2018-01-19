@@ -103,8 +103,24 @@
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
+    line-height: 150%;
 }
 
 .goods-detail img {
-    max-width: 100%;
+    max-width: 100% !important;
+}
+
+.goods-note {
+    display: block;
+    width: 70%;
+    max-width: 90%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    border: 1px solid #88c9e5;
+    background-color: #f4f7f8;
+    line-height: 150%;
 }
