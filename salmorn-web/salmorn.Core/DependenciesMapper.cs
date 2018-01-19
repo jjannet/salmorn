@@ -11,6 +11,8 @@ namespace salmorn.Core
         {
 
             services.AddTransient<IProductServices, ProductServices>();
+
+            services.AddCoreServices();
         }
     }
 }

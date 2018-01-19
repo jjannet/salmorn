@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Apis.Core" Version="1.32.0" />
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\salmorn.Services\salmorn.Services.csproj" />
   </ItemGroup>
 

@@ -49,7 +49,7 @@ export const routes: Routes =
         
         {
             path: 'cart',
-            loadChildren: 'app/pages/cart-detail/cart-detail.module#CartDetailRouterModule',
+            loadChildren: 'app/pages/cart-detail/cart-detail.module#CartDetailModule',
             pathMatch: 'full'
         },
       

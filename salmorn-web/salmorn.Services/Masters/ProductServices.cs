@@ -18,12 +18,34 @@ namespace salmorn.Services.Masters
 
         public Product getProduct(int id)
         {
-            return this.db.Products.SingleOrDefault(m => m.id == id);
+            var product = this.db.Products.SingleOrDefault(m => m.id == id);
+            if (product != null)
+            {
+                product.images = (from x in this.db.ProductImages
+                                  join y in this.db.FileUploads on x.fileId equals y.id
+                                  where x.productId == product.id
+                                  select y).ToList();
+            }
+
+            return product;
         }
 
         public List<Product> getProducts()
         {
-            return this.db.Products.Where(m => m.isActive && !m.isDelete).ToList();
+            var products =  this.db.Products.Where(m => m.isActive && !m.isDelete).ToList();
+
+            if(products != null && products.Count > 0)
+            {
+                foreach (var product in products)
+                {
+                    product.images = (from x in this.db.ProductImages
+                                      join y in this.db.FileUploads on x.fileId equals y.id
+                                      where x.productId == product.id
+                                      select y).ToList();
+                }
+            }
+
+            return products;
         }
     }
 }

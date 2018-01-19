@@ -12,7 +12,7 @@ namespace salmorn.Controllers
     [AutoValidateAntiforgeryToken]
     [Produces("application/json")]
     [Route("api/ProductServices")]
-    public class ProductServicesController : BaseController
+    public class ProductServicesController : BaseServiceController
     {
         private IProductServices productService;
         public ProductServicesController(IProductServices productService)
