@@ -8,11 +8,13 @@ import { MenuRouterItemComponent } from './menu-router/menu-router-item/menu-rou
 import { UserBoxComponent } from './user-box/user-box.component';
 import { CartBoxComponent } from './cart-box/cart-box.component';
 
+import { CartService } from '../services/cart.service';
+
 @NgModule({
   imports: [
     CommonModule
   ],
-  providers: [RouterModule],
+  providers: [RouterModule, CartService],
   exports: [ HeaderComponent, MenuRouterComponent, MenuRouterItemComponent ],
   declarations: [HeaderComponent, MenuRouterComponent, MenuRouterItemComponent, UserBoxComponent, CartBoxComponent]
 })

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Cart } from '../models/cart';
 import { Product } from '../models/product';
+import { retry } from 'rxjs/operator/retry';
 
 @Injectable()
 export class CartService {
-  cartKey: string = 'salmorn-cart';
+  private cartKey: string = 'salmorn-cart';
+  private shippingTypeKey: string = 'salmorn-shipping';
 
 
   constructor() { }
@@ -24,7 +26,13 @@ export class CartService {
 
   addProduct(product: Product, qty: number) {
     var carts = this.getAll();
-    carts.push({ product: product, qty: qty });
+
+    if(carts.filter(m=>m.product.id === product.id).length > 0) {
+      let index = carts.findIndex(m=>m.product.id === product.id);
+      carts[index].qty += qty;
+    } else{
+      carts.push({ product: product, qty: qty });
+    }
     this.setCart(carts);
   }
 
@@ -38,10 +46,20 @@ export class CartService {
     this.setCart(carts);
   }
 
-  removeProduct(product:Product){
+  removeProduct(cart:Cart){
     var carts = this.getAll();
-    var index = carts.findIndex(m=>m.product.id === product.id);
-    carts = carts.splice(index, 1);
+    carts = carts.filter(m=>m.product.id != cart.product.id);
+    this.setCart(carts);
+  }
+
+
+  setShippingType(type: string) {
+    localStorage.setItem(this.shippingTypeKey, type);
+  }
+  getShippingType() : string{
+    var sht = localStorage.getItem(this.shippingTypeKey);
+    if(sht) return sht;
+    else return 'shipping';
   }
 
 }

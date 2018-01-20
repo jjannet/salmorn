@@ -1927,6 +1927,19 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "salmorn.IServices/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "salmorn.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/salmorn.IServices.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/salmorn.IServices.dll": {}
+        }
+      },
       "salmorn.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1938,6 +1951,19 @@
         },
         "runtime": {
           "bin/placeholder/salmorn.Models.dll": {}
+        }
+      },
+      "salmorn.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "salmorn.IServices": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/salmorn.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/salmorn.Services.dll": {}
         }
       }
     }
@@ -6572,10 +6598,20 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
+    "salmorn.IServices/1.0.0": {
+      "type": "project",
+      "path": "../salmorn.IServices/salmorn.IServices.csproj",
+      "msbuildProject": "../salmorn.IServices/salmorn.IServices.csproj"
+    },
     "salmorn.Models/1.0.0": {
       "type": "project",
       "path": "../salmorn.Models/salmorn.Models.csproj",
       "msbuildProject": "../salmorn.Models/salmorn.Models.csproj"
+    },
+    "salmorn.Services/1.0.0": {
+      "type": "project",
+      "path": "../salmorn.Services/salmorn.Services.csproj",
+      "msbuildProject": "../salmorn.Services/salmorn.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6584,7 +6620,8 @@
       "MSTest.TestFramework >= 1.1.18",
       "Microsoft.NET.Test.Sdk >= 15.3.0-preview-20170628-02",
       "Microsoft.NETCore.App >= 2.0.0",
-      "salmorn.Models >= 1.0.0"
+      "salmorn.Models >= 1.0.0",
+      "salmorn.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6620,6 +6657,9 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
+            "C:\\Projects\\My Projects\\GitHub\\Salmorn\\salmorn-web\\salmorn.Services\\salmorn.Services.csproj": {
+              "projectPath": "C:\\Projects\\My Projects\\GitHub\\Salmorn\\salmorn-web\\salmorn.Services\\salmorn.Services.csproj"
+            },
             "C:\\Projects\\My Projects\\GitHub\\Salmorn\\salmorn-web\\salmorn.Models\\salmorn.Models.csproj": {
               "projectPath": "C:\\Projects\\My Projects\\GitHub\\Salmorn\\salmorn-web\\salmorn.Models\\salmorn.Models.csproj"
             }

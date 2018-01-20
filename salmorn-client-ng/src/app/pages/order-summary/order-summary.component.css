@@ -6,8 +6,14 @@
     padding: 3%;
 }
 .title {
+    display: block;
+    width: calc(100% - 40px);
     font-size: 2em;
     margin-bottom: 20px;
+    padding: 20px;
+    background-color: #88c9e5;
+    text-align: center;
+    color: white;
 }
 
 .order-items, .order-summary {
@@ -20,7 +26,7 @@
 }
 
 .order-summary {
-    padding: 2%;
+    padding: 1.5%;
     background-color: #fffafd;
     border: 1px solid #f3deec;
 }
@@ -49,3 +55,11 @@
     }
 }
 
+
+
+.no-product-order {
+    display: block;
+    padding: 5%;
+    text-align: center;
+    font-size: 30px;
+}

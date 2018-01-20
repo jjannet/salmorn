@@ -1,0 +1,23 @@
+<div class="title">
+    ยืนยันการสั่งสินค้า
+</div>
+
+<div class="container">
+  
+    <div class="checkout-box">
+      <div class="checkout-form">
+
+        <app-customer-form></app-customer-form>
+
+
+        <app-order-item *ngFor="let cart of carts" [cart]="cart" ></app-order-item>
+      </div>
+      <div class="checkout-summary">
+
+        <app-checkout-summary [carts]="carts"></app-checkout-summary>
+
+      </div>
+      <div style="clear:both"></div>
+    </div>
+  
+  </div>

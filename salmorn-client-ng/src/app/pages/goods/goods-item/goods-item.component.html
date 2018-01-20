@@ -1,6 +1,6 @@
 <img [src]="getImagePath(product)" (error)="errorHandler($event)" />
 <div class="product-box-title">
-  {{ product.name }}
+  {{ product.title }}
 </div>
 <ul>
   <li>
@@ -10,8 +10,8 @@
     <label [hidden]="product.preEnd != null">ไม่มีกำหนด</label>
   </li>
   <li style="padding: 10px 0px;">
-    <button class="btn btn-main">Buy it now</button>
-    <button class="btn">
+    <button class="btn btn-main" (click)="buyItNow(product)">Buy it now</button>
+    <button class="btn"  (click)="addToCart(product)" >
       <i class="fa fa-shopping-cart"></i>Add to cart</button>
   </li>
   <li>

@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\salmorn.Models\salmorn.Models.csproj" />
+    <ProjectReference Include="..\salmorn.Services\salmorn.Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,36 @@
-<p>
-  order-shipping works!
-</p>
+<div class="title">
+
+  วิธีการรับสินค้า</div>
+<div class="shipping-selection">
+  <div class="shipping-item" [ngClass]="{'select': shippingType=='shipping'}" (click)="changeShippingType('shipping')">
+    <i class="fa fa-truck"></i>
+    <label>จัดส่งทางไปรษณีย์</label>
+  </div>
+  <div class="shipping-item" [ngClass]="{'select': shippingType=='manual'}" (click)="changeShippingType('manual')">
+    <i class="fa fa-hand-lizard-o"></i>
+    <label>นัดรับตามงาน Event</label>
+  </div>
+</div>
+<div class="shipping-prices" *ngIf="shippingType === 'shipping'">
+  <ul>
+    <li *ngFor="let cart of carts">
+      <p>
+        <b>{{ cart.product.name }} </b>
+        ค่าจัดส่ง {{ cart.product.shippintPriceRate | number }} บาท ต่อสินค้า {{ cart.product.qtyShippingPriceCeiling }} {{ cart.product.unitName
+        }}
+      </p>
+      <p class="price"><b>ราคาสินค้า: </b> {{ calculateProductPrice(cart) | number }} บาท</p>
+      <p class="price"><b>ค่าส่งสินค้า: </b> {{ calculateShippingPrice(cart) | number }} บาท</p>
+    </li>
+  </ul>
+</div>
+<div class="shipping-prices" *ngIf="shippingType === 'manual'">
+  <ul>
+    <li *ngFor="let cart of carts">
+      <b>{{ cart.product.name }}</b>
+      <p style="margin-top: 10px;">
+        {{ cart.product.pickupAt }}
+      </p>
+      <p class="price"><b>ราคาสินค้า: </b> {{ calculateProductPrice(cart) | number }} บาท</p>
+  </ul>
+</div>

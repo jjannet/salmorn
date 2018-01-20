@@ -46,3 +46,7 @@ C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Test\obj\Debug\netcor
 C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Test\obj\Debug\netcoreapp2.0\salmorn.Test.AssemblyInfo.cs
 C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Test\obj\Debug\netcoreapp2.0\salmorn.Test.dll
 C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Test\obj\Debug\netcoreapp2.0\salmorn.Test.pdb
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.IServices.dll
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.Services.dll
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.Services.pdb
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Test\bin\Debug\netcoreapp2.0\salmorn.IServices.pdb

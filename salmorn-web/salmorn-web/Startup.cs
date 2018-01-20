@@ -13,6 +13,7 @@ using salmorn.Security.Bearer.Helpers;
 using Microsoft.EntityFrameworkCore;
 using salmorn.Core;
 using salmorn.Services;
+using salmorn.Models.Commons;
 
 namespace salmorn
 {
@@ -67,6 +68,9 @@ namespace salmorn
 
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS"
                 , Configuration["GoogleCloudStorage:AcountAPIKeyPath"]);
+
+
+            services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
 
             services.AddServices();
             services.AddCors();

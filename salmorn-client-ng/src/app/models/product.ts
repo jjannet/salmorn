@@ -10,6 +10,7 @@ export class Product {
     isActive: Boolean;
     isPreOrder: Boolean;
     isUseStock: Boolean;
+    title: string;
     name: string;
     note: string;
     preEnd: Date;

@@ -26,4 +26,9 @@ namespace salmorn.Models.Transactions
         [NotMapped]
         public FileUpload file { get; set; }
     }
+
+    public enum PaymentTypes
+    {
+        TRANSFER
+    }
 }

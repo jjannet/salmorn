@@ -11,6 +11,7 @@ import { Product } from '../../../models/product';
 export class OrderItemComponent implements OnInit {
   @Input() cart: Cart;
   @Output() qtyChanged = new EventEmitter();
+  @Output() removeProduct = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -29,6 +30,13 @@ export class OrderItemComponent implements OnInit {
   qtyChange (event) {
     event.preventDefault();
     this.qtyChanged.emit(this.cart);
+  }
+
+  deleteItem(cart: Cart){
+    if(confirm('คุณต้องการลบการสั่งซื้อสินค้า ' + cart.product.name + ' ใช่หรือไม่ ?')){
+      event.preventDefault();
+      this.removeProduct.emit(this.cart);
+    }
   }
 
 }

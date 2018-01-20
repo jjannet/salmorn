@@ -21,6 +21,7 @@ namespace salmorn.Models.Masters
         public bool isActive { get; set; }
         public Nullable<bool> isPreOrder { get; set; }
         public bool isUseStock { get; set; }
+        public string title { get; set; }
         public string name { get; set; }
         public string note { get; set; }
         public Nullable<System.DateTime> preEnd { get; set; }

@@ -4,10 +4,24 @@
 <div id='app-root' class="container-fluid">
   <section class="container-body">
 
-    <app-header></app-header>
+    <app-header id="appHeader"></app-header>
 
     <router-outlet></router-outlet>
   </section>
 
   <app-menu-router></app-menu-router>
 </div>
+
+
+
+<script type="text/javascript">
+
+  var showHeader = function () {
+    document.getElementById('appHeader').style.display = 'block';
+  }
+
+  var hideHeader = function () {
+    document.getElementById('appHeader').style.display = 'none';
+  }
+
+</script>

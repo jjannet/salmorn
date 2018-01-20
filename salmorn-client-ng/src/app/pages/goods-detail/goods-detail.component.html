@@ -4,7 +4,7 @@
       <img [src]="getImagePath(product)" (error)="errorHandler($event)" />
     </div>
     <div class="goods-detail-header-order-title">
-      <h1>{{ product?.name }}</h1>
+      <h1>{{ product?.title }}</h1>
       <p>
         {{ product?.preStart | date:'dd MMMM yyyy เวลา HH:mm น.' }} -
         <label [hidden]="product?.preEnd == null">{{ product?.preEnd | date:'dd MMMM yyyy เวลา HH:mm น.' }}</label>

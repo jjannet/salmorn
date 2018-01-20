@@ -58,6 +58,12 @@ export const routes: Routes =
             loadChildren: 'app/pages/cart-detail/cart-detail.module#CartDetailModule',
             pathMatch: 'full'
         },
+        
+        {
+            path: 'checkout',
+            loadChildren: 'app/pages/checkout/checkout.module#CheckoutModule',
+            pathMatch: 'full'
+        },
       
         {
             path: '**',
