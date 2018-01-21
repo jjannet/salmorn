@@ -1,18 +1,19 @@
-
-
-
 <div id='app-root' class="container-fluid">
   <section class="container-body">
 
     <app-header id="appHeader"></app-header>
 
     <router-outlet></router-outlet>
+
+
   </section>
 
   <app-menu-router></app-menu-router>
 </div>
 
-
+<div id="loading">
+  <img src="contents/images/giphy.gif" />
+</div>
 
 <script type="text/javascript">
 
@@ -24,4 +25,10 @@
     document.getElementById('appHeader').style.display = 'none';
   }
 
+  var loading = function (isLoading) {
+    if (isLoading)
+      document.getElementById('loading').style.display = 'block';
+    else
+      document.getElementById('loading').style.display = 'none';
+  }
 </script>

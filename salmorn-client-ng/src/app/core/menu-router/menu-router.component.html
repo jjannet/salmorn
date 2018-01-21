@@ -3,7 +3,7 @@
       <img src="contents/images/logo-white.png" />
   </div>
   <i class="fa fa-bars fa-lg btn-menu" onclick="toggleMenu()"></i>
-  <div class="user-box-top" onclick="toggleUser()">
+  <!-- <div class="user-box-top" onclick="toggleUser()">
       <div class="user-info">
           <div class="user-img" style="background-image: url(contents/images/top-slider/01.jpg)"></div>
           <div class="user-name">Orn BNK48</div>
@@ -13,13 +13,8 @@
           <li>Profile</li>
           <li>Logout</li>
       </ul>
-  </div>
-  <div class="cart-box-top">
-      <div class="cart-icon">
-          <i class="fa fa-shopping-cart"></i>
-          <label>10</label>
-      </div>
-  </div>
+  </div> -->
+  <app-cart-box-top></app-cart-box-top>
   <ul id="toggleMenu">
     <li class="logo">
         <a  (click)="enterLink('/')"  href="javascript:void(0)"><img src="contents/images/logo.png" /></a>
@@ -30,7 +25,7 @@
 
     
 
-    <li app-user-box class="user"></li>
+    <!-- <li app-user-box class="user"></li> -->
     <li app-cart-box class="cart"></li>
     <li class="close-menu-btn"><i class="fa fa-close" onclick="toggleMenu()"></i></li>
 </ul>

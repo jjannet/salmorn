@@ -7,14 +7,18 @@
     <div class="checkout-box">
       <div class="checkout-form">
 
-        <app-customer-form></app-customer-form>
+        <app-customer-form [customer]="customer"></app-customer-form>
 
 
-        <app-order-item *ngFor="let cart of carts" [cart]="cart" ></app-order-item>
+        <app-checkout-item [carts]="carts" (qtyChanged)="qtyChanged($event)" (removeProduct)="removeProduct($event)"></app-checkout-item>
+
+
+        {{customer.email}}
+
       </div>
       <div class="checkout-summary">
 
-        <app-checkout-summary [carts]="carts"></app-checkout-summary>
+        <app-checkout-summary [carts]="carts" (submitForm)="submitForm($event)"></app-checkout-summary>
 
       </div>
       <div style="clear:both"></div>

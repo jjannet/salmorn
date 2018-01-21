@@ -52,20 +52,52 @@ namespace salmorn.Services.Transactions
             }
         }
 
-        public List<Order> createOrders(List<Order> orders)
+        public string createOrders(List<Order> orders)
         {
 
             try
             {
-                for(int i = 0; i < orders.Count; i++)
+                string orderCode = getOrderCode();
+                for (int i = 0; i < orders.Count; i++)
                 {
+                    var product = this.db.Products.SingleOrDefault(m => m.id == orders[i].product.id);
+                    if (product == null) return null;
+                    if (product.isPreOrder == true)
+                    {
+                        if (product.preStart > DateTime.Now) return null;
+                        if (product.preEnd == null || product.preEnd < DateTime.Now) return null;
+                    }
+
                     orders[i] = genOrderForInsert(orders[i]);
+                    orders[i].code = orderCode;
                 }
 
                 db.Orders.AddRange(orders);
                 db.SaveChanges();
 
-                return orders;
+                sendMail(orders);
+
+                return orderCode;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public Order getLastCustomerDetail(string email)
+        {
+            try
+            {
+                var datas = this.db.Orders.Where(m => m.email == email);
+                if (datas.Count() > 0)
+                {
+                    return datas.OrderByDescending(m => m.orderDate).First();
+                }
+                else
+                {
+                    return null;
+                }
             }
             catch (Exception ex)
             {
@@ -75,47 +107,44 @@ namespace salmorn.Services.Transactions
 
         public Order genOrderForInsert(Order data)
         {
-                if (data.product == null) return null;
-                var product = db.Products.SingleOrDefault(m => m.id == data.product.id);
-                if (product == null) return null;
+            if (data.product == null) return null;
+            var product = db.Products.SingleOrDefault(m => m.id == data.product.id);
+            if (product == null) return null;
 
-                data.code = getOrderCode();
-                data.createDate = DateTime.Now;
-                data.isActive = true;
-                data.isCreateShipping = false;
-                data.isFinish = false;
-                data.isPay = false;
-                data.isShipping = false;
-                data.orderDate = DateTime.Now;
-                data.payDate = null;
-                data.productId = product.id;
-                data.shippingDate = null;
-                data.shippingDateEnd = null;
-                data.shippingDateStart = null;
-                if (data.isShipping)
-                    data.totalPrice = (product.price.Value * data.qty) + (product.shippintPriceRate * Math.Ceiling((decimal)data.qty / product.qtyShippingPriceCeiling));
-                else
-                    data.totalPrice = (product.price.Value * data.qty);
-                data.totalProductPrice = (product.price.Value * data.qty);
-                data.unitPrice = product.price.Value;
-                data.updateDate = DateTime.Now;
-                data.createBy = -1;
-                data.updateBy = -1;
+            //data.code = getOrderCode();
+            data.createDate = DateTime.Now;
+            data.isActive = true;
+            data.isCreateShipping = false;
+            data.isFinish = false;
+            data.isPay = false;
+            data.orderDate = DateTime.Now;
+            data.payDate = null;
+            data.productId = product.id;
+            data.shippingDate = null;
+            data.shippingDateEnd = null;
+            data.shippingDateStart = null;
+            if (data.isShipping)
+            {
+                data.shippingPrice = (product.shippintPriceRate * Math.Ceiling((decimal)data.qty / product.qtyShippingPriceCeiling));
+                data.totalPrice = (product.price.Value * data.qty) + (product.shippintPriceRate * Math.Ceiling((decimal)data.qty / product.qtyShippingPriceCeiling));
+            }
 
-                return data;
+            else
+                data.totalPrice = (product.price.Value * data.qty);
+            data.totalProductPrice = (product.price.Value * data.qty);
+            data.unitPrice = product.price.Value;
+            data.updateDate = DateTime.Now;
+            data.createBy = -1;
+            data.updateBy = -1;
+
+            return data;
         }
 
-        public void sendMail(string orderCode)
+        public void sendMail(List<Order> orders)
         {
             try
             {
-                var order = this.db.Orders.SingleOrDefault(m => m.code == orderCode);
-                if (order == null) return;
-
-                order.product = this.db.Products.SingleOrDefault(m => m.id == order.productId);
-                if (order.product == null) return;
-
-                this._emailSender.SendEmailAsync(order.email, "รายการสั่งซื้อสินค้า Salmorn", genereateEmailBody(order));
+                this._emailSender.SendEmailAsync(orders.First().email, "รายการสั่งซื้อสินค้า Salmorn", genereateEmailBody(orders));
             }
             catch (Exception ex)
             {
@@ -123,32 +152,18 @@ namespace salmorn.Services.Transactions
             }
         }
 
-        private string genereateEmailBody(Order order)
+        private string genereateEmailBody(List<Order> orders)
         {
             StringBuilder body = new StringBuilder();
+            var order = orders.First();
 
+            body.Append(" <html> ");
+            body.Append(" <header> ");
+            body.Append("   <meta content='text/html; charset=utf-8' http-equiv='Content-Type' /> ");
             body.Append("    <style> ");
             body.Append("        body { ");
             body.Append("            background-color: #FAFAFA; ");
             body.Append("            color: #555; ");
-            body.Append("        } ");
-            body.Append("        .container { ");
-            body.Append("            display: block; ");
-            body.Append("            width: 500px; ");
-            body.Append("            margin-left: auto; ");
-            body.Append("            margin-right: auto; ");
-            body.Append("            padding: 20px; ");
-            body.Append("            border: 1px solid #88c9e5; ");
-            body.Append("            background-color: #fefefe; ");
-            body.Append("            text-align: center; ");
-            body.Append("        } ");
-            body.Append(" ");
-            body.Append("        .container > img { ");
-            body.Append("            display: block; ");
-            body.Append("            width: 150px; ");
-            body.Append("            margin-left: auto; ");
-            body.Append("            margin-right: auto; ");
-            body.Append("            margin-bottom: 30px; ");
             body.Append("        } ");
             body.Append("        .container > label { ");
             body.Append("            display: block; ");
@@ -185,20 +200,33 @@ namespace salmorn.Services.Transactions
             body.Append("            background-color: #a1d5eb; ");
             body.Append("        } ");
             body.Append("    </style> ");
+
+            body.Append(" </header> ");
+            body.Append(" <body style='background-color: #FAFAFA; color: #555;'> ");
             body.Append(" ");
-            body.Append("    <div class='container'> ");
-            body.Append("        <img src='https://storage.googleapis.com/salmorn-dev-storage/salmorn-baby-blue.png' /> ");
-            body.Append("        <label class='title'>ขอบคุณที่มาเป็นส่วนหนึ่งของ Salmorn ด้วยการสั่งซื้อสินค้าจากเรา</label> ");
-            body.Append("        <label>รหัสการสั่งซื้อสินค้าของคุณคือ</label> ");
-            body.Append("        <label class='code'>" + order.code + "</label> ");
-            body.Append("        <label>สินค้าที่สั่งซื้อ</label> ");
-            body.Append("        <label style='margin - bottom: 30px; '>" + order.product.name + " " + order.qty.ToString("#,##0") 
-                                        + " " + order.product.unitName + " ราคาชุดละ " + order.product.price.Value.ToString("#,##0") + " บาท</label> ");
-            body.Append("        <label class='price'>รวมราคาสินค้า: " + order.totalProductPrice.ToString("#,##0") + " บาท</label> ");
-            body.Append("        <label class='price'>ค่าจัดส่ง: " + order.shippingPrice.ToString("#,##0") + " บาท</label> ");
-            body.Append("        <label class='price'>รวมราคาทั้งสิ้น: " + order.totalPrice.ToString("#,##0") + " บาท</label> ");
-            body.Append("        <a href='#'>คลิกที่นี่เพื่อยืนยันการจ่ายเงิน</a> ");
+            body.Append("    <div style='display: block; width: 500px; margin-left: auto; margin-right: auto; padding: 20px; border: 1px solid #88c9e5; background-color: #fefefe; text-align: center; '> ");
+            body.Append("        <img src='https://storage.googleapis.com/salmorn-dev-storage/salmorn-baby-blue.png' style='display: block; width: 150px; margin-left: auto; margin-right: auto; margin-bottom: 30px; ' /> ");
+            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>ขอบคุณที่มาเป็นส่วนหนึ่งของ Salmorn ด้วยการสั่งซื้อสินค้าจากเรา</label> ");
+            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>รหัสการสั่งซื้อสินค้าของคุณคือ</label> ");
+            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; font-size: 30px; color: #88c9e5; margin-top: 50px; margin-bottom: 50px;  ' >" + order.code + "</label> ");
+            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px; margin-top: 10px; '><b>นัดรับสินค้าที่: " + order.product.pickupAt + "</b></label> ");
+            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>สินค้าที่สั่งซื้อ</label> ");
+
+            foreach (var o in orders)
+            {
+                body.Append("        <label style='margin-bottom: 30px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>" + o.product.name + " " + o.qty.ToString("#,##0")
+                                            + " " + o.product.unitName + " ราคาชุดละ " + o.product.price.Value.ToString("#,##0")
+                                            + " บาท</label> ");
+            }
+            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >รวมราคาสินค้า: " + order.totalProductPrice.ToString("#,##0") + " บาท</label> ");
+            if (order.isShipping)
+                body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >ค่าจัดส่ง: " + order.shippingPrice.ToString("#,##0") + " บาท</label> ");
+            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >รวมราคาทั้งสิ้น: " + order.totalPrice.ToString("#,##0") + " บาท</label> ");
+            body.Append("        <a href='#' style='display: block; margin-left: auto; margin-right: auto; padding: 10px 20px; color: white; font-size: 20px; background-color: #88c9e5; border: 1px solid #6eb1ce; margin-top: 30px; cursor: pointer; transition: 0.2s background-color; text-decoration: none; border-radius: 4px; '>คลิกที่นี่เพื่อยืนยันการจ่ายเงิน</a> ");
             body.Append("    </div> ");
+
+            body.Append(" </body> ");
+            body.Append(" </html>");
 
             return body.ToString();
         }
@@ -206,7 +234,7 @@ namespace salmorn.Services.Transactions
         private string getOrderCode()
         {
             string code = "SLM" + DateTime.Now.ToString("ddMMyyyy");
-            int cnt = db.Orders.Where(m => m.code.Contains(code)).Count();
+            int cnt = db.Orders.Where(m => m.code.Contains(code)).Count() + 1;
             code = code + cnt.ToString("0000#");
             return code;
         }

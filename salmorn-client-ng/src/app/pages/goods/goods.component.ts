@@ -14,6 +14,11 @@ export class GoodsComponent implements OnInit {
 
   ngOnInit() {
     this.loadProduct();
+    document.getElementById('appHeader').style.display = 'none';
+  }
+
+  ngOnDestroy() {
+    document.getElementById('appHeader').style.display = 'block';
   }
 
   loadProduct() {

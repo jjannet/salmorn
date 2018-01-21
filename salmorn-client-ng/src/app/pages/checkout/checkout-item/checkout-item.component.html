@@ -1,0 +1,7 @@
+<div class="form-box">
+    <div class="title">สินค้าในตระกร้า</div>
+  
+  
+    <app-order-item *ngFor="let cart of carts" [cart]="cart"  (qtyChanged)="qtyChanged($event)" (removeProduct)="removeProduct($event)"></app-order-item>
+  
+  </div>

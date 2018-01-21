@@ -21,10 +21,17 @@ namespace salmorn.Controllers
         }
         private IOrderService orderService { get; }
 
-        [HttpPost]
-        public Order createOrder([FromBody] List<Order> data)
+        [HttpPost("getLastCustomerDetail")]
+        public Order getLastCustomerDetail([FromBody] getLastCustomerDetailParam data)
         {
-            return this.orderService.createOrder(data);
+            return this.orderService.getLastCustomerDetail(data.email);
+        }
+        public class getLastCustomerDetailParam { public string email { get; set; } }
+
+        [HttpPost]
+        public string createOrder([FromBody] List<Order> data)
+        {
+            return this.orderService.createOrders(data);
         }
 
         [HttpPut]

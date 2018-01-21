@@ -10,10 +10,14 @@ import { ServicesModule } from './services/services.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutungModule } from './app-router';
+import { OnlyNumberDirective } from './directives/only-number.directive';
+
+import 'reflect-metadata';
 
 @NgModule({
   declarations: [
     AppComponent,
+    OnlyNumberDirective,
   ],
   imports: [
     BrowserModule,FormsModule, CoreModule, RouterModule, AppRoutungModule, SharedModule, ServicesModule, HttpModule

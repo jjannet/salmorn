@@ -9,6 +9,7 @@ import { UserBoxComponent } from './user-box/user-box.component';
 import { CartBoxComponent } from './cart-box/cart-box.component';
 
 import { CartService } from '../services/cart.service';
+import { CartBoxTopComponent } from './cart-box-top/cart-box-top.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { CartService } from '../services/cart.service';
   ],
   providers: [RouterModule, CartService],
   exports: [ HeaderComponent, MenuRouterComponent, MenuRouterItemComponent ],
-  declarations: [HeaderComponent, MenuRouterComponent, MenuRouterItemComponent, UserBoxComponent, CartBoxComponent]
+  declarations: [HeaderComponent, MenuRouterComponent, MenuRouterItemComponent, UserBoxComponent, CartBoxComponent, CartBoxTopComponent]
 })
 export class CoreModule { }

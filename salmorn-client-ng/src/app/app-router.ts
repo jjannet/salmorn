@@ -62,7 +62,6 @@ export const routes: Routes =
         {
             path: 'checkout',
             loadChildren: 'app/pages/checkout/checkout.module#CheckoutModule',
-            pathMatch: 'full'
         },
       
         {

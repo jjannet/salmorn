@@ -24,6 +24,10 @@ export class CartService {
     localStorage.setItem(this.cartKey, JSON.stringify(carts));
   }
 
+  clearCart() {
+    localStorage.removeItem(this.cartKey);
+  }
+
   addProduct(product: Product, qty: number) {
     var carts = this.getAll();
 
@@ -60,6 +64,10 @@ export class CartService {
     var sht = localStorage.getItem(this.shippingTypeKey);
     if(sht) return sht;
     else return 'shipping';
+  }
+  
+  clearShippingType() {
+    localStorage.removeItem(this.shippingTypeKey);
   }
 
 }

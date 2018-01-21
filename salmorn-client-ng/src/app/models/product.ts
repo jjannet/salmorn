@@ -13,8 +13,8 @@ export class Product {
     title: string;
     name: string;
     note: string;
-    preEnd: Date;
-    preStart: Date;
+    preEnd?: Date;
+    preStart?: Date;
     price: number;
     qtyShippingPriceCeiling: number;
     shippintPriceRate: number;

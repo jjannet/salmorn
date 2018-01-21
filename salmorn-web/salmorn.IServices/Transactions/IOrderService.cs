@@ -8,8 +8,7 @@ namespace salmorn.IServices.Transactions
     public interface IOrderService
     {
         int addPayment(Order data);
-        Order createOrder(Order data);
-        Order createOrders(List<Order> datas);
-        void sendMail(string orderCode);
+        string createOrders(List<Order> datas);
+        Order getLastCustomerDetail(string email);
     }
 }

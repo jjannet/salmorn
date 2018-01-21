@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { CartService } from '../../../services/cart.service';
 import { Cart } from '../../../models/cart';
@@ -10,6 +10,7 @@ import { Cart } from '../../../models/cart';
 })
 export class CheckoutSummaryComponent implements OnInit {
   @Input() carts: Array<Cart>;
+  @Output() submitForm = new EventEmitter();
   shippingSelector: string;
 
   constructor(private cartService: CartService) { }
@@ -52,4 +53,8 @@ export class CheckoutSummaryComponent implements OnInit {
     return this.calProductPrice() + this.calShippingPrice();
   }
 
+  submit() {
+    event.preventDefault();
+      this.submitForm.emit();
+  }
 }

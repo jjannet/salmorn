@@ -29,6 +29,7 @@ export class OrderSummaryComponent implements OnInit {
   qtyChanged(cart: Cart){
     let index = this.carts.findIndex(m=>m.product.id === cart.product.id);
     this.carts[index].qty = cart.qty;
+    this.cartService.setCart(this.carts);
   }
 
   removeProduct(cart: Cart){

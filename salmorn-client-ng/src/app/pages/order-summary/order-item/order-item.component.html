@@ -4,7 +4,7 @@
       <label class="name">{{ cart.product.name }}</label>
       <div class="order">
           <label class="price">{{ cart.product.price | number }} บาท</label>
-          <label>จำนวน <input type="number" [(ngModel)]="cart.qty" (change)="qtyChange($event)" /></label>
+          <label>จำนวน <input type="number" [(ngModel)]="cart.qty" (change)="qtyChange($event)" OnlyNumber="true"  /></label>
           <a href="javascript:void(0)" (click)="deleteItem(cart)">ลบรายการ</a>
       </div>
       <div style="clear:both"></div>
