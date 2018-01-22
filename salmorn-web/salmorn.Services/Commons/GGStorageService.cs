@@ -1,18 +1,21 @@
 ﻿using Google.Cloud.Storage.V1;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using salmorn.IServices.Commons;
+using salmorn.Models.Configurations;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace salmorn.Core.GGClouds
+namespace salmorn.Services.Commons
 {
-    public class GGStorage : IGGStorage
+    public class GGStorageService : IGGStorageService
     {
         private StorageClient _storage;
         public IConfiguration Configuration { get; }
 
-        public GGStorage(IConfiguration Configuration)
+        public GGStorageService(IConfiguration Configuration)
         {
             this.Configuration = Configuration;
         }
@@ -34,7 +37,7 @@ namespace salmorn.Core.GGClouds
             }
         }
 
-        private void createBucket(string bucketName)
+        public void createBucket(string bucketName)
         {
             if (!BucketIsExist(bucketName))
                 Storage.CreateBucket(ProjectId, bucketName);

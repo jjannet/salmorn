@@ -25,5 +25,6 @@ namespace salmorn.Models.Logs
         public const string Product = "PROD";
         public const string News = "NEWS";
         public const string Galleries = "GALL";
+        public const string PaymentSlip = "SLIP";
     }
 }

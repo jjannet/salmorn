@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using salmorn.Core.GGClouds;
 using salmorn.Core.Utils;
 using salmorn.IServices.Commons;
 using salmorn.Services.Commons;
@@ -13,8 +12,8 @@ namespace salmorn.Core
     {
         public static void AddCoreServices(this IServiceCollection services)
         {
-            services.AddTransient<IGGStorage, GGStorage>();
-            services.AddTransient<IFileUploadProcess, FileUploadProcess>();
+            services.AddTransient<IGGStorageService, GGStorageService>();
+            services.AddTransient<IFileUploadService, FileUploadService>();
             services.AddTransient<IEmailSender, AuthMessageSender>();
 
         }

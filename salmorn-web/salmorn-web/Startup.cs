@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using salmorn.Core;
 using salmorn.Services;
 using salmorn.Models.Commons;
+using salmorn.Models.Configurations;
 
 namespace salmorn
 {
@@ -71,7 +72,10 @@ namespace salmorn
 
 
             services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
+            services.Configure<GoogleCloudStorage>(Configuration.GetSection("GoogleCloudStorage"));
 
+            
+            services.AddGoogleCloudAPI(Configuration);
             services.AddServices();
             services.AddCors();
             services.AddMvc();

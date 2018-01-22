@@ -148,6 +148,12 @@
     <TypeScriptCompile Include="ClientApp\routes.ts" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Salmorn-e36ce18162e9.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

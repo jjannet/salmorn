@@ -1756,6 +1756,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Google.Cloud.Storage.V1": "2.1.0",
           "salmorn.IServices": "1.0.0"
         },
         "compile": {

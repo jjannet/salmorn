@@ -8,6 +8,9 @@ using salmorn.IServices.Masters;
 using salmorn.Models.Masters;
 using salmorn.Core.Utils;
 using salmorn.Models.Logs;
+using salmorn.IServices.Commons;
+using salmorn.Models.Configurations;
+using Microsoft.Extensions.Options;
 
 namespace salmorn.Controllers
 {
@@ -15,13 +18,15 @@ namespace salmorn.Controllers
     [Route("api/Product")]
     public class ProductController : Controller
     {
-        private IProductServices productService;
-        private IFileUploadProcess fileUploadProcess;
+        private IProductServices productService { get; }
+        private IFileUploadService fileUploadProcess { get; }
+        private GoogleCloudStorage ggSetting { get; }
 
-        public ProductController(IProductServices productService, IFileUploadProcess fileUploadProcess)
+        public ProductController(IProductServices productService, IFileUploadService fileUploadProcess, IOptions<GoogleCloudStorage> ggSetting)
         {
             this.productService = productService;
             this.fileUploadProcess = fileUploadProcess;
+            this.ggSetting = ggSetting.Value;
         }
 
         // GET api/values
@@ -58,7 +63,7 @@ namespace salmorn.Controllers
             {
                 foreach (var i in product.images)
                 {
-                    i.fileName = this.fileUploadProcess.GenerateHTTPFilePath(i.fileName);
+                    i.fileName = this.fileUploadProcess.GenerateHTTPFilePath(i.fileName, this.ggSetting.Bucket_Product_Large);
                 }
             }
 

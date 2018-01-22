@@ -8,4 +8,12 @@
     <ProjectReference Include="..\salmorn.IServices\salmorn.IServices.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="2.1.0" />
+  </ItemGroup>
+
 </Project>

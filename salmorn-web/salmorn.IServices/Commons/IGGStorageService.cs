@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace salmorn.Core.GGClouds
+namespace salmorn.IServices.Commons
 {
-    public interface IGGStorage
+    public interface IGGStorageService
     {
+        void createBucket(string bucketName);
         void Upload(Stream file, string bucketName, string fileName);
         void Delete(string bucketName, string fileName);
     }
