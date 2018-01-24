@@ -1,0 +1,88 @@
+<div class="title">
+  ยืนยันการสั่งสินค้า
+</div>
+
+<div class="container">
+
+  <div class="checkout-box">
+    <div class="checkout-form">
+
+      <div class="form-box">
+        <div class="form-title">กรอก Order code</div>
+        <div class="row">
+          <div class="form-control">
+            <i>Order code
+              <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label>
+            </i>
+            <input type="text" name="orderCode" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-control">
+            <button type="button">Enter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <div class="form-title">รายละเอียดการจ่ายเงิน</div>
+        <div class="row">
+          <div class="form-control">
+            <i>Order code
+              <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
+            </i>
+            <input type="text" name="orderCode" value="SAL010120180001" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-control">
+            <i>ชื่อ - นามสกุล
+              <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
+            </i>
+            <input type="text" name="name" value="๋Jirawat Jannet" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-control">
+            <i>วันที่โอนเงิน
+              <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
+            </i>
+            <input type="date" name="transferdate"  />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-control" style="display: inline-block; width: 150px">
+            <i>เวลาโอน (ชั่วโมง)
+              <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
+            </i>
+            <select>
+              <option *ngFor="let h of hours" value="h">{{ h }} </option>
+            </select>
+          </div>
+          <div class="form-control" style="display: inline-block; width: 150px">
+              <i>เวลาโอน (นาที)
+                <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
+              </i>
+              <select>
+                <option *ngFor="let m of minutes" value="m">{{ m }}</option>
+              </select>
+            </div>
+        </div>
+        <div class="row">
+          <div class="form-control">
+            <i>แนบไฟล์
+              <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
+            </i>
+            <input type="file" name="transferFile"  />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-control">
+            <button type="button">Enter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

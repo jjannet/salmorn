@@ -63,6 +63,11 @@ export const routes: Routes =
             path: 'checkout',
             loadChildren: 'app/pages/checkout/checkout.module#CheckoutModule',
         },
+        
+        {
+            path: 'confirm-payment',
+            loadChildren: 'app/pages/confirm-payment/confirm-payment.module#ConfirmPaymentModule',
+        },
       
         {
             path: '**',
