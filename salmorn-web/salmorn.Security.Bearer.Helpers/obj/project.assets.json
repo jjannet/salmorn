@@ -4136,11 +4136,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Projects\\My Projects\\GitHub\\Salmorn\\salmorn-web\\salmorn.Security.Bearer.Helpers\\salmorn.Security.Bearer.Helpers.csproj",
+      "projectUniqueName": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Security.Bearer.Helpers\\salmorn.Security.Bearer.Helpers.csproj",
       "projectName": "salmorn.Security.Bearer.Helpers",
-      "projectPath": "C:\\Projects\\My Projects\\GitHub\\Salmorn\\salmorn-web\\salmorn.Security.Bearer.Helpers\\salmorn.Security.Bearer.Helpers.csproj",
+      "projectPath": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Security.Bearer.Helpers\\salmorn.Security.Bearer.Helpers.csproj",
       "packagesPath": "C:\\Users\\jiraw\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\My Projects\\GitHub\\Salmorn\\salmorn-web\\salmorn.Security.Bearer.Helpers\\obj\\",
+      "outputPath": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Security.Bearer.Helpers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

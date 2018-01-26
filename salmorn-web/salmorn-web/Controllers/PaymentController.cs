@@ -15,7 +15,7 @@ using salmorn.Models.Logs;
 
 namespace salmorn.Controllers
 {
-    [Produces("application/json")]
+    //[Produces("application/json")]
     [Route("api/Payment")]
     public class PaymentController : BaseServiceController
     {
