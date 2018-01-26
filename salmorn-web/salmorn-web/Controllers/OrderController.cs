@@ -40,5 +40,12 @@ namespace salmorn.Controllers
             return this.orderService.addPayment(data);
         }
 
+        [HttpPost("getOrderByCode")]
+        public Order getOrderByCode([FromBody] getOrderByCodeParameter data)
+        {
+            return this.orderService.getOrderByCode(data.orderCode);
+        }
+        public class getOrderByCodeParameter { public string orderCode { get; set; } }
+
     }
 }

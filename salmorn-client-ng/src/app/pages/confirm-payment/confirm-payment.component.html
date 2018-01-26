@@ -6,82 +6,82 @@
 
   <div class="checkout-box">
     <div class="checkout-form">
-
-      <div class="form-box">
-        <div class="form-title">กรอก Order code</div>
-        <div class="row">
-          <div class="form-control">
-            <i>Order code
-              <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label>
-            </i>
-            <input type="text" name="orderCode" />
+      <form #f1="ngForm" (ngSubmit)="setOrderCode(f1)">
+        <div class="form-box" *ngIf="!isSetOrderCode">
+          <div class="form-title">กรอก Order code</div>
+          <div class="row">
+            <div class="form-control">
+              <i>Order code
+                <label class="error-message"  [hidden]="(orderCode.valid || !orderCode.touched) && !f1.submitted">(ไม่สามารถเป็นค่าว่างได้)</label>
+              </i>
+              <input type="text" name="orderCode" [(ngModel)]="payment.orderCode"  #orderCode="ngModel" required />
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-control">
+              <button type="submit">Enter</button>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="form-control">
-            <button type="button">Enter</button>
+      </form>
+      <form #f2="ngForm">
+        <div class="form-box" *ngIf="isSetOrderCode">
+          <div class="form-title">รายละเอียดการจ่ายเงิน</div>
+          <div class="row">
+            <div class="form-control">
+              <i>Order code 
+              </i>
+              <input type="text" name="orderCode" [ngModel]="payment.orderCode" disabled />
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="form-box">
-        <div class="form-title">รายละเอียดการจ่ายเงิน</div>
-        <div class="row">
-          <div class="form-control">
-            <i>Order code
-              <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
-            </i>
-            <input type="text" name="orderCode" value="SAL010120180001" />
+          <div class="row">
+            <div class="form-control">
+              <i>ชื่อ - นามสกุล
+              </i>
+              <input type="text" name="name" [ngModel]="payment.firstName + ' ' + payment.lastName" disabled />
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="form-control">
-            <i>ชื่อ - นามสกุล
-              <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
-            </i>
-            <input type="text" name="name" value="๋Jirawat Jannet" />
+          <div class="row">
+            <div class="form-control">
+              <i>วันที่โอนเงิน
+                <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
+              </i>
+              <input type="date" name="payDate" [(ngModel)]="payDate" />
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="form-control">
-            <i>วันที่โอนเงิน
-              <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
-            </i>
-            <input type="date" name="transferdate"  />
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-control" style="display: inline-block; width: 150px">
-            <i>เวลาโอน (ชั่วโมง)
-              <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
-            </i>
-            <select>
-              <option *ngFor="let h of hours" value="h">{{ h }} </option>
-            </select>
-          </div>
-          <div class="form-control" style="display: inline-block; width: 150px">
+          <div class="row">
+            <div class="form-control" style="display: inline-block; width: 150px">
+              <i>เวลาโอน (ชั่วโมง)
+                <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
+              </i>
+              <select name="hour" [(ngModel)]="hour">
+                <option *ngFor="let h of hours" ng-value="h">{{ h }} </option>
+              </select>
+            </div>
+            <div class="form-control" style="display: inline-block; width: 150px">
               <i>เวลาโอน (นาที)
                 <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
               </i>
-              <select>
-                <option *ngFor="let m of minutes" value="m">{{ m }}</option>
+              <select name="minute" [(ngModel)]="minute">
+                <option *ngFor="let m of minutes" ng-value="m">{{ m }}</option>
               </select>
             </div>
-        </div>
-        <div class="row">
-          <div class="form-control">
-            <i>แนบไฟล์
-              <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
-            </i>
-            <input type="file" name="transferFile"  />
+          </div>
+          <div class="row">
+            <div class="form-control">
+              <i>แนบไฟล์
+                <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
+              </i>
+              <input type="file" name="files" id="files" (change)="uploadSlip($event.target.files)" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-control">
+              <button type="button">Enter</button>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="form-control">
-            <button type="button">Enter</button>
-          </div>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 

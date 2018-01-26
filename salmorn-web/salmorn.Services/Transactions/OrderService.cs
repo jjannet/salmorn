@@ -19,6 +19,18 @@ namespace salmorn.Services.Transactions
             this._emailSender = emailSender;
         }
 
+        public Order getOrderByCode(string orderCode)
+        {
+            try
+            {
+                return this.db.Orders.Where(m => m.code == orderCode).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         /// <summary>
         /// Add payment
         /// </summary>

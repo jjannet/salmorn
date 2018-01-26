@@ -10,5 +10,6 @@ namespace salmorn.IServices.Transactions
         int addPayment(Order data);
         string createOrders(List<Order> datas);
         Order getLastCustomerDetail(string email);
+        Order getOrderByCode(string orderCode);
     }
 }

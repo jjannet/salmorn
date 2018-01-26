@@ -15,6 +15,8 @@ using salmorn.Models.Logs;
 
 namespace salmorn.Controllers
 {
+    [Produces("application/json")]
+    [Route("api/Payment")]
     public class PaymentController : BaseServiceController
     {
         private IFileUploadService fileUploadService { get; }
@@ -29,8 +31,14 @@ namespace salmorn.Controllers
         [HttpPost("uploadPaymentSlip")]
         public FileUpload uploadPaymentSlip(IFormFile file)
         {
+            if (file == null) throw new Exception("File is null");
+            if (file.Length == 0) throw new Exception("File is empty");
+
+            Console.WriteLine(file);
+
             string errorMessage = "";
             FileUpload f = null;
+           
             if (file.Length > 0)
             {
                 var ip = Request.HttpContext?.Connection?.RemoteIpAddress;

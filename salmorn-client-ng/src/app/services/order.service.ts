@@ -24,5 +24,9 @@ export class OrderService {
     return this.http.post(`/api/Order`, orders).map((res: Response) => res.json() as string);
   }
 
+  getOrderByCode(orderCode: string):Observable<Order> {
+    return this.http.post(`/api/Order/getOrderByCode`, { orderCode: orderCode }).map((res: Response) => res.json() as Order);
+  }
+
 }
  
