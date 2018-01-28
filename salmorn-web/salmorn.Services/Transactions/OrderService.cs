@@ -39,21 +39,26 @@ namespace salmorn.Services.Transactions
         /// 2: there is no order code
         /// -1: error
         /// </returns>
-        public int addPayment(Order data)
+        public int addPayment(PaymentNotification data)
         {
             try
             {
-                if (data.product == null || data.payment == null) return -1;
-                var order = db.Orders.SingleOrDefault(m => m.code == data.code);
+                var order = db.Orders.FirstOrDefault(m => m.code == data.orderCode);
                 if (order == null) return 2;
 
-                data.payment.orderCode = order.code;
-                data.payment.isActive = true;
-                data.payment.isMapping = true;
-                data.payment.paymentType = PaymentTypes.TRANSFER.ToString();
-                data.payment.fileId = data.payment.file.id;
-
-                db.PaymentNotifications.Add(data.payment);
+                db.PaymentNotifications.Add(new PaymentNotification()
+                {
+                    file = data.file,
+                    fileId = data.file.id,
+                    firstName = data.firstName,
+                    isActive = true,
+                    isMapping = false,
+                    lastName = data.lastName,
+                    money = data.money,
+                    orderCode = order.code,
+                    paymentDate = data.paymentDate,
+                    paymentType = PaymentTypes.TRANSFER.ToString()
+                });
                 db.SaveChanges();
 
                 return 1;
@@ -72,7 +77,7 @@ namespace salmorn.Services.Transactions
                 string orderCode = getOrderCode();
                 for (int i = 0; i < orders.Count; i++)
                 {
-                    var product = this.db.Products.SingleOrDefault(m => m.id == orders[i].product.id);
+                    var product = this.db.Products.FirstOrDefault(m => m.id == orders[i].product.id);
                     if (product == null) return null;
                     if (product.isPreOrder == true)
                     {
@@ -120,7 +125,7 @@ namespace salmorn.Services.Transactions
         public Order genOrderForInsert(Order data)
         {
             if (data.product == null) return null;
-            var product = db.Products.SingleOrDefault(m => m.id == data.product.id);
+            var product = db.Products.FirstOrDefault(m => m.id == data.product.id);
             if (product == null) return null;
 
             //data.code = getOrderCode();

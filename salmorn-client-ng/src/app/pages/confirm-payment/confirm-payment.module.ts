@@ -7,12 +7,13 @@ import { OrderService } from '../../services/order.service';
 import { PaymentService } from '../../services/payment.service';
 
 import { ConfirmPaymentRouter } from './confirm-payment-router';
+import { ConfirmPaymentCompleteComponent } from './confirm-payment-complete/confirm-payment-complete.component';
 
 @NgModule({
   imports: [
     CommonModule, ConfirmPaymentRouter, FormsModule
   ],
   providers: [OrderService, PaymentService],
-  declarations: [ConfirmPaymentComponent]
+  declarations: [ConfirmPaymentComponent, ConfirmPaymentCompleteComponent]
 })
 export class ConfirmPaymentModule { }

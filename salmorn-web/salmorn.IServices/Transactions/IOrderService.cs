@@ -7,7 +7,7 @@ namespace salmorn.IServices.Transactions
 {
     public interface IOrderService
     {
-        int addPayment(Order data);
+        int addPayment(PaymentNotification data);
         string createOrders(List<Order> datas);
         Order getLastCustomerDetail(string email);
         Order getOrderByCode(string orderCode);

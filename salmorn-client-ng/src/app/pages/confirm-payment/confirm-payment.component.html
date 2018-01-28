@@ -1,5 +1,5 @@
 <div class="title">
-  ยืนยันการสั่งสินค้า
+  ยืนยันการโอนเงิน
 </div>
 
 <div class="container">
@@ -24,7 +24,7 @@
           </div>
         </div>
       </form>
-      <form #f2="ngForm">
+      <form #f2="ngForm"  (ngSubmit)="confirm(f2)">
         <div class="form-box" *ngIf="isSetOrderCode">
           <div class="form-title">รายละเอียดการจ่ายเงิน</div>
           <div class="row">
@@ -43,10 +43,18 @@
           </div>
           <div class="row">
             <div class="form-control">
-              <i>วันที่โอนเงิน
-                <!-- <label class="error-message">(ไม่สามารถเป็นค่าว่างได้)</label> -->
+              <i>จำนวนเงินที่โอน
+                <label class="error-message"   [hidden]="payment.money > 0" >(ต้องมีค่ามากกว่า 0)</label> 
               </i>
-              <input type="date" name="payDate" [(ngModel)]="payDate" />
+              <input type="number" name="money" [(ngModel)]="payment.money"  #money2="ngModel" min="1" required  OnlyNumber="true" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-control">
+              <i>วันที่โอนเงิน
+                <label class="error-message"   [hidden]="(payDate2.valid || !payDate2.touched) && !f2.submitted" >(ไม่สามารถเป็นค่าว่างได้)</label> 
+              </i>
+              <input type="date" name="payDate" [(ngModel)]="payDate"  #payDate2="ngModel" required />
             </div>
           </div>
           <div class="row">
@@ -75,9 +83,16 @@
               <input type="file" name="files" id="files" (change)="uploadSlip($event.target.files)" />
             </div>
           </div>
+          <div class="row" *ngIf="payment.file != null">
+            <div class="form-control">
+                <i>หลักฐานการโอนเงิน
+                  </i>
+              <img [src]="payment?.file.fileName" >
+            </div>
+          </div>
           <div class="row">
             <div class="form-control">
-              <button type="button">Enter</button>
+              <button type="submit">Enter</button>
             </div>
           </div>
         </div>

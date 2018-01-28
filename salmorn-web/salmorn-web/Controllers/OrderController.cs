@@ -34,8 +34,8 @@ namespace salmorn.Controllers
             return this.orderService.createOrders(data);
         }
 
-        [HttpPut]
-        public int addPayment([FromBody] Order data)
+        [HttpPost("addPayment")]
+        public int addPayment([FromBody] PaymentNotification data)
         {
             return this.orderService.addPayment(data);
         }

@@ -7,6 +7,7 @@ import { JhttpService } from '../shared/services/jhttp.service';
 
 import { Order } from '../models/order';
 import { CustomerOrderDetail } from '../models/customer-order-detail';
+import { PaymentNotification } from '../models/payment-notification';
 
 @Injectable()
 export class OrderService {
@@ -26,6 +27,10 @@ export class OrderService {
 
   getOrderByCode(orderCode: string):Observable<Order> {
     return this.http.post(`/api/Order/getOrderByCode`, { orderCode: orderCode }).map((res: Response) => res.json() as Order);
+  }
+
+  addPayment(data: PaymentNotification):Observable<number> {
+    return this.http.post('/api/Order/addPayment', data).map((res: Response) =>  res.json() as number);
   }
 
 }
