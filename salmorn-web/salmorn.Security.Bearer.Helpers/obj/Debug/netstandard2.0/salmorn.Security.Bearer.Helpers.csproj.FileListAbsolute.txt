@@ -20,3 +20,12 @@ C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.Security.Bearer.Help
 C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\bin\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.deps.json
 C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\bin\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.dll
 C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\bin\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.pdb
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\bin\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.deps.json
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\bin\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.dll
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\bin\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.pdb
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\obj\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.csprojResolveAssemblyReference.cache
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\obj\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.csproj.CoreCompileInputs.cache
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\obj\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.AssemblyInfoInputs.cache
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\obj\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.AssemblyInfo.cs
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\obj\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.dll
+C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Security.Bearer.Helpers\obj\Debug\netstandard2.0\salmorn.Security.Bearer.Helpers.pdb
