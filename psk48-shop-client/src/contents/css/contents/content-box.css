@@ -48,7 +48,7 @@
 }
 
     .news-content-box-title > a:hover {
-        color: #88c9e5;
+        color: #cc006b;
     }
 
 .news-content-box-detail {
@@ -215,7 +215,7 @@
 .cart-box {
     display: block;
     width: calc(100% - 40px);
-    background-color: #88c9e5;
+    background-color: #cc006b;
     padding: 20px;
     text-align: center;
 }
@@ -325,7 +325,7 @@
             position: absolute;
             right: 0px;
             left: 0;
-            border: 2px solid #88c9e5;
+            border: 2px solid #cc006b;
         }
 
             .user-box-top > ul.active {
@@ -355,7 +355,7 @@
         left: 5px;
         padding: 10px;
         /*background-color: #555;*/
-        border: 2px solid #88c9e5;
+        border: 2px solid #cc006b;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         /*padding: 5px;*/
@@ -379,7 +379,7 @@
                 height: 50px;
                 width: 50px;
                 border-radius: 50%;
-                border: 2px solid #88c9e5;
+                border: 2px solid #cc006b;
                 background-size: cover;
                 float: left;
             }
@@ -387,7 +387,7 @@
             .user-box > .user-info > .user-name {
                 display: block;
                 font-weight: bold;
-                color: #88c9e5;
+                color: #cc006b;
                 float: left;
                 width: 152px;
                 height: 33px;

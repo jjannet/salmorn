@@ -27,16 +27,16 @@
     }
 
 .btn-main {
-    background-color: #88c9e5;
-    border-color: #6cb6d7;
+    background-color: #cc006b;
+    border-color: #a50055;
 }
 
     .btn-main:hover {
-        background-color: #a4daf1;
+        background-color: #e0328c;
     }
 
     .btn-main:disabled {
-    background-color: #cad2d6;
+    background-color: #f1e7ec;
     border-color: #99a1a5;
     color: #99a1a5;
     }
