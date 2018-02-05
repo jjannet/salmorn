@@ -1,0 +1,16 @@
+.price {
+    display: block;
+    font-size: 35px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid #f3deec;
+}
+
+div.price > label {
+    display: block;
+    float: left;
+}
+div.price > i {
+    display: block;
+    float: right;
+}

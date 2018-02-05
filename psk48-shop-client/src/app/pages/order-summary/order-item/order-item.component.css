@@ -1,0 +1,49 @@
+.product-item, .information {
+    display: block;
+    padding: 2%;
+}
+
+.product-item {
+    border-bottom: 1px solid #f3deec;
+}
+.information > img, label.name {
+    display: block;
+    float: left;
+}
+
+.information > img {
+    width: 20%;
+}
+label.name {
+    width: 50%;
+    padding: 2%;
+    font-size: 20px;
+}
+
+div.order {
+    display: block;
+    width: 25%;
+    float: right;
+    padding-top: 2%;
+    text-align: right;
+}
+
+label.price {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+label > input {
+    width: 70px;
+    padding: 5px;
+}
+div.order > a {
+    display: block;
+    text-decoration: none;
+    margin-top: 20px;
+    color: #555;
+}
+div.order > a:hover {
+    color: red;
+}

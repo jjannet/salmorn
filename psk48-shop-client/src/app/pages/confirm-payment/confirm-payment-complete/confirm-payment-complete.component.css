@@ -1,0 +1,39 @@
+
+.title {
+    display: block;
+    width: calc(100% - 40px);
+    font-size: 2em;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #88c9e5;
+    text-align: center;
+    color: white;
+}
+
+
+.container {
+    display: block;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+}
+
+
+div.confirm-box {
+    display: block;
+    padding: 2%;
+    width: 66%;
+    text-align: center;
+    margin: 0 auto;
+    border: 2px solid #88c9e5;
+}
+div.confirm-box > label {
+    display: block;
+    font-size: 20px;
+    line-height: 2em;
+}
+div.confirm-box > label > i {
+    font-weight: bold;
+    color: #88c9e5;
+}

@@ -1,0 +1,26 @@
+<div class="title">
+    ยืนยันการสั่งสินค้า
+</div>
+
+<div class="container">
+  
+    <div class="checkout-box">
+      <div class="checkout-form">
+
+        <app-customer-form [customer]="customer"></app-customer-form>
+
+
+        <app-checkout-item [carts]="carts" (qtyChanged)="qtyChanged($event)" (removeProduct)="removeProduct($event)"></app-checkout-item>
+
+
+
+      </div>
+      <div class="checkout-summary">
+
+        <app-checkout-summary [carts]="carts" (submitForm)="submitForm($event)"></app-checkout-summary>
+
+      </div>
+      <div style="clear:both"></div>
+    </div>
+  
+  </div>

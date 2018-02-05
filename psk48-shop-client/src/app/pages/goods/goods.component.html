@@ -1,0 +1,16 @@
+<content class="web-welcome">
+    <div class="web-welcome-title">SALMORN GOODS</div>
+    <div class="web-welcome-detail">
+        <p>มาเป็นส่วนหนึ่งของแซวม่อนด้วยการเป็นเจ้าของ GOODS</p>
+    </div>
+</content>
+
+<div class="content-box ">
+    <div class="content-box-body" style="padding-top: 30px;">
+
+
+        <div app-goods-item class="product-box" *ngFor="let product of products" [product]="product"></div>
+
+        <div style="clear: both;"></div>
+    </div>
+</div>

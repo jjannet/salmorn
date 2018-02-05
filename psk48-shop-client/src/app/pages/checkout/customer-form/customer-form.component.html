@@ -1,0 +1,60 @@
+<div class="form-box">
+  <div class="title">ข้อมูลลูกค้าและการจัดส่ง</div>
+  <form #f="ngForm">
+    <div class="row">
+      <div class="form-control">
+        <i>Email
+          <label class="error-message" [hidden]="email.valid || !email.touched">(ไม่สามารถเป็นค่าว่างได้ และ รูปแบบ email ต้องถูกต้อง)</label>
+        </i>
+        <input type="email" name="email" [(ngModel)]="customer.email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+          #email="ngModel" (blur)="findCustomerDetail()" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-control">
+        <i>เบอร์โทร <label class="error-message" [hidden]="tel.valid || !tel.touched">(ไม่สามารถเป็นค่าว่างได้)</label></i>
+        <input type="text" name="tel" [(ngModel)]="customer.tel" required #tel="ngModel"  OnlyNumber="true" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-control">
+        <i>ชื่อ <label class="error-message" [hidden]="firstName.valid || !firstName.touched">(ไม่สามารถเป็นค่าว่างได้)</label></i>
+        <input type="text" name="firstName" [(ngModel)]="customer.firstName" required #firstName="ngModel" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-control">
+        <i>นามสกุล <label class="error-message" [hidden]="lastName.valid || !lastName.touched">(ไม่สามารถเป็นค่าว่างได้)</label></i>
+        <input type="text" name="lastName" [(ngModel)]="customer.lastName" required #lastName="ngModel" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-control">
+        <i>ที่อยู่ <label class="error-message" [hidden]="address.valid || !address.touched">(ไม่สามารถเป็นค่าว่างได้)</label></i>
+        <textarea name="address" [(ngModel)]="customer.address" required #address="ngModel"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-control">
+        <i>จังหวัด <label class="error-message" [hidden]="province.valid || !province.touched">(ไม่สามารถเป็นค่าว่างได้)</label></i>
+        <select name="province" [(ngModel)]="customer.province" required #province="ngModel">
+          <option value="bankok">กรุงเทพมหานคร</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-control">
+        <i>รหัสไปรษณีย์ <label class="error-message" [hidden]="zipCode.valid || !zipCode.touched">(ไม่สามารถเป็นค่าว่างได้)</label></i>
+        <input type="email" name="zipCode" [(ngModel)]="customer.zipCode" required #zipCode="ngModel" />
+      </div>
+    </div>
+  </form>
+
+
+</div>

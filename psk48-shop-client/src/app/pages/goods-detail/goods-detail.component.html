@@ -1,0 +1,39 @@
+<div class="goods-detail-header">
+  <div class="goods-detail-header-order">
+    <div class="goods-detail-header-order-image">
+      <img [src]="getImagePath(product)" (error)="errorHandler($event)" />
+    </div>
+    <div class="goods-detail-header-order-title">
+      <h1>{{ product?.title }}</h1>
+      <p>
+        {{ product?.preStart | date:'dd MMMM yyyy เวลา HH:mm น.' }} -
+        <label [hidden]="product?.preEnd == null">{{ product?.preEnd | date:'dd MMMM yyyy เวลา HH:mm น.' }}</label>
+        <label [hidden]="product?.preEnd != null">ไม่มีกำหนด</label>
+      </p>
+      <div class="goods-detail-header-order-detail">
+        <div class="row">
+          <div class="goods-detail-header-order-detail-price">
+            {{ product?.price | number }} บาท
+          </div>
+          <div class="goods-detail-header-order-detail-qty">
+            <span>จำนวน </span>
+            <input type="number" id="orderQty" [(ngModel)]="orderQty" />
+          </div>
+          <div style="clear:both"></div>
+        </div>
+        <div class="row" style="margin-top: 10px; text-align: right">
+          <button class="btn btn-main">Buy it now</button>
+          <button class="btn">
+            <i class="fa fa-shopping-cart"></i>Add to cart</button>
+        </div>
+      </div>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+</div>
+
+<div class="goods-detail" [innerHTML]="product?.detail">
+</div>
+
+<div class="goods-note" [innerHTML]="product?.note">
+</div>

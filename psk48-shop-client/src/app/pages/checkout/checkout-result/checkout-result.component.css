@@ -1,0 +1,91 @@
+
+.title {
+    display: block;
+    width: calc(100% - 40px);
+    font-size: 2em;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #88c9e5;
+    text-align: center;
+    color: white;
+}
+
+
+.container {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+}
+
+
+.special-thanks {
+    display: block;
+    border: 1px solid #fafafa;
+    box-shadow: 0px 0px 50px 0 #88c9e5;
+    border-radius: 5px;
+    padding: 30px 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.special-thanks > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 200px;
+}
+.special-thanks > label {
+    display: block;
+    font-size: 30px;
+}
+
+.special-thanks > label.note {
+    color: #ff7474;
+    font-size: 20px;
+}
+
+.special-thanks > label.order-code {
+    color: #ff74dc;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 900px) {
+    .special-thanks {
+        width: 90%;
+    }
+
+    .special-thanks > label {
+        font-size: 20px;
+    }
+
+    .special-thanks > label.order-code {
+        font-size: 30px;
+    }
+    .special-thanks > img {
+        width: 100px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .special-thanks {
+        width: 60%;
+    }
+
+    .special-thanks > label {
+        font-size: 30px;
+    }
+
+    .special-thanks > label.order-code {
+        font-size: 50px;
+    }
+    .special-thanks > img {
+        width: 200px;
+    }
+}

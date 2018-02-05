@@ -1,0 +1,19 @@
+<div class="title">ตะกร้าสินค้าของคุณ</div>
+<div class="container">
+  
+  <div class="order-box">
+    <div class="order-items">
+      <app-order-item *ngFor="let cart of carts" [cart]="cart" (qtyChanged)="qtyChanged($event)" (removeProduct)="removeProduct($event)"></app-order-item>
+
+      <label class="no-product-order" *ngIf="carts.length <= 0">ไม่มีสินค้าในตะกร้า</label>
+    </div>
+    <div class="order-summary">
+      <app-order-shipping [carts]="carts" (shippingTypeChange)="shippingTypeChange($event)"></app-order-shipping>
+      <app-order-price [carts]="carts" [shippingSelector]="shippingSelector"></app-order-price>
+
+      <button type="button" [disabled]="carts.length <= 0" class="btn btn-main" style="margin-top: 20px; width: 100%;" (click)="confirmOrder()">ยืนยัน Order</button>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+
+</div>

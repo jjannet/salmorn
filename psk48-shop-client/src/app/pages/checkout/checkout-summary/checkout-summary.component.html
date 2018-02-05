@@ -1,0 +1,29 @@
+<div class="form-box">
+  <div class="title">ข้อมูลลูกค้าและการจัดส่ง</div>
+
+
+  <div class="row">
+    <label>ราคาสินค้า ({{ sumTotalOrderItems() | number }} ชิ้น)</label>
+    <i>{{ calProductPrice() | number }} บาท</i>
+    <div style="clear:both"></div>
+  </div>
+
+  <div class="row" *ngIf="shippingSelector == 'shipping'">
+    <label>ค่าจัดส่ง</label>
+    <i>{{ calShippingPrice() | number }} บาท</i>
+    <div style="clear:both"></div>
+  </div>
+
+  <div class="line"></div>
+
+  <div class="row total-price">
+      <label>รวม</label>
+      <i>{{ calTotalPrice() | number }} บาท</i>
+      <div style="clear:both"></div>
+  </div>
+
+  <div class="line"></div>
+
+  <button type="button" class="btn btn-main" (click)="submit($event)">ยืนยันการสั่งซื้อสินค้า</button>
+
+</div>
