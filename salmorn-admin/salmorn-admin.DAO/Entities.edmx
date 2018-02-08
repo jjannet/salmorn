@@ -1,0 +1,1322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SalmornDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="_Test">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="test" Type="text" />
+        </EntityType>
+        <EntityType Name="L_FileUpload">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fileName" Type="nvarchar(max)" />
+          <Property Name="ipAddress" Type="nvarchar" MaxLength="20" />
+          <Property Name="macAddress" Type="nvarchar" MaxLength="20" />
+          <Property Name="type" Type="nvarchar" MaxLength="20" />
+          <Property Name="uploadDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="userId" Type="int" />
+        </EntityType>
+        <EntityType Name="M_PostType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="M_Product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="nvarchar" MaxLength="20" />
+          <Property Name="cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="createBy" Type="int" />
+          <Property Name="createDate" Type="datetime" />
+          <Property Name="detail" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="isPreOrder" Type="bit" />
+          <Property Name="isUseStock" Type="bit" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" />
+          <Property Name="name" Type="nvarchar" MaxLength="250" />
+          <Property Name="note" Type="nvarchar(max)" />
+          <Property Name="preEnd" Type="datetime2" Precision="7" />
+          <Property Name="preStart" Type="datetime2" Precision="7" />
+          <Property Name="price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="isShipping" Type="bit" Nullable="false" />
+          <Property Name="qtyShippingPriceCeiling" Type="int" Nullable="false" />
+          <Property Name="shippintPriceRate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="unitName" Type="nvarchar" MaxLength="50" />
+          <Property Name="updateBy" Type="int" />
+          <Property Name="updateDate" Type="datetime" />
+          <Property Name="weight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="isManualPickup" Type="bit" Nullable="false" />
+          <Property Name="pickupAt" Type="nvarchar" MaxLength="500" />
+          <Property Name="stockQrty" Type="int" />
+        </EntityType>
+        <EntityType Name="M_Product_Image">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fileId" Type="bigint" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="S_Role">
+          <Key>
+            <PropertyRef Name="role" />
+          </Key>
+          <Property Name="role" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="roleName" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="S_RoleMapping">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="role" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="S_User">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="createBy" Type="int" Nullable="false" />
+          <Property Name="createDate" Type="datetime" Nullable="false" />
+          <Property Name="displayName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="updateBy" Type="int" Nullable="false" />
+          <Property Name="updateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_CustomerOneTime">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="province" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="zipCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="nvarchar" MaxLength="50" />
+          <Property Name="paymentId" Type="int" />
+          <Property Name="orderDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+          <Property Name="unitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalProductPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="isPay" Type="bit" Nullable="false" />
+          <Property Name="payDate" Type="datetime2" Precision="7" />
+          <Property Name="isShipping" Type="bit" Nullable="false" />
+          <Property Name="shippingDateStart" Type="datetime" />
+          <Property Name="shippingDateEnd" Type="datetime" />
+          <Property Name="shippingDate" Type="datetime" />
+          <Property Name="shippingPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="250" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="150" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="150" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="province" Type="nvarchar" MaxLength="250" />
+          <Property Name="zipCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="isMeetReceive" Type="bit" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="isCreateShipping" Type="bit" Nullable="false" />
+          <Property Name="isFinish" Type="bit" Nullable="false" />
+          <Property Name="createBy" Type="int" />
+          <Property Name="createDate" Type="datetime" />
+          <Property Name="updateBy" Type="int" />
+          <Property Name="updateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Order_D">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hId" Type="int" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+          <Property Name="unitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_PaymentNotification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fileId" Type="bigint" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="orderCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="paymentDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="paymentType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="isMapping" Type="bit" Nullable="false" />
+          <Property Name="money" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Post">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="detail" Type="text" Nullable="false" />
+          <Property Name="typeId" Type="int" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="author" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="authorId" Type="int" Nullable="false" />
+          <Property Name="targetDate" Type="datetime" />
+          <Property Name="createDate" Type="datetime" Nullable="false" />
+          <Property Name="updateDate" Type="datetime" Nullable="false" />
+          <Property Name="updateBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_ProductStocks">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Shipping">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="trackingCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="orderId" Type="int" Nullable="false" />
+          <Property Name="orderCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="isShipping" Type="bit" Nullable="false" />
+          <Property Name="shippingDate" Type="datetime" />
+          <Property Name="email" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="province" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="zipCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="printCoverQty" Type="int" />
+          <Property Name="createDate" Type="datetime" />
+          <Property Name="createBy" Type="int" />
+          <Property Name="updateDate" Type="datetime" />
+          <Property Name="updateBy" Type="int" />
+        </EntityType>
+        <EntityType Name="T_Shipping_D">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hId" Type="int" Nullable="false" />
+          <Property Name="orderId" Type="int" Nullable="false" />
+          <Property Name="code" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_Shipping_H">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="nvarchar" MaxLength="20" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="isShipping" Type="bit" Nullable="false" />
+          <Property Name="shippingDate" Type="datetime" />
+          <Property Name="createDate" Type="datetime" />
+          <Property Name="createBy" Type="int" />
+          <Property Name="updateDate" Type="datetime" />
+          <Property Name="updateBy" Type="int" />
+        </EntityType>
+        <Association Name="FK_M_Product_Image_L_FileUpload">
+          <End Role="L_FileUpload" Type="Self.L_FileUpload" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="M_Product_Image" Type="Self.M_Product_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="L_FileUpload">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="M_Product_Image">
+              <PropertyRef Name="fileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_M_Product_Image_M_Product">
+          <End Role="M_Product" Type="Self.M_Product" Multiplicity="1" />
+          <End Role="M_Product_Image" Type="Self.M_Product_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_Product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="M_Product_Image">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S_RoleMapping_S_RoleMapping">
+          <End Role="S_Role" Type="Self.S_Role" Multiplicity="1" />
+          <End Role="S_RoleMapping" Type="Self.S_RoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S_Role">
+              <PropertyRef Name="role" />
+            </Principal>
+            <Dependent Role="S_RoleMapping">
+              <PropertyRef Name="role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S_RoleMapping_S_User">
+          <End Role="S_User" Type="Self.S_User" Multiplicity="1" />
+          <End Role="S_RoleMapping" Type="Self.S_RoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S_User">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="S_RoleMapping">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Order_M_Product">
+          <End Role="M_Product" Type="Self.M_Product" Multiplicity="1" />
+          <End Role="T_Order" Type="Self.T_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_Product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_Order">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_PaymentNotification_L_FileUpload">
+          <End Role="L_FileUpload" Type="Self.L_FileUpload" Multiplicity="1" />
+          <End Role="T_PaymentNotification" Type="Self.T_PaymentNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="L_FileUpload">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_PaymentNotification">
+              <PropertyRef Name="fileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Post_M_PostType">
+          <End Role="M_PostType" Type="Self.M_PostType" Multiplicity="1" />
+          <End Role="T_Post" Type="Self.T_Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_PostType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_Post">
+              <PropertyRef Name="typeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Shipping_D_T_Shipping_H">
+          <End Role="T_Shipping_H" Type="Self.T_Shipping_H" Multiplicity="1" />
+          <End Role="T_Shipping_D" Type="Self.T_Shipping_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Shipping_H">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_Shipping_D">
+              <PropertyRef Name="hId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Shipping_T_Order">
+          <End Role="T_Order" Type="Self.T_Order" Multiplicity="1" />
+          <End Role="T_Shipping" Type="Self.T_Shipping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Order">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_Shipping">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_m_product_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="code" Type="nvarchar" Mode="In" />
+          <Parameter Name="cost" Type="decimal" Mode="In" />
+          <Parameter Name="detail" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="isActive" Type="bit" Mode="In" />
+          <Parameter Name="isPreOrder" Type="bit" Mode="In" />
+          <Parameter Name="isUseStock" Type="bit" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="note" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="preEnd" Type="datetime2" Mode="In" />
+          <Parameter Name="preStart" Type="datetime2" Mode="In" />
+          <Parameter Name="price" Type="decimal" Mode="In" />
+          <Parameter Name="qtyShippingPriceCeiling" Type="int" Mode="In" />
+          <Parameter Name="shippintPriceRate" Type="decimal" Mode="In" />
+          <Parameter Name="unitName" Type="nvarchar" Mode="In" />
+          <Parameter Name="weight" Type="decimal" Mode="In" />
+          <Parameter Name="createBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_m_product_edit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="cost" Type="decimal" Mode="In" />
+          <Parameter Name="detail" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="isActive" Type="bit" Mode="In" />
+          <Parameter Name="isPreOrder" Type="bit" Mode="In" />
+          <Parameter Name="isUseStock" Type="bit" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="note" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="preEnd" Type="datetime2" Mode="In" />
+          <Parameter Name="preStart" Type="datetime2" Mode="In" />
+          <Parameter Name="price" Type="decimal" Mode="In" />
+          <Parameter Name="qtyShippingPriceCeiling" Type="int" Mode="In" />
+          <Parameter Name="shippintPriceRate" Type="decimal" Mode="In" />
+          <Parameter Name="unitName" Type="nvarchar" Mode="In" />
+          <Parameter Name="weight" Type="decimal" Mode="In" />
+          <Parameter Name="updateBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_test" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="SalmornDBModelStoreContainer">
+          <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="_Test" EntityType="Self._Test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="L_FileUpload" EntityType="Self.L_FileUpload" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_PostType" EntityType="Self.M_PostType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Product" EntityType="Self.M_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Product_Image" EntityType="Self.M_Product_Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="S_Role" EntityType="Self.S_Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="S_RoleMapping" EntityType="Self.S_RoleMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="S_User" EntityType="Self.S_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_CustomerOneTime" EntityType="Self.T_CustomerOneTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Order" EntityType="Self.T_Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Order_D" EntityType="Self.T_Order_D" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_PaymentNotification" EntityType="Self.T_PaymentNotification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Post" EntityType="Self.T_Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_ProductStocks" EntityType="Self.T_ProductStocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Shipping" EntityType="Self.T_Shipping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Shipping_D" EntityType="Self.T_Shipping_D" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Shipping_H" EntityType="Self.T_Shipping_H" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_M_Product_Image_L_FileUpload" Association="Self.FK_M_Product_Image_L_FileUpload">
+            <End Role="L_FileUpload" EntitySet="L_FileUpload" />
+            <End Role="M_Product_Image" EntitySet="M_Product_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_M_Product_Image_M_Product" Association="Self.FK_M_Product_Image_M_Product">
+            <End Role="M_Product" EntitySet="M_Product" />
+            <End Role="M_Product_Image" EntitySet="M_Product_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S_RoleMapping_S_RoleMapping" Association="Self.FK_S_RoleMapping_S_RoleMapping">
+            <End Role="S_Role" EntitySet="S_Role" />
+            <End Role="S_RoleMapping" EntitySet="S_RoleMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S_RoleMapping_S_User" Association="Self.FK_S_RoleMapping_S_User">
+            <End Role="S_User" EntitySet="S_User" />
+            <End Role="S_RoleMapping" EntitySet="S_RoleMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Order_M_Product" Association="Self.FK_T_Order_M_Product">
+            <End Role="M_Product" EntitySet="M_Product" />
+            <End Role="T_Order" EntitySet="T_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_PaymentNotification_L_FileUpload" Association="Self.FK_T_PaymentNotification_L_FileUpload">
+            <End Role="L_FileUpload" EntitySet="L_FileUpload" />
+            <End Role="T_PaymentNotification" EntitySet="T_PaymentNotification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Post_M_PostType" Association="Self.FK_T_Post_M_PostType">
+            <End Role="M_PostType" EntitySet="M_PostType" />
+            <End Role="T_Post" EntitySet="T_Post" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Shipping_D_T_Shipping_H" Association="Self.FK_T_Shipping_D_T_Shipping_H">
+            <End Role="T_Shipping_H" EntitySet="T_Shipping_H" />
+            <End Role="T_Shipping_D" EntitySet="T_Shipping_D" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Shipping_T_Order" Association="Self.FK_T_Shipping_T_Order">
+            <End Role="T_Order" EntitySet="T_Order" />
+            <End Role="T_Shipping" EntitySet="T_Shipping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SalmornDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="sp_m_product_add">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="code" Mode="In" Type="String" />
+            <Parameter Name="cost" Mode="In" Type="Decimal" />
+            <Parameter Name="detail" Mode="In" Type="String" />
+            <Parameter Name="isActive" Mode="In" Type="Boolean" />
+            <Parameter Name="isPreOrder" Mode="In" Type="Boolean" />
+            <Parameter Name="isUseStock" Mode="In" Type="Boolean" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="note" Mode="In" Type="String" />
+            <Parameter Name="preEnd" Mode="In" Type="DateTime" />
+            <Parameter Name="preStart" Mode="In" Type="DateTime" />
+            <Parameter Name="price" Mode="In" Type="Decimal" />
+            <Parameter Name="qtyShippingPriceCeiling" Mode="In" Type="Int32" />
+            <Parameter Name="shippintPriceRate" Mode="In" Type="Decimal" />
+            <Parameter Name="unitName" Mode="In" Type="String" />
+            <Parameter Name="weight" Mode="In" Type="Decimal" />
+            <Parameter Name="createBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_m_product_edit">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="cost" Mode="In" Type="Decimal" />
+            <Parameter Name="detail" Mode="In" Type="String" />
+            <Parameter Name="isActive" Mode="In" Type="Boolean" />
+            <Parameter Name="isPreOrder" Mode="In" Type="Boolean" />
+            <Parameter Name="isUseStock" Mode="In" Type="Boolean" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="note" Mode="In" Type="String" />
+            <Parameter Name="preEnd" Mode="In" Type="DateTime" />
+            <Parameter Name="preStart" Mode="In" Type="DateTime" />
+            <Parameter Name="price" Mode="In" Type="Decimal" />
+            <Parameter Name="qtyShippingPriceCeiling" Mode="In" Type="Int32" />
+            <Parameter Name="shippintPriceRate" Mode="In" Type="Decimal" />
+            <Parameter Name="unitName" Mode="In" Type="String" />
+            <Parameter Name="weight" Mode="In" Type="Decimal" />
+            <Parameter Name="updateBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_test" ReturnType="Collection(SalmornDBModel.sp_test_Result)" />
+          <EntitySet Name="C__EFMigrationsHistory" EntityType="SalmornDBModel.C__EFMigrationsHistory" />
+          <EntitySet Name="C_Test" EntityType="SalmornDBModel.C_Test" />
+          <EntitySet Name="L_FileUpload" EntityType="SalmornDBModel.L_FileUpload" />
+          <EntitySet Name="M_PostType" EntityType="SalmornDBModel.M_PostType" />
+          <EntitySet Name="M_Product" EntityType="SalmornDBModel.M_Product" />
+          <EntitySet Name="M_Product_Image" EntityType="SalmornDBModel.M_Product_Image" />
+          <EntitySet Name="S_Role" EntityType="SalmornDBModel.S_Role" />
+          <EntitySet Name="S_RoleMapping" EntityType="SalmornDBModel.S_RoleMapping" />
+          <EntitySet Name="S_User" EntityType="SalmornDBModel.S_User" />
+          <EntitySet Name="T_CustomerOneTime" EntityType="SalmornDBModel.T_CustomerOneTime" />
+          <EntitySet Name="T_Order" EntityType="SalmornDBModel.T_Order" />
+          <EntitySet Name="T_Order_D" EntityType="SalmornDBModel.T_Order_D" />
+          <EntitySet Name="T_PaymentNotification" EntityType="SalmornDBModel.T_PaymentNotification" />
+          <EntitySet Name="T_Post" EntityType="SalmornDBModel.T_Post" />
+          <EntitySet Name="T_ProductStocks" EntityType="SalmornDBModel.T_ProductStocks" />
+          <EntitySet Name="T_Shipping" EntityType="SalmornDBModel.T_Shipping" />
+          <EntitySet Name="T_Shipping_D" EntityType="SalmornDBModel.T_Shipping_D" />
+          <EntitySet Name="T_Shipping_H" EntityType="SalmornDBModel.T_Shipping_H" />
+          <AssociationSet Name="FK_M_Product_Image_L_FileUpload" Association="SalmornDBModel.FK_M_Product_Image_L_FileUpload">
+            <End Role="L_FileUpload" EntitySet="L_FileUpload" />
+            <End Role="M_Product_Image" EntitySet="M_Product_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_PaymentNotification_L_FileUpload" Association="SalmornDBModel.FK_T_PaymentNotification_L_FileUpload">
+            <End Role="L_FileUpload" EntitySet="L_FileUpload" />
+            <End Role="T_PaymentNotification" EntitySet="T_PaymentNotification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Post_M_PostType" Association="SalmornDBModel.FK_T_Post_M_PostType">
+            <End Role="M_PostType" EntitySet="M_PostType" />
+            <End Role="T_Post" EntitySet="T_Post" />
+          </AssociationSet>
+          <AssociationSet Name="FK_M_Product_Image_M_Product" Association="SalmornDBModel.FK_M_Product_Image_M_Product">
+            <End Role="M_Product" EntitySet="M_Product" />
+            <End Role="M_Product_Image" EntitySet="M_Product_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Order_D_M_Product" Association="SalmornDBModel.FK_T_Order_D_M_Product">
+            <End Role="M_Product" EntitySet="M_Product" />
+            <End Role="T_Order_D" EntitySet="T_Order_D" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Order_M_Product" Association="SalmornDBModel.FK_T_Order_M_Product">
+            <End Role="M_Product" EntitySet="M_Product" />
+            <End Role="T_Order" EntitySet="T_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_ProductStocks_M_Product" Association="SalmornDBModel.FK_T_ProductStocks_M_Product">
+            <End Role="M_Product" EntitySet="M_Product" />
+            <End Role="T_ProductStocks" EntitySet="T_ProductStocks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S_RoleMapping_S_RoleMapping" Association="SalmornDBModel.FK_S_RoleMapping_S_RoleMapping">
+            <End Role="S_Role" EntitySet="S_Role" />
+            <End Role="S_RoleMapping" EntitySet="S_RoleMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_S_RoleMapping_S_User" Association="SalmornDBModel.FK_S_RoleMapping_S_User">
+            <End Role="S_User" EntitySet="S_User" />
+            <End Role="S_RoleMapping" EntitySet="S_RoleMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Shipping_T_Order" Association="SalmornDBModel.FK_T_Shipping_T_Order">
+            <End Role="T_Order" EntitySet="T_Order" />
+            <End Role="T_Shipping" EntitySet="T_Shipping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Shipping_D_T_Shipping_H" Association="SalmornDBModel.FK_T_Shipping_D_T_Shipping_H">
+            <End Role="T_Shipping_H" EntitySet="T_Shipping_H" />
+            <End Role="T_Shipping_D" EntitySet="T_Shipping_D" />
+          </AssociationSet>
+          </EntityContainer>
+        <ComplexType Name="sp_test_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="code" Nullable="true" MaxLength="20" />
+          <Property Type="Decimal" Name="cost" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="createBy" Nullable="true" />
+          <Property Type="DateTime" Name="createDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="detail" Nullable="true" />
+          <Property Type="Boolean" Name="isActive" Nullable="false" />
+          <Property Type="Boolean" Name="isPreOrder" Nullable="true" />
+          <Property Type="Boolean" Name="isUseStock" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="note" Nullable="true" />
+          <Property Type="DateTime" Name="preEnd" Nullable="true" />
+          <Property Type="DateTime" Name="preStart" Nullable="true" />
+          <Property Type="Decimal" Name="price" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Boolean" Name="isShipping" Nullable="false" />
+          <Property Type="Int32" Name="qtyShippingPriceCeiling" Nullable="false" />
+          <Property Type="Decimal" Name="shippintPriceRate" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="unitName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="updateBy" Nullable="true" />
+          <Property Type="DateTime" Name="updateDate" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="weight" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Boolean" Name="isDelete" Nullable="false" />
+          <Property Type="Boolean" Name="isManualPickup" Nullable="false" />
+          <Property Type="String" Name="pickupAt" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="stockQrty" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="C__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="C_Test">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="test" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="L_FileUpload">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ipAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="macAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="uploadDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="userId" Type="Int32" />
+          <NavigationProperty Name="M_Product_Image" Relationship="SalmornDBModel.FK_M_Product_Image_L_FileUpload" FromRole="L_FileUpload" ToRole="M_Product_Image" />
+          <NavigationProperty Name="T_PaymentNotification" Relationship="SalmornDBModel.FK_T_PaymentNotification_L_FileUpload" FromRole="L_FileUpload" ToRole="T_PaymentNotification" />
+        </EntityType>
+        <EntityType Name="M_PostType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_Post" Relationship="SalmornDBModel.FK_T_Post_M_PostType" FromRole="M_PostType" ToRole="T_Post" />
+        </EntityType>
+        <EntityType Name="M_Product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="createBy" Type="Int32" />
+          <Property Name="createDate" Type="DateTime" Precision="3" />
+          <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="isPreOrder" Type="Boolean" />
+          <Property Name="isUseStock" Type="Boolean" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="preEnd" Type="DateTime" Precision="7" />
+          <Property Name="preStart" Type="DateTime" Precision="7" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isShipping" Type="Boolean" Nullable="false" />
+          <Property Name="qtyShippingPriceCeiling" Type="Int32" Nullable="false" />
+          <Property Name="shippintPriceRate" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="unitName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="updateBy" Type="Int32" />
+          <Property Name="updateDate" Type="DateTime" Precision="3" />
+          <Property Name="weight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="isManualPickup" Type="Boolean" Nullable="false" />
+          <Property Name="pickupAt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="stockQrty" Type="Int32" />
+          <NavigationProperty Name="M_Product_Image" Relationship="SalmornDBModel.FK_M_Product_Image_M_Product" FromRole="M_Product" ToRole="M_Product_Image" />
+          <NavigationProperty Name="T_Order_D" Relationship="SalmornDBModel.FK_T_Order_D_M_Product" FromRole="M_Product" ToRole="T_Order_D" />
+          <NavigationProperty Name="T_Order" Relationship="SalmornDBModel.FK_T_Order_M_Product" FromRole="M_Product" ToRole="T_Order" />
+          <NavigationProperty Name="T_ProductStocks" Relationship="SalmornDBModel.FK_T_ProductStocks_M_Product" FromRole="M_Product" ToRole="T_ProductStocks" />
+          <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="M_Product_Image">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fileId" Type="Int64" Nullable="false" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="L_FileUpload" Relationship="SalmornDBModel.FK_M_Product_Image_L_FileUpload" FromRole="M_Product_Image" ToRole="L_FileUpload" />
+          <NavigationProperty Name="M_Product" Relationship="SalmornDBModel.FK_M_Product_Image_M_Product" FromRole="M_Product_Image" ToRole="M_Product" />
+        </EntityType>
+        <EntityType Name="S_Role">
+          <Key>
+            <PropertyRef Name="role" />
+          </Key>
+          <Property Name="role" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="roleName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="S_RoleMapping" Relationship="SalmornDBModel.FK_S_RoleMapping_S_RoleMapping" FromRole="S_Role" ToRole="S_RoleMapping" />
+        </EntityType>
+        <EntityType Name="S_RoleMapping">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="role" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="S_Role" Relationship="SalmornDBModel.FK_S_RoleMapping_S_RoleMapping" FromRole="S_RoleMapping" ToRole="S_Role" />
+          <NavigationProperty Name="S_User" Relationship="SalmornDBModel.FK_S_RoleMapping_S_User" FromRole="S_RoleMapping" ToRole="S_User" />
+        </EntityType>
+        <EntityType Name="S_User">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="createBy" Type="Int32" Nullable="false" />
+          <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="displayName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="updateBy" Type="Int32" Nullable="false" />
+          <Property Name="updateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="S_RoleMapping" Relationship="SalmornDBModel.FK_S_RoleMapping_S_User" FromRole="S_User" ToRole="S_RoleMapping" />
+        </EntityType>
+        <EntityType Name="T_CustomerOneTime">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="tel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="province" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="zipCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_Order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="paymentId" Type="Int32" />
+          <Property Name="orderDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <Property Name="unitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="totalPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="totalProductPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="isPay" Type="Boolean" Nullable="false" />
+          <Property Name="payDate" Type="DateTime" Precision="7" />
+          <Property Name="isShipping" Type="Boolean" Nullable="false" />
+          <Property Name="shippingDateStart" Type="DateTime" Precision="3" />
+          <Property Name="shippingDateEnd" Type="DateTime" Precision="3" />
+          <Property Name="shippingDate" Type="DateTime" Precision="3" />
+          <Property Name="shippingPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="firstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="lastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="province" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="zipCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="isMeetReceive" Type="Boolean" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="isCreateShipping" Type="Boolean" Nullable="false" />
+          <Property Name="isFinish" Type="Boolean" Nullable="false" />
+          <Property Name="createBy" Type="Int32" />
+          <Property Name="createDate" Type="DateTime" Precision="3" />
+          <Property Name="updateBy" Type="Int32" />
+          <Property Name="updateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="M_Product" Relationship="SalmornDBModel.FK_T_Order_M_Product" FromRole="T_Order" ToRole="M_Product" />
+          <NavigationProperty Name="T_Shipping" Relationship="SalmornDBModel.FK_T_Shipping_T_Order" FromRole="T_Order" ToRole="T_Shipping" />
+        </EntityType>
+        <EntityType Name="T_Order_D">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hId" Type="Int32" Nullable="false" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <Property Name="unitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="M_Product" Relationship="SalmornDBModel.FK_T_Order_D_M_Product" FromRole="T_Order_D" ToRole="M_Product" />
+        </EntityType>
+        <EntityType Name="T_PaymentNotification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fileId" Type="Int64" Nullable="false" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="orderCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="paymentDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="paymentType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="isMapping" Type="Boolean" Nullable="false" />
+          <Property Name="money" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="L_FileUpload" Relationship="SalmornDBModel.FK_T_PaymentNotification_L_FileUpload" FromRole="T_PaymentNotification" ToRole="L_FileUpload" />
+        </EntityType>
+        <EntityType Name="T_Post">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="detail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="typeId" Type="Int32" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="author" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="authorId" Type="Int32" Nullable="false" />
+          <Property Name="targetDate" Type="DateTime" Precision="3" />
+          <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updateBy" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="M_PostType" Relationship="SalmornDBModel.FK_T_Post_M_PostType" FromRole="T_Post" ToRole="M_PostType" />
+        </EntityType>
+        <EntityType Name="T_ProductStocks">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="M_Product" Relationship="SalmornDBModel.FK_T_ProductStocks_M_Product" FromRole="T_ProductStocks" ToRole="M_Product" />
+        </EntityType>
+        <EntityType Name="T_Shipping">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="trackingCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="orderId" Type="Int32" Nullable="false" />
+          <Property Name="orderCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="isShipping" Type="Boolean" Nullable="false" />
+          <Property Name="shippingDate" Type="DateTime" Precision="3" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="tel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="province" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="zipCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="createDate" Type="DateTime" Precision="3" />
+          <Property Name="createBy" Type="Int32" />
+          <Property Name="updateDate" Type="DateTime" Precision="3" />
+          <Property Name="updateBy" Type="Int32" />
+          <NavigationProperty Name="T_Order" Relationship="SalmornDBModel.FK_T_Shipping_T_Order" FromRole="T_Shipping" ToRole="T_Order" />
+          <Property Name="printCoverQty" Type="Int32" />
+        </EntityType>
+        <EntityType Name="T_Shipping_D">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hId" Type="Int32" Nullable="false" />
+          <Property Name="orderId" Type="Int32" Nullable="false" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_Shipping_H" Relationship="SalmornDBModel.FK_T_Shipping_D_T_Shipping_H" FromRole="T_Shipping_D" ToRole="T_Shipping_H" />
+        </EntityType>
+        <EntityType Name="T_Shipping_H">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="isShipping" Type="Boolean" Nullable="false" />
+          <Property Name="shippingDate" Type="DateTime" Precision="3" />
+          <Property Name="createDate" Type="DateTime" Precision="3" />
+          <Property Name="createBy" Type="Int32" />
+          <Property Name="updateDate" Type="DateTime" Precision="3" />
+          <Property Name="updateBy" Type="Int32" />
+          <NavigationProperty Name="T_Shipping_D" Relationship="SalmornDBModel.FK_T_Shipping_D_T_Shipping_H" FromRole="T_Shipping_H" ToRole="T_Shipping_D" />
+        </EntityType>
+        <Association Name="FK_M_Product_Image_L_FileUpload">
+          <End Type="SalmornDBModel.L_FileUpload" Role="L_FileUpload" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SalmornDBModel.M_Product_Image" Role="M_Product_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="L_FileUpload">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="M_Product_Image">
+              <PropertyRef Name="fileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_PaymentNotification_L_FileUpload">
+          <End Type="SalmornDBModel.L_FileUpload" Role="L_FileUpload" Multiplicity="1" />
+          <End Type="SalmornDBModel.T_PaymentNotification" Role="T_PaymentNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="L_FileUpload">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_PaymentNotification">
+              <PropertyRef Name="fileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Post_M_PostType">
+          <End Type="SalmornDBModel.M_PostType" Role="M_PostType" Multiplicity="1" />
+          <End Type="SalmornDBModel.T_Post" Role="T_Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_PostType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_Post">
+              <PropertyRef Name="typeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_M_Product_Image_M_Product">
+          <End Type="SalmornDBModel.M_Product" Role="M_Product" Multiplicity="1" />
+          <End Type="SalmornDBModel.M_Product_Image" Role="M_Product_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_Product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="M_Product_Image">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Order_D_M_Product">
+          <End Type="SalmornDBModel.M_Product" Role="M_Product" Multiplicity="1" />
+          <End Type="SalmornDBModel.T_Order_D" Role="T_Order_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_Product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_Order_D">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Order_M_Product">
+          <End Type="SalmornDBModel.M_Product" Role="M_Product" Multiplicity="1" />
+          <End Type="SalmornDBModel.T_Order" Role="T_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_Product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_Order">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_ProductStocks_M_Product">
+          <End Type="SalmornDBModel.M_Product" Role="M_Product" Multiplicity="1" />
+          <End Type="SalmornDBModel.T_ProductStocks" Role="T_ProductStocks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="M_Product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_ProductStocks">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S_RoleMapping_S_RoleMapping">
+          <End Type="SalmornDBModel.S_Role" Role="S_Role" Multiplicity="1" />
+          <End Type="SalmornDBModel.S_RoleMapping" Role="S_RoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S_Role">
+              <PropertyRef Name="role" />
+            </Principal>
+            <Dependent Role="S_RoleMapping">
+              <PropertyRef Name="role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_S_RoleMapping_S_User">
+          <End Type="SalmornDBModel.S_User" Role="S_User" Multiplicity="1" />
+          <End Type="SalmornDBModel.S_RoleMapping" Role="S_RoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="S_User">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="S_RoleMapping">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Shipping_T_Order">
+          <End Type="SalmornDBModel.T_Order" Role="T_Order" Multiplicity="1" />
+          <End Type="SalmornDBModel.T_Shipping" Role="T_Shipping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Order">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_Shipping">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Shipping_D_T_Shipping_H">
+          <End Type="SalmornDBModel.T_Shipping_H" Role="T_Shipping_H" Multiplicity="1" />
+          <End Type="SalmornDBModel.T_Shipping_D" Role="T_Shipping_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Shipping_H">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_Shipping_D">
+              <PropertyRef Name="hId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SalmornDBModelStoreContainer" CdmEntityContainer="Entities">
+          <FunctionImportMapping FunctionImportName="sp_m_product_add" FunctionName="SalmornDBModel.Store.sp_m_product_add" />
+          <FunctionImportMapping FunctionImportName="sp_m_product_edit" FunctionName="SalmornDBModel.Store.sp_m_product_edit" />
+          <FunctionImportMapping FunctionImportName="sp_test" FunctionName="SalmornDBModel.Store.sp_test">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SalmornDBModel.sp_test_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="createBy" ColumnName="createBy" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="isPreOrder" ColumnName="isPreOrder" />
+                <ScalarProperty Name="isUseStock" ColumnName="isUseStock" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="preEnd" ColumnName="preEnd" />
+                <ScalarProperty Name="preStart" ColumnName="preStart" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="isShipping" ColumnName="isShipping" />
+                <ScalarProperty Name="qtyShippingPriceCeiling" ColumnName="qtyShippingPriceCeiling" />
+                <ScalarProperty Name="shippintPriceRate" ColumnName="shippintPriceRate" />
+                <ScalarProperty Name="unitName" ColumnName="unitName" />
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="isManualPickup" ColumnName="isManualPickup" />
+                <ScalarProperty Name="pickupAt" ColumnName="pickupAt" />
+                <ScalarProperty Name="stockQrty" ColumnName="stockQrty" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="C__EFMigrationsHistory">
+            <EntityTypeMapping TypeName="SalmornDBModel.C__EFMigrationsHistory">
+              <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C_Test">
+            <EntityTypeMapping TypeName="SalmornDBModel.C_Test">
+              <MappingFragment StoreEntitySet="_Test">
+                <ScalarProperty Name="test" ColumnName="test" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="L_FileUpload">
+            <EntityTypeMapping TypeName="SalmornDBModel.L_FileUpload">
+              <MappingFragment StoreEntitySet="L_FileUpload">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="uploadDate" ColumnName="uploadDate" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="macAddress" ColumnName="macAddress" />
+                <ScalarProperty Name="ipAddress" ColumnName="ipAddress" />
+                <ScalarProperty Name="fileName" ColumnName="fileName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_PostType">
+            <EntityTypeMapping TypeName="SalmornDBModel.M_PostType">
+              <MappingFragment StoreEntitySet="M_PostType">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Product">
+            <EntityTypeMapping TypeName="SalmornDBModel.M_Product">
+              <MappingFragment StoreEntitySet="M_Product">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="stockQrty" ColumnName="stockQrty" />
+                <ScalarProperty Name="pickupAt" ColumnName="pickupAt" />
+                <ScalarProperty Name="isManualPickup" ColumnName="isManualPickup" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="unitName" ColumnName="unitName" />
+                <ScalarProperty Name="shippintPriceRate" ColumnName="shippintPriceRate" />
+                <ScalarProperty Name="qtyShippingPriceCeiling" ColumnName="qtyShippingPriceCeiling" />
+                <ScalarProperty Name="isShipping" ColumnName="isShipping" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="preStart" ColumnName="preStart" />
+                <ScalarProperty Name="preEnd" ColumnName="preEnd" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="isUseStock" ColumnName="isUseStock" />
+                <ScalarProperty Name="isPreOrder" ColumnName="isPreOrder" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="createBy" ColumnName="createBy" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Product_Image">
+            <EntityTypeMapping TypeName="SalmornDBModel.M_Product_Image">
+              <MappingFragment StoreEntitySet="M_Product_Image">
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="fileId" ColumnName="fileId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S_Role">
+            <EntityTypeMapping TypeName="SalmornDBModel.S_Role">
+              <MappingFragment StoreEntitySet="S_Role">
+                <ScalarProperty Name="roleName" ColumnName="roleName" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S_RoleMapping">
+            <EntityTypeMapping TypeName="SalmornDBModel.S_RoleMapping">
+              <MappingFragment StoreEntitySet="S_RoleMapping">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="S_User">
+            <EntityTypeMapping TypeName="SalmornDBModel.S_User">
+              <MappingFragment StoreEntitySet="S_User">
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="displayName" ColumnName="displayName" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="createBy" ColumnName="createBy" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_CustomerOneTime">
+            <EntityTypeMapping TypeName="SalmornDBModel.T_CustomerOneTime">
+              <MappingFragment StoreEntitySet="T_CustomerOneTime">
+                <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Order">
+            <EntityTypeMapping TypeName="SalmornDBModel.T_Order">
+              <MappingFragment StoreEntitySet="T_Order">
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="createBy" ColumnName="createBy" />
+                <ScalarProperty Name="isFinish" ColumnName="isFinish" />
+                <ScalarProperty Name="isCreateShipping" ColumnName="isCreateShipping" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="isMeetReceive" ColumnName="isMeetReceive" />
+                <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="shippingPrice" ColumnName="shippingPrice" />
+                <ScalarProperty Name="shippingDate" ColumnName="shippingDate" />
+                <ScalarProperty Name="shippingDateEnd" ColumnName="shippingDateEnd" />
+                <ScalarProperty Name="shippingDateStart" ColumnName="shippingDateStart" />
+                <ScalarProperty Name="isShipping" ColumnName="isShipping" />
+                <ScalarProperty Name="payDate" ColumnName="payDate" />
+                <ScalarProperty Name="isPay" ColumnName="isPay" />
+                <ScalarProperty Name="totalProductPrice" ColumnName="totalProductPrice" />
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+                <ScalarProperty Name="unitPrice" ColumnName="unitPrice" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="orderDate" ColumnName="orderDate" />
+                <ScalarProperty Name="paymentId" ColumnName="paymentId" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Order_D">
+            <EntityTypeMapping TypeName="SalmornDBModel.T_Order_D">
+              <MappingFragment StoreEntitySet="T_Order_D">
+                <ScalarProperty Name="unitPrice" ColumnName="unitPrice" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="hId" ColumnName="hId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PaymentNotification">
+            <EntityTypeMapping TypeName="SalmornDBModel.T_PaymentNotification">
+              <MappingFragment StoreEntitySet="T_PaymentNotification">
+                <ScalarProperty Name="money" ColumnName="money" />
+                <ScalarProperty Name="isMapping" ColumnName="isMapping" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="paymentType" ColumnName="paymentType" />
+                <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+                <ScalarProperty Name="orderCode" ColumnName="orderCode" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="fileId" ColumnName="fileId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Post">
+            <EntityTypeMapping TypeName="SalmornDBModel.T_Post">
+              <MappingFragment StoreEntitySet="T_Post">
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="targetDate" ColumnName="targetDate" />
+                <ScalarProperty Name="authorId" ColumnName="authorId" />
+                <ScalarProperty Name="author" ColumnName="author" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="typeId" ColumnName="typeId" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_ProductStocks">
+            <EntityTypeMapping TypeName="SalmornDBModel.T_ProductStocks">
+              <MappingFragment StoreEntitySet="T_ProductStocks">
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Shipping">
+            <EntityTypeMapping TypeName="SalmornDBModel.T_Shipping">
+              <MappingFragment StoreEntitySet="T_Shipping">
+                <ScalarProperty Name="printCoverQty" ColumnName="printCoverQty" />
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="createBy" ColumnName="createBy" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="shippingDate" ColumnName="shippingDate" />
+                <ScalarProperty Name="isShipping" ColumnName="isShipping" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="orderCode" ColumnName="orderCode" />
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="trackingCode" ColumnName="trackingCode" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Shipping_D">
+            <EntityTypeMapping TypeName="SalmornDBModel.T_Shipping_D">
+              <MappingFragment StoreEntitySet="T_Shipping_D">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="hId" ColumnName="hId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Shipping_H">
+            <EntityTypeMapping TypeName="SalmornDBModel.T_Shipping_H">
+              <MappingFragment StoreEntitySet="T_Shipping_H">
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="createBy" ColumnName="createBy" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="shippingDate" ColumnName="shippingDate" />
+                <ScalarProperty Name="isShipping" ColumnName="isShipping" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

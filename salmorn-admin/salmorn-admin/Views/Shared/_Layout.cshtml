@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html ng-app="shop-manage">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
+
+    <link rel="shortcut icon" href="assets/images/favicon_1.ico">
+
+    <title>Salmorn - Administrator - @ViewBag.Title</title>
+
+    <link href="~/plugins/switchery/switchery.min.css" rel="stylesheet" />
+    <link href="~/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/plugins/dropzone/dist/dropzone.css" />
+    <link href="~/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/style.css" rel="stylesheet" type="text/css">
+
+    <link href="~/Content/css/bootstrap-override.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/css/contents/content-box.css" rel="stylesheet" type="text/css">
+
+
+    @RenderSection("Styles", required: false)
+
+    <script src="~/assets/js/modernizr.min.js"></script>
+
+
+</head>
+
+
+<body class="fixed-left">
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        @Html.Partial("_Header")
+        @Html.Partial("_Menu")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <h4 class="page-title">@ViewBag.Title</h4>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @RenderBody()
+
+
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end content -->
+
+            <footer class="footer">
+                2016 - 2017 © Minton <span class="hide-phone">- Coderthemes.com</span>
+            </footer>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+        @Html.Partial("_RightSidebar")
+
+    </div>
+    <!-- END wrapper -->
+
+    <div class="loading-box"><img src="~/Content/images/loading/giphy.gif" /></div>
+
+    <script>
+        var resizefunc = [];
+    </script>
+
+    <!-- Plugins  -->
+    <script src="~/assets/js/angular.min.js"></script>
+    <script src="~/assets/js/jquery.min.js"></script>
+
+    <script src="~/assets/js/timeout.js"></script>
+
+    <script src="~/plugins/ng-file-upload/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+    <script src="~/plugins/ng-file-upload/ng-file-upload.min.js"></script>
+
+    <script src="~/assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/detect.js"></script>
+    <script src="~/assets/js/fastclick.js"></script>
+    <script src="~/assets/js/jquery.slimscroll.js"></script>
+    <script src="~/assets/js/jquery.blockUI.js"></script>
+    <script src="~/assets/js/waves.js"></script>
+    <script src="~/assets/js/wow.min.js"></script>
+    <script src="~/assets/js/jquery.nicescroll.js"></script>
+    <script src="~/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="~/plugins/switchery/switchery.min.js"></script>
+    <script src="~/plugins/dropzone/dist/dropzone.js"></script>
+    <script src="~/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>   
+    <script src="~/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.th.js"></script>   
+    
+    <!-- Notification js -->
+    <script src="~/plugins/notifyjs/dist/notify.min.js"></script>
+    <script src="~/plugins/notifications/notify-metro.js"></script>
+
+    <!-- Counter Up  -->
+    <script src="~/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!-- circliful Chart -->
+    <script src="~/plugins/jquery-circliful/js/jquery.circliful.min.js"></script>
+    <script src="~/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- skycons -->
+    <script src="~/plugins/skyicons/skycons.min.js" type="text/javascript"></script>
+
+    <!-- Page js  -->
+    <script src="~/assets/pages/jquery.dashboard.js"></script>
+
+    <!-- Custom main Js -->
+    <script src="~/assets/js/jquery.core.js"></script>
+    <script src="~/assets/js/jquery.app.js"></script>
+
+
+    <script src="~/Content/js/app.js"></script>
+
+    <!-- Commons -->
+    <script src="~/Content/js/commons/alert.js"></script>
+    <script src="~/Content/js/commons/converts.js"></script>
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            jQuery('.datepicker').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+                dateFormat: 'dd/mm/yy',
+                format: 'dd/mm/yy',
+                language: 'th'
+            });
+          });
+
+          // BEGIN SVG WEATHER ICON
+          if (typeof Skycons !== 'undefined') {
+              var icons = new Skycons(
+                  { "color": "#3bafda" },
+                  { "resizeClear": true }
+              ),
+                  list = [
+                      "clear-day", "clear-night", "partly-cloudy-day",
+                      "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                      "fog"
+                  ],
+                  i;
+
+              for (i = list.length; i--;)
+                  icons.set(list[i], list[i]);
+              icons.play();
+          };
+
+    </script>
+
+
+    @RenderSection("Modals", required: false)
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

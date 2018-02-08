@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75D0E844-E062-4BE7-A26B-5BD635E17E5F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>salmorn_admin.BO</RootNamespace>
+    <AssemblyName>salmorn-admin.BO</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountBO.cs" />
+    <Compile Include="FileBO.cs" />
+    <Compile Include="OrderBO.cs" />
+    <Compile Include="PaymentNotificationBO.cs" />
+    <Compile Include="PostBO.cs" />
+    <Compile Include="PostTypeBO.cs" />
+    <Compile Include="ProductBO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShippingBO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\salmorn-admin.DAO\salmorn-admin.DAO.csproj">
+      <Project>{4f13f065-3751-4ffd-8075-a092bb17276a}</Project>
+      <Name>salmorn-admin.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\salmorn-admin.Models\salmorn-admin.Models.csproj">
+      <Project>{DD3D5EBA-53BE-414F-B962-184465BD8501}</Project>
+      <Name>salmorn-admin.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\salmorn-admin.Utils\salmorn-admin.Utils.csproj">
+      <Project>{0f998c72-d276-4d7a-88cf-d8b5cd59b297}</Project>
+      <Name>salmorn-admin.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\salmorn_admin.Models.Transactions.Shipping.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\ShippingCover.rdlc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,80 @@
+﻿<!-- ========== Left Sidebar Start ========== -->
+
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+        <!--- Divider -->
+        <div id="sidebar-menu">
+            <ul>
+                <li class="menu-title">Main</li>
+
+                <li>
+                    <a href="@Url.Action("Index", "Home")" class="waves-effect waves-primary">
+                        <i class="ti-home"></i><span> Dashboard </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index", "Product")" class="waves-effect waves-primary">
+                        <i class="ti-home"></i><span> Product </span>
+                    </a>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect waves-primary">
+                        <i class="ti-stats-up"></i><span> Order </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="@Url.Action("Index", "Order")">
+                                <span> จัดการ Order </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("CloseOrder", "Order")">
+                                <span> ปิด Order ที่เสร็จสิ้น</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect waves-primary">
+                        <i class="ti-stats-up"></i><span> Shipping </span>
+                    </a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="@Url.Action("PostalCover", "Shipping")">
+                                <span> Print ใบปะหน้าไปรษณีย์ </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("ShippingManage", "Shipping")">
+                                <span> Update ใบส่งของที่เสร็จสิ้น</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Index", "Post")" class="waves-effect waves-primary">
+                        <i class="ti-home"></i><span> จัดการ Post </span>
+                    </a>
+                </li>
+
+                @*<li>
+                    <a href="@Url.Action("Index", "Payment")" class="waves-effect waves-primary">
+                        <i class="ti-home"></i><span> แจ้งการโอนเงิน </span>
+                    </a>
+                </li>*@
+
+
+            </ul>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- Left Sidebar End -->
