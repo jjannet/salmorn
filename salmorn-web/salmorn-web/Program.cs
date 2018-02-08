@@ -14,11 +14,22 @@ namespace salmorn
     {
         public static void Main(string[] args)
         {
+            //var host = new WebHostBuilder()
+            //.UseKestrel()
+            //.UseContentRoot(Directory.GetCurrentDirectory())
+            //.UseIISIntegration()
+            //.UseStartup<Startup>()
+            //.Build();
+
+            //host.Run();
+
             BuildWebHost(args).Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .UseIISIntegration()
+                .UseKestrel()
                 .UseStartup<Startup>()
                 .Build();
     }

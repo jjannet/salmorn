@@ -1,0 +1,136 @@
+
+.goods-detail-header {
+    display: block;
+    width: 90%;
+    padding: 20px;
+    background-color: #fafafa;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.goods-detail-header-order{
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .goods-detail-header-order-image, .goods-detail-header-order-title {
+        display: block;
+        width: 100%;
+        position: relative;
+        height: 300px;
+    }
+    .goods-detail-header-order-title {
+        margin-top: 20px;
+        height: 200px;
+    }
+}
+@media (min-width: 900px) {
+    .goods-detail-header-order-image, .goods-detail-header-order-title {
+        display: block;
+        width: 50%;
+        float: left;
+        position: relative;
+        height: 300px;
+    }
+}
+
+
+
+.goods-detail-header-order-image > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 290px;
+}
+
+.goods-detail-header-order-title > h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.goods-detail-header-order-title > p {
+    font-style: italic;
+}
+
+.goods-detail-header-order-detail {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.goods-detail-header-order-detail-price, .goods-detail-header-order-detail-qty {
+    display: block;
+    float: right;
+}
+.goods-detail-header-order-detail-price {
+    margin-top: -7px;
+}
+.goods-detail-header-order-detail-qty {
+    width: 220px;
+}
+.goods-detail-header-order-detail-qty {
+    text-align: right;
+}
+
+.goods-detail-header-order-detail-price {
+    font-size: 40px;
+    color: red;
+}
+
+.goods-detail-header-order-detail-qty > span {
+    font-size: 20px;
+}
+.goods-detail-header-order-detail-qty > input {
+    font-size: 20px;
+    padding: 5px;
+    width: 100px;
+}
+
+.goods-detail-header-order-detail button.btn {
+    padding: 10px 50px;
+}
+
+
+
+.goods-detail {
+    display: block;
+    width: 90%;
+    max-width: 90%;
+    max-width: 90%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 150%;
+    overflow: auto;
+    position: relative;
+}
+
+
+.goods-detail img {
+    max-width: 100% !important;
+    height:auto
+}
+.goods-detail p {
+    max-width: 100% !important;
+}
+
+.goods-note {
+    display: block;
+    width: 70%;
+    max-width: 90%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    border: 1px solid #88c9e5;
+    background-color: #f4f7f8;
+    line-height: 150%;
+}

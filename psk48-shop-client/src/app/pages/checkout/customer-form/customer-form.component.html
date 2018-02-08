@@ -4,6 +4,7 @@
     <div class="row">
       <div class="form-control">
         <i>Email
+            <label class="error-message" style="color: #ccc;" >สำหรับลูกค้าเก่า หลังจากกรอก email ระบบจะดึงข้อมูลล่าสุดมาให้อัตโนมัติ</label><br />
           <label class="error-message" [hidden]="email.valid || !email.touched">(ไม่สามารถเป็นค่าว่างได้ และ รูปแบบ email ต้องถูกต้อง)</label>
         </i>
         <input type="email" name="email" [(ngModel)]="customer.email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"

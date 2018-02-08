@@ -1,6 +1,14 @@
-<content class="top-img-slider" id="topHeaderSlide" [ngStyle]="{'background-image': getImageUrl()}">
-  <div class="top-img-slide-overlay">
-  </div>
-  <h3>
-    <i>อร BNK48 :</i>พัศชนันท์ เจียจิรโชติ</h3>
-</content>
+<div class="header">
+  <section class="p-container">
+    <div class="logo">
+      <img src="contents/images/logo/shop-logo-white.png" (click)="gotoHome()" />
+    </div>
+
+    <div class="cart-section">
+      <ul>
+        <li app-cart-box class="cart"></li>
+      </ul>
+    </div>
+    <div style="clear:both;"></div>
+  </section>
+</div>

@@ -19,11 +19,11 @@ export class OrderSummaryComponent implements OnInit {
   ngOnInit() {
     //this.initialDefaultDatas();
     this.carts = this.cartService.getAll();
-    document.getElementById('appHeader').style.display = 'none';
+   // document.getElementById('appHeader').style.display = 'none';
   }
 
   ngOnDestroy() {
-    document.getElementById('appHeader').style.display = 'block';
+   // document.getElementById('appHeader').style.display = 'block';
   }
 
   qtyChanged(cart: Cart){

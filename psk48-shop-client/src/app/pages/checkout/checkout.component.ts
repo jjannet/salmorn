@@ -19,19 +19,19 @@ export class CheckoutComponent implements OnInit {
   constructor(private cartService: CartService, private orderService: OrderService, private route: Router) { }
 
   ngOnInit() {
-    document.getElementById('appHeader').style.display = 'none';
+    // document.getElementById('appHeader').style.display = 'none';
 
     this.initCustomerBlankData();
     this.carts = this.cartService.getAll();
   }
 
   ngOnDestroy() {
-    document.getElementById('appHeader').style.display = 'block';
+    // document.getElementById('appHeader').style.display = 'block';
   }
 
   initCustomerBlankData() {
     this.customer = {
-      address: '', email: 'jirawat.jannet@gmail.com', firstName: '', lastName: '', province: '', tel: '', zipCode: ''
+      address: '', email: '', firstName: '', lastName: '', province: '', tel: '', zipCode: ''
     };
   }
 

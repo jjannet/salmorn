@@ -7,7 +7,8 @@ export const routes: Routes =
     [
         {
             path: '',
-            loadChildren: 'app/pages/home/home.module#HomeModule',
+            redirectTo: 'goods',
+            //loadChildren: 'app/pages/home/home.module#HomeModule',
             pathMatch: 'full'
         },
         

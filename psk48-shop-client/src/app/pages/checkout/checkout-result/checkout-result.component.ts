@@ -13,7 +13,6 @@ export class CheckoutResultComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    document.getElementById('appHeader').style.display = 'none';
     this.sub = this.route.params.subscribe(params => {
       this.orderCode = params['orderCode'];
       this.firstName = params['firstName'];
@@ -23,7 +22,6 @@ export class CheckoutResultComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    document.getElementById('appHeader').style.display = 'block';
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   index: number;
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit() {
     this.index = 0;
@@ -36,6 +37,10 @@ export class HeaderComponent implements OnInit {
     },
       10000);
 
+  }
+
+  gotoHome() {
+    this.route.navigate(['goods']);
   }
 
   getImageUrl() {

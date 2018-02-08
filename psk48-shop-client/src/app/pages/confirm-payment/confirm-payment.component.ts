@@ -28,7 +28,6 @@ export class ConfirmPaymentComponent implements OnInit {
   payDate: string;
 
   ngOnInit() {
-    document.getElementById('appHeader').style.display = 'none';
     this.sub = this.route.params.subscribe(params => {
       for (let i = 0; i < 24; i++) {
         this.hours.push(i);
@@ -59,7 +58,6 @@ export class ConfirmPaymentComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    document.getElementById('appHeader').style.display = 'block';
   }
 
 

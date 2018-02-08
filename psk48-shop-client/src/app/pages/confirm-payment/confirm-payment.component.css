@@ -3,11 +3,13 @@
     display: block;
     width: calc(100% - 40px);
     font-size: 2em;
+    margin-top: 10px;
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #88c9e5;
+    /* background-color: #ff7777; */
     text-align: center;
-    color: white;
+    color: #333;
+    border-bottom: 2px solid #ff7777;
 }
 
 .control-box > i {
@@ -31,7 +33,10 @@
     padding: 2%;
 }
 
-
+img {
+    display: block;
+    max-width: 100%;
+}
 
 .form-box{
     display: block;
@@ -93,24 +98,4 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
-}
-
-.form-control > img {
-    display: block;
-    margin:0px auto;
-    max-width: 400px;
-    max-height: 400px;
-}
-
-button {
-    padding: 5px 40px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #88c9e5;
-    border: 2px solid #76bddb;
-    cursor: pointer;
-    transition: 0.2s background-color;
-}
-button:hover {
-    background-color: #9ed5ec;
 }

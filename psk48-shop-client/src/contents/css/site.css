@@ -47,7 +47,7 @@
     }
 
     .cart-box-top {
-        display: inline-block;
+        display: block;
         position: absolute;
         right: 20px;
         top: 10px;
@@ -192,7 +192,7 @@
 }
 
 @media (min-width: 900px) {
-    .logo-top, .cart-box-top, .btn-menu, .close-menu-btn {
+    .logo-top, .btn-menu, .close-menu-btn {
         display: none;
     }
 
@@ -269,7 +269,6 @@
 @media (max-width: 900px) {
     section.container-body {
         width: 100%;
-        margin-top: 60px;
     }
 }
 
@@ -279,7 +278,10 @@
     }
 }
 
-
+section.container-body {
+    width: 100%;
+    /* //margin-top: 60px; */
+}
 
 
 
@@ -412,8 +414,7 @@ content.web-welcome {
 
 .content-box-body {
     display: block;
-    width: calc(100% - 60px);
-    padding: 30px;
+    width: 100%;
     padding-top: 0px;
 }
 
@@ -450,4 +451,53 @@ div#loading > img {
     left: 50%;
     margin-left: -50px;
     margin-top: -50px;
+}
+
+@media (max-width: 900px) {
+    .p-container  {
+        width: 100%;
+    }
+}
+
+@media (min-width: 900px) {
+    .p-container  {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .p-container  {
+        width: 1200px;
+    }
+}
+
+
+
+/* ----------  Header  ---------------------------- */
+div.header {
+    display: block;
+    width: 100%;
+    background-color: #333;
+    border-bottom: 3px solid red;
+}
+
+.p-container {
+    display: block;
+    margin: 0px auto;
+}
+
+div.logo {
+    display: block;
+    float: left;
+    padding: 15px;
+    cursor: pointer;
+}
+div.logo > img {
+    display: block;
+    height: 40px;
+}
+
+div.cart-section{
+    display: block;
+    float: right;
 }

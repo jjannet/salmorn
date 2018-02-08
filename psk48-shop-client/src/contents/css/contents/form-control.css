@@ -27,12 +27,13 @@
     }
 
 .btn-main {
-    background-color: #cc006b;
-    border-color: #a50055;
+    color: #FFF;
+    background-color: red;
+    border-color: #d60404;
 }
 
     .btn-main:hover {
-        background-color: #e0328c;
+        background-color: #ff4f4f;
     }
 
     .btn-main:disabled {
