@@ -2942,11 +2942,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Projects\\My Projects\\GitHub\\Salmorn\\salmorn-web\\salmorn.Models\\salmorn.Models.csproj",
+      "projectUniqueName": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Models\\salmorn.Models.csproj",
       "projectName": "salmorn.Models",
-      "projectPath": "C:\\Projects\\My Projects\\GitHub\\Salmorn\\salmorn-web\\salmorn.Models\\salmorn.Models.csproj",
+      "projectPath": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Models\\salmorn.Models.csproj",
       "packagesPath": "C:\\Users\\jiraw\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\My Projects\\GitHub\\Salmorn\\salmorn-web\\salmorn.Models\\obj\\",
+      "outputPath": "C:\\Projects\\My Projects\\GitHubs\\Salmorn\\salmorn-web\\salmorn.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -38,7 +38,6 @@ namespace salmorn
                            ValidateAudience = true,
                            ValidateLifetime = true,
                            ValidateIssuerSigningKey = true,
-
                            ValidIssuer = Configuration["JwtIssuerOptions:Issuer"],// "Orn.BNK48.FC",
                             ValidAudience = Configuration["JwtIssuerOptions:Audience"],// "Salmorn.BNK.C",
                             IssuerSigningKey = JwtSecurityKey.Create(Configuration["JwtIssuerOptions:SecurityKey"]) // patchanan-jiajirachote-orn-salmorn

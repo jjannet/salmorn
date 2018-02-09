@@ -29,7 +29,7 @@ namespace salmorn
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
             .UseIISIntegration()
-                .UseKestrel()
+                //.UseKestrel()
                 .UseStartup<Startup>()
                 .Build();
     }
