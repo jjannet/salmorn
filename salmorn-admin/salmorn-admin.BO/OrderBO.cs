@@ -25,8 +25,11 @@ namespace salmorn_admin.BO
             PaymentNotificationDAO pDao = new PaymentNotificationDAO();
             List<Order> datas = new List<Order>();
             List<Order> results = new List<Order>();
-            var items = dao.getOrders(data.productId).Where(m => m.isPay == false && m.isActive == true 
-                                                                && m.code.Contains(data.orderCode)).ToList();
+            var items = dao.getOrders(data.productId)
+                                .Where(m => m.isPay == false && m.isActive == true 
+                                        && m.code.Contains(data.orderCode))
+                                .OrderByDescending(m=>m.orderDate)
+                                .ToList();
 
             foreach(var code in items.GroupBy(m=>m.code).Select(m=>m.Key))
             {

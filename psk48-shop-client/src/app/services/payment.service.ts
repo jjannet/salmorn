@@ -9,6 +9,7 @@ import {
   Http,XHRBackend,RequestOptions,Request,RequestOptionsArgs,Response,Headers
 } from '@angular/http'
 
+import { PaymentNotification } from '../models/payment-notification';
 import { FileUpload } from '../models/file-upload';
 
 @Injectable()
@@ -24,5 +25,10 @@ export class PaymentService {
       .map((res: Response) => res.json() as FileUpload);
   }
 
+  confirmPayment(payment: PaymentNotification): Observable<number> {
+    return  this.http
+                .post('/api/Payment/ConfirmPayment', payment)
+                .map((res: Response) => res.json() as number);;
+  }
 }
 

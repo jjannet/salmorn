@@ -11,9 +11,11 @@ using salmorn.Models.Logs;
 using salmorn.IServices.Commons;
 using salmorn.Models.Configurations;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Cors;
 
 namespace salmorn.Controllers
 {
+    [EnableCors("AllowSpecificOrigin")]
     [Produces("application/json")]
     [Route("api/Product")]
     public class ProductController : Controller
@@ -31,6 +33,7 @@ namespace salmorn.Controllers
 
         // GET api/values
         [HttpGet]
+        [EnableCors("AllowSpecificOrigin")]
         public IEnumerable<Product> Get()
         {
             var products = this.productService.getProducts();

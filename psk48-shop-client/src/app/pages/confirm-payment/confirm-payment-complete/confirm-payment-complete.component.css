@@ -3,11 +3,13 @@
     display: block;
     width: calc(100% - 40px);
     font-size: 2em;
+    margin-top: 10px;
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #88c9e5;
+    /* background-color: #ff7777; */
     text-align: center;
-    color: white;
+    color: #333;
+    border-bottom: 2px solid #ff7777;
 }
 
 
@@ -26,7 +28,8 @@ div.confirm-box {
     width: 66%;
     text-align: center;
     margin: 0 auto;
-    border: 2px solid #88c9e5;
+    background-color: #fff3f3;
+    border: 2px solid #ff7777;
 }
 div.confirm-box > label {
     display: block;
@@ -35,5 +38,5 @@ div.confirm-box > label {
 }
 div.confirm-box > label > i {
     font-weight: bold;
-    color: #88c9e5;
+    color: #ff7777;
 }

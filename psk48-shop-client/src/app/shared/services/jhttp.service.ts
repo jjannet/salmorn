@@ -23,6 +23,7 @@ export class JhttpService extends Http {
   ): Observable<Response>{
 
     const token = localStorage.getItem('access-token');
+    console.log('options', options);
 
     if(typeof url === 'string'){
       if(!options) options = { headers: new Headers() };

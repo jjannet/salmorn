@@ -205,7 +205,7 @@ namespace salmorn.Services.Transactions
             body.Append("            padding: 10px 20px; ");
             body.Append("            color: white; ");
             body.Append("            font-size: 20px; ");
-            body.Append("            background-color: #88c9e5; ");
+            body.Append("            background-color: #ff7777; ");
             body.Append("            border: 1px solid #6eb1ce; ");
             body.Append("            margin-top: 30px; ");
             body.Append("            cursor: pointer; ");
@@ -221,11 +221,11 @@ namespace salmorn.Services.Transactions
             body.Append(" </header> ");
             body.Append(" <body style='background-color: #FAFAFA; color: #555;'> ");
             body.Append(" ");
-            body.Append("    <div style='display: block; width: 500px; margin-left: auto; margin-right: auto; padding: 20px; border: 1px solid #88c9e5; background-color: #fefefe; text-align: center; '> ");
-            body.Append("        <img src='https://storage.googleapis.com/salmorn-dev-storage/salmorn-baby-blue.png' style='display: block; width: 150px; margin-left: auto; margin-right: auto; margin-bottom: 30px; ' /> ");
+            body.Append("    <div style='display: block; width: 500px; margin-left: auto; margin-right: auto; padding: 20px; border: 1px solid #ff7777; background-color: #fefefe; text-align: center; '> ");
+            body.Append("        <img src='https://storage.googleapis.com/web-contents-jj/logo-red.png' style='display: block; width: 150px; margin-left: auto; margin-right: auto; margin-bottom: 30px; ' /> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>ขอบคุณที่มาเป็นส่วนหนึ่งของ Salmorn ด้วยการสั่งซื้อสินค้าจากเรา</label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>รหัสการสั่งซื้อสินค้าของคุณคือ</label> ");
-            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; font-size: 30px; color: #88c9e5; margin-top: 50px; margin-bottom: 50px;  ' >" + order.code + "</label> ");
+            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; font-size: 30px; color: #ff7777; margin-top: 50px; margin-bottom: 50px;  ' >" + order.code + "</label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px; margin-top: 10px; '><b>นัดรับสินค้าที่: " + order.product.pickupAt + "</b></label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>สินค้าที่สั่งซื้อ</label> ");
 
@@ -239,7 +239,7 @@ namespace salmorn.Services.Transactions
             if (order.isShipping)
                 body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >ค่าจัดส่ง: " + order.shippingPrice.ToString("#,##0") + " บาท</label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >รวมราคาทั้งสิ้น: " + order.totalPrice.ToString("#,##0") + " บาท</label> ");
-            body.Append("        <a href='#' style='display: block; margin-left: auto; margin-right: auto; padding: 10px 20px; color: white; font-size: 20px; background-color: #88c9e5; border: 1px solid #6eb1ce; margin-top: 30px; cursor: pointer; transition: 0.2s background-color; text-decoration: none; border-radius: 4px; '>คลิกที่นี่เพื่อยืนยันการจ่ายเงิน</a> ");
+            body.Append("        <a href='" + "http://shop.psk48.com/confirm-payment/res/" + order.code + "' style='display: block; margin-left: auto; margin-right: auto; padding: 10px 20px; color: white; font-size: 20px; background-color: #ff7777; border: 1px solid #6eb1ce; margin-top: 30px; cursor: pointer; transition: 0.2s background-color; text-decoration: none; border-radius: 4px; '>คลิกที่นี่เพื่อยืนยันการจ่ายเงิน</a> ");
             body.Append("    </div> ");
 
             body.Append(" </body> ");
@@ -250,7 +250,7 @@ namespace salmorn.Services.Transactions
 
         private string getOrderCode()
         {
-            string code = "SLM" + DateTime.Now.ToString("ddMMyyyy");
+            string code = "PSK" + DateTime.Now.ToString("ddMMyyyy");
             int cnt = db.Orders.Where(m => m.code.Contains(code)).Count() + 1;
             code = code + cnt.ToString("0000#");
             return code;

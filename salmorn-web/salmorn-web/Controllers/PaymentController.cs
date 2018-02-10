@@ -12,6 +12,7 @@ using salmorn.IServices.Commons;
 using Microsoft.Extensions.Options;
 using salmorn.Models.Configurations;
 using salmorn.Models.Logs;
+using Microsoft.AspNetCore.Cors;
 
 namespace salmorn.Controllers
 {
@@ -21,12 +22,19 @@ namespace salmorn.Controllers
     {
         private IFileUploadService fileUploadService { get; }
         private GoogleCloudStorage ggSetting { get; }
-        public PaymentController(IFileUploadService fileUploadService, IOptions<GoogleCloudStorage> ggSetting)
+        private IOrderService service { get; }
+        public PaymentController(IOrderService service, IFileUploadService fileUploadService, IOptions<GoogleCloudStorage> ggSetting)
         {
+            this.service = service;
             this.fileUploadService = fileUploadService;
             this.ggSetting = ggSetting.Value;
         }
 
+        [HttpPost("ConfirmPayment")]
+        public int confirmPayment([FromBody] PaymentNotification data)
+        {
+            return this.service.addPayment(data);
+        }
 
         [HttpPost("uploadPaymentSlip")]
         public FileUpload uploadPaymentSlip(IFormFile file)

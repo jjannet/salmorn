@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using salmorn.Models.Masters;
 using salmorn.IServices.Masters;
+using Microsoft.AspNetCore.Cors;
 
 namespace salmorn.Controllers
 {
     [AutoValidateAntiforgeryToken]
+    [EnableCors("AllowSpecificOrigin")]
     [Produces("application/json")]
     [Route("api/ProductServices")]
     public class ProductServicesController : BaseServiceController

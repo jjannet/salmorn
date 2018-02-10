@@ -53,7 +53,7 @@ export class CheckoutSummaryComponent implements OnInit {
     return this.calProductPrice() + this.calShippingPrice();
   }
 
-  submit() {
+  submit(event) {
     event.preventDefault();
       this.submitForm.emit();
   }

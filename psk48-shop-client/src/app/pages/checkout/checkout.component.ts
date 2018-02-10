@@ -19,14 +19,11 @@ export class CheckoutComponent implements OnInit {
   constructor(private cartService: CartService, private orderService: OrderService, private route: Router) { }
 
   ngOnInit() {
-    // document.getElementById('appHeader').style.display = 'none';
-
     this.initCustomerBlankData();
     this.carts = this.cartService.getAll();
   }
 
   ngOnDestroy() {
-    // document.getElementById('appHeader').style.display = 'block';
   }
 
   initCustomerBlankData() {
@@ -35,7 +32,7 @@ export class CheckoutComponent implements OnInit {
     };
   }
 
-  submitForm() {
+  submitForm(event) {
     if (this.validateSubmit()) {
       this.loading(true);
       var orders = this.buildOrderModel();

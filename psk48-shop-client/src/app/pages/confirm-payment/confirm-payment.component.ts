@@ -116,12 +116,12 @@ export class ConfirmPaymentComponent implements OnInit {
         this.loading(true);
         this.payment.paymentDate = new Date(`${this.payDate}T${this.pad(Number(this.hour), 2)}:${this.pad(Number(this.minute), 2)}:00`);
         this.payment.fileId = this.payment.file.id;
-        this.orderService.addPayment(this.payment)
+        this.paymentService.confirmPayment(this.payment)
           .subscribe(
           res => {
             console.log(res);
             if (res == 1) {
-              this.router.navigate(['/confirm-payment/complete']);
+              this.router.navigate([`/confirm-payment/complete/${this.payment.orderCode}`]);
             } else {
               alert('ไม่พบ Order code');
             }

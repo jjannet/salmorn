@@ -10,9 +10,11 @@ using salmorn.IServices.Transactions;
 using salmorn.Models.Transactions;
 using salmorn.Security.Bearer.Helpers;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Cors;
 
 namespace salmorn.Controllers
 {
+    [EnableCors("AllowSpecificOrigin")]
     [Produces("application/json")]
     [Route("api/Order")]
     public class OrderController : BaseServiceController

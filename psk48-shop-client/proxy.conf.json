@@ -1,6 +1,6 @@
 {
     "/api/*": {
-        "target" : "http://localhost:56363/",
+        "target" : "http://service.psk48.com/",
         "changeOrigin": true,
         "secure": false,
         "logLevel": "debug"

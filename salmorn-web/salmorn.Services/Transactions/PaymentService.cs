@@ -12,17 +12,21 @@ namespace salmorn.Services.Transactions
 {
     public class PaymentService : IPaymentService
     {
+        private DBContext db;
         private IFileUploadService fileService { get; }
-        public PaymentService(IFileUploadService fileService, IOptions<GoogleCloudStorage> ggSetting)
+        public PaymentService(DBContext db, IFileUploadService fileService, IOptions<GoogleCloudStorage> ggSetting)
         {
             this.fileService = this.fileService;
+            this.db = db;
         }
 
         
 
-        public int addPayment(Order data)
+        public int addPayment(PaymentNotification data)
         {
-            throw new NotImplementedException();
+            this.db.PaymentNotifications.Add(data);
+            this.db.SaveChanges();
+            return -1;
         }
 
     }

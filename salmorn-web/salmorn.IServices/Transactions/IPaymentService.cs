@@ -16,7 +16,7 @@ namespace salmorn.IServices.Transactions
         /// 2: there is no order code
         /// -1: error
         /// </returns>
-        int addPayment(Order data);
+        int addPayment(PaymentNotification data);
 
     }
 }

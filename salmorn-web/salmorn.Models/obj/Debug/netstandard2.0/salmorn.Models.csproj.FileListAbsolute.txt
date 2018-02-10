@@ -19,7 +19,6 @@ C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.Models\obj\Debug\net
 C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Models\bin\Debug\netstandard2.0\salmorn.Models.deps.json
 C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Models\bin\Debug\netstandard2.0\salmorn.Models.dll
 C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Models\bin\Debug\netstandard2.0\salmorn.Models.pdb
-C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Models\obj\Debug\netstandard2.0\salmorn.Models.csprojResolveAssemblyReference.cache
 C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Models\obj\Debug\netstandard2.0\salmorn.Models.csproj.CoreCompileInputs.cache
 C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Models\obj\Debug\netstandard2.0\salmorn.Models.AssemblyInfoInputs.cache
 C:\Projects\My Projects\GitHub\Salmorn\salmorn-web\salmorn.Models\obj\Debug\netstandard2.0\salmorn.Models.AssemblyInfo.cs

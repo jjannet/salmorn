@@ -15,11 +15,14 @@ using salmorn.Core;
 using salmorn.Services;
 using salmorn.Models.Commons;
 using salmorn.Models.Configurations;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 
 namespace salmorn
 {
     public class Startup
     {
+        private string allowUrl = "http://shop.psk48.com.*";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -64,6 +67,11 @@ namespace salmorn
                     policy => policy.RequireClaim("MembershipId"));
             });
 
+            services.AddNodeServices(options =>
+            {
+                options.ProjectPath = @"C:\Program Files\nodejs";
+            });
+
             services.AddDbContext<salmorn.Services.DBContext>(options => options.UseSqlServer(Configuration["Data:ConnectionString"]));
 
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS"
@@ -73,11 +81,21 @@ namespace salmorn
             services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
             services.Configure<GoogleCloudStorage>(Configuration.GetSection("GoogleCloudStorage"));
 
-            
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins(allowUrl));
+            });
+
             services.AddGoogleCloudAPI(Configuration);
             services.AddServices();
             services.AddCors();
             services.AddMvc();
+
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("AllowSpecificOrigin"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,15 +104,22 @@ namespace salmorn
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
-                {
-                    HotModuleReplacement = true
-                });
+                //app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                //{
+                //    HotModuleReplacement = true
+                //});
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseCors(builder => builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+                            app.UseMvc();
+
 
             app.UseStaticFiles();
 

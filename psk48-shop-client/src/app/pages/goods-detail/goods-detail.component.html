@@ -22,8 +22,8 @@
           <div style="clear:both"></div>
         </div>
         <div class="row" style="margin-top: 10px; text-align: right">
-          <button class="btn btn-main">Buy it now</button>
-          <button class="btn">
+          <button class="btn btn-main" (click)="buyItNow(product)"  [disabled]="!canBuy()" >Buy it now</button>
+          <button class="btn" (click)="addToCart(product)" [disabled]="!canBuy()" >
             <i class="fa fa-shopping-cart"></i>Add to cart</button>
         </div>
       </div>

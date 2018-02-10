@@ -13,7 +13,6 @@ export class ConfirmPaymentCompleteComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    document.getElementById('appHeader').style.display = 'none';
 
     this.sub = this.route.params.subscribe(params => {
      
@@ -22,7 +21,6 @@ export class ConfirmPaymentCompleteComponent implements OnInit {
     });
   }
   ngOnDestroy() {
-    document.getElementById('appHeader').style.display = 'block';
   }
 
 }

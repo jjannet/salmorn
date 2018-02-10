@@ -3,11 +3,12 @@
     display: block;
     width: 90%;
     padding: 20px;
-    background-color: #fafafa;
+    background-color: #fff3f3;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    border: 2px solid #ffdfdf;
 }
 
 
@@ -130,7 +131,7 @@
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 100px;
-    border: 1px solid #88c9e5;
-    background-color: #f4f7f8;
+    border: 1px solid #ffdfdf;
+    background-color: #fff3f3;
     line-height: 150%;
 }
