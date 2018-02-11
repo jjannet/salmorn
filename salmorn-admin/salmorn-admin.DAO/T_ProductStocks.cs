@@ -18,7 +18,5 @@ namespace salmorn_admin.DAO
         public System.DateTime date { get; set; }
         public int productId { get; set; }
         public int qty { get; set; }
-    
-        public virtual M_Product M_Product { get; set; }
     }
 }

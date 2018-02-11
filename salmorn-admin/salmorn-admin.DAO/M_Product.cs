@@ -18,9 +18,7 @@ namespace salmorn_admin.DAO
         public M_Product()
         {
             this.M_Product_Image = new HashSet<M_Product_Image>();
-            this.T_Order_D = new HashSet<T_Order_D>();
             this.T_Order = new HashSet<T_Order>();
-            this.T_ProductStocks = new HashSet<T_ProductStocks>();
         }
     
         public int id { get; set; }
@@ -32,6 +30,7 @@ namespace salmorn_admin.DAO
         public bool isActive { get; set; }
         public Nullable<bool> isPreOrder { get; set; }
         public bool isUseStock { get; set; }
+        public string title { get; set; }
         public string name { get; set; }
         public string note { get; set; }
         public Nullable<System.DateTime> preEnd { get; set; }
@@ -48,15 +47,10 @@ namespace salmorn_admin.DAO
         public bool isManualPickup { get; set; }
         public string pickupAt { get; set; }
         public Nullable<int> stockQrty { get; set; }
-        public string title { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<M_Product_Image> M_Product_Image { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<T_Order_D> T_Order_D { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_Order> T_Order { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<T_ProductStocks> T_ProductStocks { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using salmorn_admin.BO;
+using salmorn_admin.Models.Screens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,13 @@ namespace salmorn_admin.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            OrderBO bo = new OrderBO();
+            DashboardModel data = new DashboardModel();
+            data.payOrder = bo.countPayOrder();
+            data.shippingOrder = bo.countNotShippingOrder();
+            data.totalOrder = bo.countAllNotFinishOrder();
+
+            return View(data);
         }
 
         public ActionResult About()

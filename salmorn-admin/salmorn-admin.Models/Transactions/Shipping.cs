@@ -10,7 +10,6 @@ namespace salmorn_admin.Models.Transactions
     {
         public int id { get; set; }
         public string trackingCode { get; set; }
-        public int orderId { get; set; }
         public string orderCode { get; set; }
         public bool isActive { get; set; }
         public bool isShipping { get; set; }

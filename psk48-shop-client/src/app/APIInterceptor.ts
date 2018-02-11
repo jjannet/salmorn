@@ -4,7 +4,7 @@ import {Request, XHRBackend, XHRConnection} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 
 
-const baseUrl = 'http://service.psk48.com'; 
+const baseUrl = 'http://localhost:64671'; 
 
 @Injectable()
 export class APIInterceptor implements HttpInterceptor {

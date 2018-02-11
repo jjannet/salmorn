@@ -78,6 +78,7 @@
                                     <th class="text-center">Order code</th>
                                     <th class="text-center" data-priority="1">Order date</th>
                                     <th class="text-center" data-priority="2">ชื่อผู้สั่ง</th>
+                                    <th class="text-center" data-priority="2">วิธีการรับสินค้า</th>
                                     <th class="text-center" data-priority="2">สินค้า</th>
                                     <th class="text-center" data-priority="2">จำนวนเงินทั้งหมด</th>
                                     <th class="text-center" data-priority="1">แจ้งการจ่ายเงิน</th>
@@ -89,6 +90,7 @@
                                     <th class="text-center">{{o.code}}</th>
                                     <td class="text-center">{{o.orderDate | date : 'dd/MM/yyyy HH:mm'}}</td>
                                     <td class="text-center">{{o.firstName + ' ' + o.lastName}}</td>
+                                    <td class="text-center">{{getPickupType(o)}}</td>
                                     <td class="text-center">{{o.product.name}}</td>
                                     <td class="text-center">{{o.totalPrice | number}} บาท</td>
                                     <td class="text-center">

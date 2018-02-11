@@ -38,5 +38,11 @@ namespace salmorn_admin.Test
             AccountBO bo = new AccountBO();
             var user = bo.getUser("jirawat.jannet@gmail.com", "1q2w3e4r");
         }
+
+        [TestMethod]
+        public void genPassword()
+        {
+            var password = JEncode.HashPassword("123456");
+        }
     }
 }

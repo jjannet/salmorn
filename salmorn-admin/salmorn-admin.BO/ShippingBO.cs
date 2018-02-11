@@ -23,10 +23,19 @@ namespace salmorn_admin.BO
         public List<Shipping> getShippings()
         {
             List<Shipping> datas = new List<Shipping>();
-            var items = dao.getShippings().Where(m => m.isActive && m.isShipping == false).ToList();
+            var items = ConvertToScreenModel.Transactions.shippings(dao.getShippings()
+                .Where(m => m.isActive && m.isShipping == false).ToList());
             foreach (var i in items)
             {
-                datas.Add(ConvertToScreenModel.Transactions.shipping(i));
+                var orders = ConvertToScreenModel.Transactions.orders(new OrderDAO().getOrders()
+                    .Where(m => m.code == i.orderCode).ToList());
+
+                foreach(var o in orders)
+                {
+                    i.order = o;
+                    datas.Add(i);
+                }
+
             }
             return datas;
         }
@@ -64,7 +73,6 @@ namespace salmorn_admin.BO
                 T_Shipping data = new T_Shipping()
                 {
                     trackingCode = item.trackingCode,
-                    orderId = item.orderId,
                     orderCode = item.orderCode,
                     isActive = item.isActive,
                     isShipping = item.isShipping,
@@ -98,7 +106,6 @@ namespace salmorn_admin.BO
             {
                 id = item.id,
                 trackingCode = item.trackingCode,
-                orderId = item.orderId,
                 orderCode = item.orderCode,
                 isActive = item.isActive,
                 isShipping = item.isShipping,

@@ -14,12 +14,6 @@ namespace salmorn_admin.DAO
     
     public partial class T_Order
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public T_Order()
-        {
-            this.T_Shipping = new HashSet<T_Shipping>();
-        }
-    
         public int id { get; set; }
         public string code { get; set; }
         public Nullable<int> paymentId { get; set; }
@@ -53,7 +47,5 @@ namespace salmorn_admin.DAO
         public Nullable<System.DateTime> updateDate { get; set; }
     
         public virtual M_Product M_Product { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<T_Shipping> T_Shipping { get; set; }
     }
 }

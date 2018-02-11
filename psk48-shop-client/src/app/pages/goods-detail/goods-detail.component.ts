@@ -35,9 +35,10 @@ export class GoodsDetailComponent implements OnInit {
   }
 
   loadProduct() {
+    this.loading(true);
     this.service.Get(this.id).subscribe(res => {
       this.product = res;
-      console.log(this.product);
+      this.loading(false);
     });
   }
 
@@ -72,4 +73,11 @@ export class GoodsDetailComponent implements OnInit {
     event.target.src = "../contents/images/no-image.jpg";
   }
 
+
+  loading(isLoading: boolean) {
+    if (isLoading)
+      document.getElementById('loading').style.display = 'block';
+    else
+      document.getElementById('loading').style.display = 'none';
+  }
 }

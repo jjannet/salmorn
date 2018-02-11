@@ -19,6 +19,29 @@ namespace salmorn_admin.BO
             dao = new OrderDAO();
         }
 
+        public int countAllNotFinishOrder()
+        {
+            return dao.getOrders().Where(m => m.isActive == true && m.isFinish == false).Count();
+        }
+
+        public int countPayOrder()
+        {
+            ShippingDAO sDao = new ShippingDAO();
+            int cnt = 0;
+            var datas = dao.getOrders().Where(m => m.isActive == true && m.isPay == false && m.isFinish == false);
+            foreach(var d in datas)
+            {
+                if(sDao.getShippings().Where(m=>m.orderCode == d.code).Any())
+                    cnt++;
+            }
+            return cnt;
+        }
+
+        public int countNotShippingOrder()
+        {
+            return dao.getOrders().Where(m => m.isActive == true && m.isFinish == false && m.isCreateShipping == true && m.isPay == true).Count();
+        }
+
         public List<Order> getNotPayOrders(OrderSearchModel data)
         {
             if (data.orderCode == null) data.orderCode = "";
@@ -152,7 +175,34 @@ namespace salmorn_admin.BO
         {
             try
             {
+                var order = this.dao.getOrders().Where(m => m.code == data.orderCode).FirstOrDefault();
+                if (order == null) return false;
                 dao.makeOrderPay(data.orderCode, data.payment.paymentDate);
+
+                if(order.isShipping == true)
+                {
+                    new ShippingBO().addShipping(new Shipping()
+                    {
+                        address = order.address,
+                        createBy = data.userId,
+                        createDate = DateTime.Now,
+                        email = order.email,
+                        firstName = order.firstName,
+                        isActive = true,
+                        isShipping = false,
+                        lastName = order.lastName,
+                        orderCode = order.code,
+                        printCoverQty = 0,
+                        province = order.province,
+                        select = false,
+                        shippingDate = null,
+                        tel = order.tel,
+                        trackingCode = "",
+                        updateBy = data.userId,
+                        updateDate = DateTime.Now,
+                        zipCode =order.zipCode
+                    });
+                }
 
                 return true;
             }

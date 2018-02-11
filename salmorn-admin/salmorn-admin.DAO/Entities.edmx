@@ -211,7 +211,6 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="trackingCode" Type="nvarchar" MaxLength="20" />
-          <Property Name="orderId" Type="int" Nullable="false" />
           <Property Name="orderCode" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="isActive" Type="bit" Nullable="false" />
           <Property Name="isShipping" Type="bit" Nullable="false" />
@@ -350,18 +349,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_T_Shipping_T_Order">
-          <End Role="T_Order" Type="Self.T_Order" Multiplicity="1" />
-          <End Role="T_Shipping" Type="Self.T_Shipping" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="T_Order">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="T_Shipping">
-              <PropertyRef Name="orderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Function Name="sp_m_product_add" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
           <Parameter Name="code" Type="nvarchar" Mode="In" />
@@ -451,10 +438,6 @@
             <End Role="T_Shipping_H" EntitySet="T_Shipping_H" />
             <End Role="T_Shipping_D" EntitySet="T_Shipping_D" />
           </AssociationSet>
-          <AssociationSet Name="FK_T_Shipping_T_Order" Association="Self.FK_T_Shipping_T_Order">
-            <End Role="T_Order" EntitySet="T_Order" />
-            <End Role="T_Shipping" EntitySet="T_Shipping" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -533,17 +516,9 @@
             <End Role="M_Product" EntitySet="M_Product" />
             <End Role="M_Product_Image" EntitySet="M_Product_Image" />
           </AssociationSet>
-          <AssociationSet Name="FK_T_Order_D_M_Product" Association="SalmornDBModel.FK_T_Order_D_M_Product">
-            <End Role="M_Product" EntitySet="M_Product" />
-            <End Role="T_Order_D" EntitySet="T_Order_D" />
-          </AssociationSet>
           <AssociationSet Name="FK_T_Order_M_Product" Association="SalmornDBModel.FK_T_Order_M_Product">
             <End Role="M_Product" EntitySet="M_Product" />
             <End Role="T_Order" EntitySet="T_Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_T_ProductStocks_M_Product" Association="SalmornDBModel.FK_T_ProductStocks_M_Product">
-            <End Role="M_Product" EntitySet="M_Product" />
-            <End Role="T_ProductStocks" EntitySet="T_ProductStocks" />
           </AssociationSet>
           <AssociationSet Name="FK_S_RoleMapping_S_RoleMapping" Association="SalmornDBModel.FK_S_RoleMapping_S_RoleMapping">
             <End Role="S_Role" EntitySet="S_Role" />
@@ -552,10 +527,6 @@
           <AssociationSet Name="FK_S_RoleMapping_S_User" Association="SalmornDBModel.FK_S_RoleMapping_S_User">
             <End Role="S_User" EntitySet="S_User" />
             <End Role="S_RoleMapping" EntitySet="S_RoleMapping" />
-          </AssociationSet>
-          <AssociationSet Name="FK_T_Shipping_T_Order" Association="SalmornDBModel.FK_T_Shipping_T_Order">
-            <End Role="T_Order" EntitySet="T_Order" />
-            <End Role="T_Shipping" EntitySet="T_Shipping" />
           </AssociationSet>
           <AssociationSet Name="FK_T_Shipping_D_T_Shipping_H" Association="SalmornDBModel.FK_T_Shipping_D_T_Shipping_H">
             <End Role="T_Shipping_H" EntitySet="T_Shipping_H" />
@@ -638,6 +609,7 @@
           <Property Name="isActive" Type="Boolean" Nullable="false" />
           <Property Name="isPreOrder" Type="Boolean" />
           <Property Name="isUseStock" Type="Boolean" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="preEnd" Type="DateTime" Precision="7" />
@@ -655,10 +627,7 @@
           <Property Name="pickupAt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="stockQrty" Type="Int32" />
           <NavigationProperty Name="M_Product_Image" Relationship="SalmornDBModel.FK_M_Product_Image_M_Product" FromRole="M_Product" ToRole="M_Product_Image" />
-          <NavigationProperty Name="T_Order_D" Relationship="SalmornDBModel.FK_T_Order_D_M_Product" FromRole="M_Product" ToRole="T_Order_D" />
           <NavigationProperty Name="T_Order" Relationship="SalmornDBModel.FK_T_Order_M_Product" FromRole="M_Product" ToRole="T_Order" />
-          <NavigationProperty Name="T_ProductStocks" Relationship="SalmornDBModel.FK_T_ProductStocks_M_Product" FromRole="M_Product" ToRole="T_ProductStocks" />
-          <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="M_Product_Image">
           <Key>
@@ -752,7 +721,6 @@
           <Property Name="updateBy" Type="Int32" />
           <Property Name="updateDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="M_Product" Relationship="SalmornDBModel.FK_T_Order_M_Product" FromRole="T_Order" ToRole="M_Product" />
-          <NavigationProperty Name="T_Shipping" Relationship="SalmornDBModel.FK_T_Shipping_T_Order" FromRole="T_Order" ToRole="T_Shipping" />
         </EntityType>
         <EntityType Name="T_Order_D">
           <Key>
@@ -763,7 +731,6 @@
           <Property Name="productId" Type="Int32" Nullable="false" />
           <Property Name="qty" Type="Int32" Nullable="false" />
           <Property Name="unitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <NavigationProperty Name="M_Product" Relationship="SalmornDBModel.FK_T_Order_D_M_Product" FromRole="T_Order_D" ToRole="M_Product" />
         </EntityType>
         <EntityType Name="T_PaymentNotification">
           <Key>
@@ -806,7 +773,6 @@
           <Property Name="date" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="productId" Type="Int32" Nullable="false" />
           <Property Name="qty" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="M_Product" Relationship="SalmornDBModel.FK_T_ProductStocks_M_Product" FromRole="T_ProductStocks" ToRole="M_Product" />
         </EntityType>
         <EntityType Name="T_Shipping">
           <Key>
@@ -814,7 +780,6 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="trackingCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="orderId" Type="Int32" Nullable="false" />
           <Property Name="orderCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="isActive" Type="Boolean" Nullable="false" />
           <Property Name="isShipping" Type="Boolean" Nullable="false" />
@@ -826,12 +791,11 @@
           <Property Name="address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="province" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="zipCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="printCoverQty" Type="Int32" />
           <Property Name="createDate" Type="DateTime" Precision="3" />
           <Property Name="createBy" Type="Int32" />
           <Property Name="updateDate" Type="DateTime" Precision="3" />
           <Property Name="updateBy" Type="Int32" />
-          <NavigationProperty Name="T_Order" Relationship="SalmornDBModel.FK_T_Shipping_T_Order" FromRole="T_Shipping" ToRole="T_Order" />
-          <Property Name="printCoverQty" Type="Int32" />
         </EntityType>
         <EntityType Name="T_Shipping_D">
           <Key>
@@ -908,18 +872,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_T_Order_D_M_Product">
-          <End Type="SalmornDBModel.M_Product" Role="M_Product" Multiplicity="1" />
-          <End Type="SalmornDBModel.T_Order_D" Role="T_Order_D" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="M_Product">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="T_Order_D">
-              <PropertyRef Name="productId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_T_Order_M_Product">
           <End Type="SalmornDBModel.M_Product" Role="M_Product" Multiplicity="1" />
           <End Type="SalmornDBModel.T_Order" Role="T_Order" Multiplicity="*" />
@@ -928,18 +880,6 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="T_Order">
-              <PropertyRef Name="productId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_T_ProductStocks_M_Product">
-          <End Type="SalmornDBModel.M_Product" Role="M_Product" Multiplicity="1" />
-          <End Type="SalmornDBModel.T_ProductStocks" Role="T_ProductStocks" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="M_Product">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="T_ProductStocks">
               <PropertyRef Name="productId" />
             </Dependent>
           </ReferentialConstraint>
@@ -965,18 +905,6 @@
             </Principal>
             <Dependent Role="S_RoleMapping">
               <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_T_Shipping_T_Order">
-          <End Type="SalmornDBModel.T_Order" Role="T_Order" Multiplicity="1" />
-          <End Type="SalmornDBModel.T_Shipping" Role="T_Shipping" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="T_Order">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="T_Shipping">
-              <PropertyRef Name="orderId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1071,7 +999,6 @@
           <EntitySetMapping Name="M_Product">
             <EntityTypeMapping TypeName="SalmornDBModel.M_Product">
               <MappingFragment StoreEntitySet="M_Product">
-                <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="stockQrty" ColumnName="stockQrty" />
                 <ScalarProperty Name="pickupAt" ColumnName="pickupAt" />
                 <ScalarProperty Name="isManualPickup" ColumnName="isManualPickup" />
@@ -1088,6 +1015,7 @@
                 <ScalarProperty Name="preEnd" ColumnName="preEnd" />
                 <ScalarProperty Name="note" ColumnName="note" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="isUseStock" ColumnName="isUseStock" />
                 <ScalarProperty Name="isPreOrder" ColumnName="isPreOrder" />
                 <ScalarProperty Name="isActive" ColumnName="isActive" />
@@ -1249,11 +1177,11 @@
           <EntitySetMapping Name="T_Shipping">
             <EntityTypeMapping TypeName="SalmornDBModel.T_Shipping">
               <MappingFragment StoreEntitySet="T_Shipping">
-                <ScalarProperty Name="printCoverQty" ColumnName="printCoverQty" />
                 <ScalarProperty Name="updateBy" ColumnName="updateBy" />
                 <ScalarProperty Name="updateDate" ColumnName="updateDate" />
                 <ScalarProperty Name="createBy" ColumnName="createBy" />
                 <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="printCoverQty" ColumnName="printCoverQty" />
                 <ScalarProperty Name="zipCode" ColumnName="zipCode" />
                 <ScalarProperty Name="province" ColumnName="province" />
                 <ScalarProperty Name="address" ColumnName="address" />
@@ -1265,7 +1193,6 @@
                 <ScalarProperty Name="isShipping" ColumnName="isShipping" />
                 <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="orderCode" ColumnName="orderCode" />
-                <ScalarProperty Name="orderId" ColumnName="orderId" />
                 <ScalarProperty Name="trackingCode" ColumnName="trackingCode" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

@@ -16,7 +16,6 @@ namespace salmorn_admin.DAO
     {
         public int id { get; set; }
         public string trackingCode { get; set; }
-        public int orderId { get; set; }
         public string orderCode { get; set; }
         public bool isActive { get; set; }
         public bool isShipping { get; set; }
@@ -28,12 +27,10 @@ namespace salmorn_admin.DAO
         public string address { get; set; }
         public string province { get; set; }
         public string zipCode { get; set; }
+        public Nullable<int> printCoverQty { get; set; }
         public Nullable<System.DateTime> createDate { get; set; }
         public Nullable<int> createBy { get; set; }
         public Nullable<System.DateTime> updateDate { get; set; }
         public Nullable<int> updateBy { get; set; }
-        public Nullable<int> printCoverQty { get; set; }
-    
-        public virtual T_Order T_Order { get; set; }
     }
 }

@@ -11,6 +11,7 @@
     <AssemblyName>salmorn-admin.Models</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,6 +48,7 @@
     <Compile Include="Masters\Product.cs" />
     <Compile Include="OrderModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\DashboardModel.cs" />
     <Compile Include="Screens\OrderSearchModel.cs" />
     <Compile Include="Systems\Role.cs" />
     <Compile Include="Systems\RoleMapping.cs" />

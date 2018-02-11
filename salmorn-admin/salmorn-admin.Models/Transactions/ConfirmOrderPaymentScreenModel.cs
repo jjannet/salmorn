@@ -14,6 +14,7 @@ namespace salmorn_admin.Models.Transactions
         public decimal shippingPrice { get; set; }
         public decimal totalPrice { get; set; }
         public int qty { get; set; }
+        public int userId { get; set; }
 
         public List<Order> orders { get; set; }
         public PaymentNotification payment { get; set; }

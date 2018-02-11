@@ -178,9 +178,22 @@ namespace salmorn_admin.Models
                     unitPrice = item.unitPrice
                 };
 
-                if (item.M_Product != null) data.product = Masters.product(item.M_Product);
+                //if (item.M_Product != null) data.product = Masters.product(item.M_Product);
 
                 return data;
+            }
+
+            public static List<Order> orders(List<T_Order> items)
+            {
+                if (items.Count() <= 0) return new List<Order>();
+
+                List<Order> orders = new List<Order>();
+                foreach(var  i in items)
+                {
+                    orders.Add(order(i));
+                }
+
+                return orders;
             }
 
             public static Order order(T_Order item)
@@ -314,6 +327,17 @@ namespace salmorn_admin.Models
                 return data;
             }
 
+            public static List<Shipping> shippings(List<T_Shipping> items)
+            {
+                List<Shipping> shippings = new List<Shipping>();
+                foreach (var i in items)
+                {
+                    shippings.Add(shipping(i));
+                }
+
+                return shippings;
+            }
+
             public static Shipping shipping(T_Shipping item)
             {
                 if (item == null) return null;
@@ -322,7 +346,6 @@ namespace salmorn_admin.Models
                 {
                     id = item.id,
                     trackingCode = item.trackingCode,
-                    orderId = item.orderId,
                     orderCode = item.orderCode,
                     isActive = item.isActive,
                     isShipping = item.isShipping,
@@ -340,7 +363,7 @@ namespace salmorn_admin.Models
                     updateBy = item.updateBy,
                     printCoverQty = item.printCoverQty,
 
-                    order = Transactions.order(item.T_Order)
+                    //order = Transactions.order(item.T_Order)
                 };
             }
         }

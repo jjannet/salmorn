@@ -22,11 +22,19 @@ export class GoodsComponent implements OnInit {
   }
 
   loadProduct() {
+    this.loading(true);
     this.service.GetAll().subscribe(res => {
       this.products = res;
-      console.log(this.products);
+      this.loading(false);
       //this.productForm.setValue(this._convertProductToFromProductModel(this.product));
     });
   }
 
+
+  loading(isLoading: boolean) {
+    if (isLoading)
+      document.getElementById('loading').style.display = 'block';
+    else
+      document.getElementById('loading').style.display = 'none';
+  }
 }

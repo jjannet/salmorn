@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>F:\DEPLOY_PROJECT\SALMORN\admin</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\web-deploy\psk48-admin</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -4564,37 +4564,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/13/2017 15:47:48</publishTime>
     </File>
     <File Include="bin/salmorn-admin.BO.dll">
-      <publishTime>01/27/2018 23:26:27</publishTime>
+      <publishTime>02/11/2018 17:08:06</publishTime>
     </File>
     <File Include="bin/salmorn-admin.BO.pdb">
-      <publishTime>01/27/2018 23:26:27</publishTime>
+      <publishTime>02/11/2018 17:08:06</publishTime>
     </File>
     <File Include="bin/salmorn-admin.DAO.dll">
-      <publishTime>01/27/2018 23:26:26</publishTime>
+      <publishTime>02/11/2018 17:08:05</publishTime>
     </File>
     <File Include="bin/salmorn-admin.DAO.dll.config">
       <publishTime>12/12/2017 16:35:09</publishTime>
     </File>
     <File Include="bin/salmorn-admin.DAO.pdb">
-      <publishTime>01/27/2018 23:26:26</publishTime>
+      <publishTime>02/11/2018 17:08:05</publishTime>
     </File>
     <File Include="bin/salmorn-admin.dll">
-      <publishTime>01/27/2018 23:26:32</publishTime>
+      <publishTime>02/11/2018 17:08:11</publishTime>
     </File>
     <File Include="bin/salmorn-admin.Models.dll">
-      <publishTime>01/27/2018 23:26:27</publishTime>
+      <publishTime>02/11/2018 17:08:06</publishTime>
     </File>
     <File Include="bin/salmorn-admin.Models.pdb">
-      <publishTime>01/27/2018 23:26:27</publishTime>
+      <publishTime>02/11/2018 17:08:06</publishTime>
     </File>
     <File Include="bin/salmorn-admin.pdb">
-      <publishTime>01/27/2018 23:26:32</publishTime>
+      <publishTime>02/11/2018 17:08:11</publishTime>
     </File>
     <File Include="bin/salmorn-admin.Utils.dll">
-      <publishTime>01/27/2018 23:26:26</publishTime>
+      <publishTime>02/11/2018 17:08:05</publishTime>
     </File>
     <File Include="bin/salmorn-admin.Utils.pdb">
-      <publishTime>01/27/2018 23:26:26</publishTime>
+      <publishTime>02/11/2018 17:08:05</publishTime>
     </File>
     <File Include="bin/System.Interactive.Async.dll">
       <publishTime>11/21/2016 14:05:54</publishTime>
@@ -4668,6 +4668,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/images/loading/loading-01.gif">
       <publishTime>12/12/2017 16:35:09</publishTime>
     </File>
+    <File Include="Content/images/logo-white.png">
+      <publishTime>02/11/2018 17:06:32</publishTime>
+    </File>
+    <File Include="Content/images/PSK48-LOGO2clear.png">
+      <publishTime>02/11/2018 16:45:27</publishTime>
+    </File>
     <File Include="Content/images/salmorn.png">
       <publishTime>12/12/2017 16:35:09</publishTime>
     </File>
@@ -4684,7 +4690,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/26/2017 00:52:45</publishTime>
     </File>
     <File Include="Content/js/controllers/ConfirmOrderPayment.js">
-      <publishTime>01/27/2018 20:57:02</publishTime>
+      <publishTime>02/11/2018 03:43:34</publishTime>
     </File>
     <File Include="Content/js/controllers/dashboard.js">
       <publishTime>12/12/2017 16:35:09</publishTime>
@@ -4693,7 +4699,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/19/2017 15:03:33</publishTime>
     </File>
     <File Include="Content/js/controllers/orders.js">
-      <publishTime>12/26/2017 00:56:34</publishTime>
+      <publishTime>02/11/2018 03:40:38</publishTime>
     </File>
     <File Include="Content/js/controllers/payments.js">
       <publishTime>12/19/2017 15:35:31</publishTime>
@@ -8623,7 +8629,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/10/2017 06:10:32</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>12/12/2017 16:35:09</publishTime>
+      <publishTime>02/11/2018 16:49:25</publishTime>
     </File>
     <File Include="Views/Commons/_FileControl.cshtml">
       <publishTime>12/19/2017 12:04:41</publishTime>
@@ -8635,7 +8641,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/10/2017 06:10:25</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>12/12/2017 16:35:09</publishTime>
+      <publishTime>02/11/2018 17:00:35</publishTime>
     </File>
     <File Include="Views/Order/CloseOrder.cshtml">
       <publishTime>12/26/2017 00:53:45</publishTime>
@@ -8644,7 +8650,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/27/2018 20:47:45</publishTime>
     </File>
     <File Include="Views/Order/Index.cshtml">
-      <publishTime>12/26/2017 00:53:39</publishTime>
+      <publishTime>02/11/2018 03:42:46</publishTime>
     </File>
     <File Include="Views/Order/Order.cshtml">
       <publishTime>12/12/2017 16:35:09</publishTime>
@@ -8674,7 +8680,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/25/2017 16:11:49</publishTime>
     </File>
     <File Include="Views/Product/_ProductForm.cshtml">
-      <publishTime>01/20/2018 11:29:17</publishTime>
+      <publishTime>02/09/2018 01:44:44</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>12/10/2017 06:10:25</publishTime>
@@ -8683,13 +8689,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/12/2017 16:35:09</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
-      <publishTime>12/12/2017 16:35:09</publishTime>
+      <publishTime>02/11/2018 17:07:17</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>12/26/2017 20:37:24</publishTime>
     </File>
     <File Include="Views/Shared/_Menu.cshtml">
-      <publishTime>12/26/2017 22:48:43</publishTime>
+      <publishTime>02/11/2018 03:30:57</publishTime>
     </File>
     <File Include="Views/Shared/_ReportLayout.cshtml">
       <publishTime>12/26/2017 20:42:03</publishTime>
@@ -8701,10 +8707,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/12/2017 16:35:09</publishTime>
     </File>
     <File Include="Views/Shipping/PostalCover.cshtml">
-      <publishTime>12/26/2017 23:03:14</publishTime>
+      <publishTime>02/11/2018 16:44:16</publishTime>
     </File>
     <File Include="Views/Shipping/PostalCoverPrint.cshtml">
-      <publishTime>12/26/2017 21:51:09</publishTime>
+      <publishTime>02/11/2018 16:47:14</publishTime>
     </File>
     <File Include="Views/Shipping/Shipping.cshtml">
       <publishTime>12/12/2017 16:35:09</publishTime>
@@ -8719,7 +8725,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/10/2017 06:10:25</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/27/2018 23:26:35</publishTime>
+      <publishTime>02/11/2018 17:08:15</publishTime>
     </File>
   </ItemGroup>
 </Project>

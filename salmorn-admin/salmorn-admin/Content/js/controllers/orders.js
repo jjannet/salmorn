@@ -51,6 +51,14 @@ angular.module('shop-manage')
             else return '';
         }
 
+        $scope.getPickupType = function (p) {
+            if (p.isShipping === true) {
+                return 'ส่งทางไปรษณีย์';
+            } else {
+                return 'นัดรับ';
+            }
+        }
+
         $scope.selectChange = function () {
             var selectAll = true;
             for (var i = 0; i < $scope.orders.length; i++) {

@@ -123,9 +123,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -1480,6 +1480,8 @@
     <Content Include="Content\images\errors\no-product-image.png" />
     <Content Include="Content\images\loading\giphy.gif" />
     <Content Include="Content\images\loading\loading-01.gif" />
+    <Content Include="Content\images\logo-white.png" />
+    <Content Include="Content\images\PSK48-LOGO2clear.png" />
     <Content Include="Content\images\salmorn.png" />
     <Content Include="Content\js\app.js" />
     <Content Include="Content\js\commons\alert.js" />
@@ -2999,7 +3001,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
