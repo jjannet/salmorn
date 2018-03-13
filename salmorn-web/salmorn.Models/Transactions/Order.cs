@@ -29,6 +29,7 @@ namespace salmorn.Models.Transactions
         public Nullable<System.DateTime> shippingDate { get; set; }
         public decimal shippingPrice { get; set; }
         public string tel { get; set; }
+        public string facebook { get; set; }
         public string email { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }

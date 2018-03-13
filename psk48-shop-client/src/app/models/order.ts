@@ -19,6 +19,7 @@ export class Order {
     shippingDate?: Date;
     shippingPrice?: number;
     tel: string;
+    facebook: string;
     email: string;
     firstName: string;
     lastName: string;

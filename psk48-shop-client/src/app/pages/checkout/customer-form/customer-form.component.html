@@ -21,6 +21,13 @@
 
     <div class="row">
       <div class="form-control">
+        <i>Facebook <label class="error-message" [hidden]="tel.valid || !tel.touched">(ไม่สามารถเป็นค่าว่างได้)</label></i>
+        <input type="text" name="facebook" [(ngModel)]="customer.facebook" required #facebook="ngModel"  />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-control">
         <i>ชื่อ <label class="error-message" [hidden]="firstName.valid || !firstName.touched">(ไม่สามารถเป็นค่าว่างได้)</label></i>
         <input type="text" name="firstName" [(ngModel)]="customer.firstName" required #firstName="ngModel" />
       </div>

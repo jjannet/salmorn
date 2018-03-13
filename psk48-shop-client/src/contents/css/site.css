@@ -32,7 +32,7 @@
         }
 
         .logo-top > img {
-            width: 54px;
+            width: 80px;
         }
 
     .btn-menu {
@@ -489,15 +489,33 @@ div.header {
 div.logo {
     display: block;
     float: left;
-    padding: 15px;
+    padding: 17px;
+    padding-bottom: 10px;
     cursor: pointer;
 }
 div.logo > img {
     display: block;
-    height: 40px;
+    height: 45px;
 }
 
-div.cart-section{
+div.cart-section {
     display: block;
     float: right;
+}
+
+div.cart-section > ul > li {
+    display: block;
+    float: left;
+}
+
+div.cart-section > ul > li.menu {
+    cursor: pointer;
+    background-color: rgb(255, 248, 248);
+    color: red;
+    padding: 28px 20px;
+    font-weight: bold;
+    transition: background-color 0.4s;
+}
+div.cart-section > ul > li.menu:hover {
+    background-color: rgb(253, 229, 229);
 }

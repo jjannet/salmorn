@@ -28,7 +28,7 @@ export class CheckoutComponent implements OnInit {
 
   initCustomerBlankData() {
     this.customer = {
-      address: '', email: '', firstName: '', lastName: '', province: '', tel: '', zipCode: ''
+      address: '', email: '', firstName: '', lastName: '', province: '', tel: '', zipCode: '', facebook: ''
     };
   }
 
@@ -98,6 +98,7 @@ export class CheckoutComponent implements OnInit {
         province: c.province,
         qty: data.qty,
         tel: c.tel,
+        facebook: c.facebook,
         zipCode: c.zipCode,
         isActive: true,
         payment: null

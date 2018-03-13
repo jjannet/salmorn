@@ -5,7 +5,7 @@ export class Product {
     code: string;
     cost: number;
     createBy: number;
-    createDate: Date;
+    createDate?: Date | null;
     detail: string;
     isActive: Boolean;
     isPreOrder: Boolean;
@@ -13,7 +13,7 @@ export class Product {
     title: string;
     name: string;
     note: string;
-    preEnd?: Date;
+    preEnd?: Date | null;
     preStart?: Date;
     price: number;
     qtyShippingPriceCeiling: number;

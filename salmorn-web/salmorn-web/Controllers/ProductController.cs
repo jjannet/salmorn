@@ -34,7 +34,7 @@ namespace salmorn.Controllers
         // GET api/values
         [HttpGet]
         [EnableCors("AllowSpecificOrigin")]
-        public IEnumerable<Product> Get()
+        public IActionResult Get()
         {
             var products = this.productService.getProducts();
             if (products != null && products.Count() > 0)
@@ -45,7 +45,7 @@ namespace salmorn.Controllers
                 }
             }
 
-            return products;
+            return Ok(products);
         }
 
         // GET api/values/5

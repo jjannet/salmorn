@@ -42,8 +42,10 @@ img {
     display: block;
     padding: 20px;
     width: calc(100% - 40px);
-    border: 1px solid #88c9e5;
-    background-color: #fff;
+    /* border: 1px solid #ffc3c3;
+    background-color: #fff; */
+    background-color: #fffafd;
+    border: 1px solid #f3deec;
     box-shadow: 0px 0px 10px 0px #ccc;
 }
 
