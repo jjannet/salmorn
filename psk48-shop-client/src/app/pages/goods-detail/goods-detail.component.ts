@@ -54,6 +54,7 @@ export class GoodsDetailComponent implements OnInit {
     if (this.product) {
       if(this.product.preStart > new Date()) return false;
       if(this.product.preEnd != null && this.product.preEnd < new Date()) return false;
+      if(this.product.stockQrty > 0 && (this.product.stockQrty - this.product.orderQty) <= 0) return false;
       return true;
     } else {
       return true;
@@ -61,7 +62,7 @@ export class GoodsDetailComponent implements OnInit {
   }
 
   addToCart(product: Product) {
-    this.cartService.addProduct(product, 1);
+    this.cartService.addProduct(product, this.orderQty);
   }
 
   buyItNow(product: Product) {

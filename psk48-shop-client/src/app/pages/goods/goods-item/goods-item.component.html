@@ -3,15 +3,15 @@
   {{ product.title }}
 </div>
 <ul>
-  <li>
-    <b>ราคา: </b> {{ product.price | number }} บาท</li>
+  <li><b>ราคา: </b> {{ product.price | number }} บาท</li>
+  <li *ngIf="product.stockQrty > 0"><b>จำนวนคงเหลือ: </b> {{ (product.stockQrty - product.orderQty) | number }} {{ product.unitName }}</li>
   <li [hidden]="product.preStart == null">{{ product.preStart | date:'dd MMMM yyyy' }} -
     <label [hidden]="product.preEnd == null">{{ product.preEnd | date:'dd MMMM yyyy' }}</label>
     <label [hidden]="product.preEnd != null">ไม่มีกำหนด</label>
   </li>
   <li style="padding: 10px 0px;">
-    <button class="btn btn-main" (click)="buyItNow(product)" [disabled]="!canBuy()">Buy it now</button>
-    <button class="btn"  (click)="addToCart(product)" [disabled]="!canBuy()" >
+    <button class="btn btn-main" (click)="buyItNow(product)" *ngIf="canBuy()">Buy it now</button>
+    <button class="btn"  (click)="addToCart(product)" *ngIf="canBuy()" >
       <i class="fa fa-shopping-cart"></i>Add to cart</button>
   </li>
   <li>

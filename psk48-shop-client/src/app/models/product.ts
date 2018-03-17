@@ -28,4 +28,5 @@ export class Product {
     stockQrty: number;
 
     images: Array<FileUpload>;
+    orderQty?: number;
 }

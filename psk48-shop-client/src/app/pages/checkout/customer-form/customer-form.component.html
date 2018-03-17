@@ -51,7 +51,7 @@
       <div class="form-control">
         <i>จังหวัด <label class="error-message" [hidden]="province.valid || !province.touched">(ไม่สามารถเป็นค่าว่างได้)</label></i>
         <select name="province" [(ngModel)]="customer.province" required #province="ngModel">
-          <option value="bankok">กรุงเทพมหานคร</option>
+          <option [value]="p.value" *ngFor="let p of provinces">{{p.title}}</option>
         </select>
       </div>
     </div>

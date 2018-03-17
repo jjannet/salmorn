@@ -11,7 +11,7 @@ import { ConfirmPaymentCompleteComponent } from './confirm-payment-complete/conf
 
 @NgModule({
   imports: [
-    CommonModule, ConfirmPaymentRouter, FormsModule
+    CommonModule, ConfirmPaymentRouter, FormsModule 
   ],
   providers: [OrderService, PaymentService],
   declarations: [ConfirmPaymentComponent, ConfirmPaymentCompleteComponent]

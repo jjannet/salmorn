@@ -8,16 +8,42 @@ content.goods-welcome {
 .goods-welcome-logo > img {
     display: block;
     margin: 0px auto;
-    height: 150px;
     padding: 20px;
+    padding-bottom: 0px;
 }
 
 .goods-welcome-detail {
     display: block;
     text-align: center;
     padding: 20px;
-    font-size: 2em;
 }
 .goods-welcome-detail > p {
     margin: 5px 0px;
+}
+
+@media (max-width: 900px) {
+    .goods-welcome-detail {
+        font-size: 10px;
+    }
+    .goods-welcome-logo > img {
+        height: 50px;
+    }
+}
+
+@media (min-width: 900px) {
+    .goods-welcome-detail {
+        font-size: 18px;
+    }
+    .goods-welcome-logo > img {
+        height: 100px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .goods-welcome-detail {
+        font-size: 18px;
+    }
+    .goods-welcome-logo > img {
+        height: 150px;
+    }
 }

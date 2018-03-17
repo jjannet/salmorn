@@ -290,7 +290,6 @@ section.container-body {
     position: relative;
     float: right;
     background-color: #FEFEFE;
-    height: 100vh;
     z-index: 0;
 }
 
@@ -435,7 +434,7 @@ content.web-welcome {
 
 div#loading {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -512,10 +511,34 @@ div.cart-section > ul > li.menu {
     cursor: pointer;
     background-color: rgb(255, 248, 248);
     color: red;
-    padding: 28px 20px;
     font-weight: bold;
     transition: background-color 0.4s;
 }
 div.cart-section > ul > li.menu:hover {
     background-color: rgb(253, 229, 229);
+}
+
+
+@media (max-width: 900px) {
+    div.cart-section > ul > li.menu  {
+        padding: 14px 20px;
+    }
+    div.logo {
+        padding: 10px;
+    }
+    div.logo > img {
+        height: 23px;
+    }
+}
+
+@media (min-width: 900px) {
+    div.cart-section > ul > li.menu  {
+        padding: 28px 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    div.cart-section > ul > li.menu  {
+        padding: 28px 20px;
+    }
 }

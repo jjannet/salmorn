@@ -17,28 +17,6 @@
     width: 100%;
 }
 
-@media (max-width: 900px) {
-    .goods-detail-header-order-image, .goods-detail-header-order-title {
-        display: block;
-        width: 100%;
-        position: relative;
-        height: 300px;
-    }
-    .goods-detail-header-order-title {
-        margin-top: 20px;
-        height: 200px;
-    }
-}
-@media (min-width: 900px) {
-    .goods-detail-header-order-image, .goods-detail-header-order-title {
-        display: block;
-        width: 50%;
-        float: left;
-        position: relative;
-        height: 300px;
-    }
-}
-
 
 
 .goods-detail-header-order-image > img {
@@ -59,13 +37,11 @@
 .goods-detail-header-order-detail {
     display: block;
     width: 100%;
-    position: absolute;
     bottom: 0;
 }
 
 .goods-detail-header-order-detail-price, .goods-detail-header-order-detail-qty {
     display: block;
-    float: right;
 }
 .goods-detail-header-order-detail-price {
     margin-top: -7px;
@@ -134,4 +110,75 @@
     border: 1px solid #ffdfdf;
     background-color: #fff3f3;
     line-height: 150%;
+}
+
+
+
+@media (max-width: 1000px) {
+    .goods-detail-header-order-image, .goods-detail-header-order-title {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+    .goods-detail-header-order-title {
+        margin-top: 20px;
+    }
+
+    .goods-detail-header-order-image > img {
+        width: 100%;
+    }
+
+    .goods-detail-header-order-detail {
+        margin-top: 20px;
+    }
+
+    .goods-detail-header-order-detail-price, .goods-detail-header-order-detail-qty {
+        display: inline-block;
+        width: 40%;
+        margin:auto 10px;
+    }
+
+    .goods-detail-header-order-detail-price {
+        margin-top: 10px;
+        text-align: right;
+    }
+
+    .goods-detail-header-order-detail button.btn {
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+   
+    .goods-detail-header-order-detail-price, .goods-detail-header-order-detail-qty {
+        display: block;
+        width: 90%;
+    }
+
+    .goods-detail-header-order-detail-price {
+        margin-top: 10px;
+        text-align: right;
+    }
+}
+@media (min-width: 1000px) {
+    .goods-detail-header-order-image, .goods-detail-header-order-title {
+        display: block;
+        width: 50%;
+        float: left;
+        position: relative;
+        height: 300px;
+    }
+
+    .goods-detail-header-order-detail-price, .goods-detail-header-order-detail-qty {
+        float: right;
+    }
+
+    .goods-detail-header-order-detail {
+        position: absolute;
+    }
+
+    .goods-detail-header-order-image > img {
+       width: auto;
+    }
 }

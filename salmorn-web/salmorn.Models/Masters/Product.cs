@@ -40,5 +40,8 @@ namespace salmorn.Models.Masters
 
         [NotMapped]
         public List<FileUpload> images { get; set; }
+
+        [NotMapped]
+        public int orderQty { get; set; }
     }
 }

@@ -12,7 +12,14 @@
       </p>
       <div class="goods-detail-header-order-detail">
         <div class="row">
-          <div class="goods-detail-header-order-detail-qty">
+          <div class="goods-detail-header-order-detail-qty" *ngIf="product.stockQrty > 0">
+            <span>จำนวนคงเหลือ </span>
+            <label>{{ (product.stockQrty - product.orderQty) | number }} {{ product.unitName}}</label>
+          </div>
+          <div style="clear:both"></div>
+        </div>
+        <div class="row">
+          <div class="goods-detail-header-order-detail-qty" *ngIf="canBuy()">
             <span>จำนวน </span>
             <input type="number" id="orderQty" [(ngModel)]="orderQty" />
           </div>
@@ -22,8 +29,8 @@
           <div style="clear:both"></div>
         </div>
         <div class="row" style="margin-top: 10px; text-align: right">
-          <button class="btn btn-main" (click)="buyItNow(product)"  [disabled]="!canBuy()" >Buy it now</button>
-          <button class="btn" (click)="addToCart(product)" [disabled]="!canBuy()" >
+          <button class="btn btn-main" (click)="buyItNow(product)" *ngIf="canBuy()">Buy it now</button>
+          <button class="btn" (click)="addToCart(product)" *ngIf="canBuy()">
             <i class="fa fa-shopping-cart"></i>Add to cart</button>
         </div>
       </div>

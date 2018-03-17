@@ -1,0 +1,64 @@
+div.pag-bottom {
+    margin-top: 100px;
+    display: block;
+    width: 100%;
+    background-color: #efefef;
+    border-top: 5px solid #000;
+    color: #333;
+
+    -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   padding-bottom: 10px;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
+a {
+    font-weight: bold;
+    color: #c58ec3;
+    text-decoration: none;
+}
+
+div.pag-bottom-body {
+    display: block;
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+div.pag-bottom-body > ul > li {
+    margin: 10px;
+}
+
+
+@media (max-width: 900px) {
+    div.pag-bottom-body {
+        width: 100%;
+    }
+
+    div.pag-bottom {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 900px) {
+    div.pag-bottom-body  {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1200px) {
+    div.pag-bottom-body  {
+        width: 1200px;
+    }
+
+    div.pag-bottom {
+        font-size: 15px;
+    }
+}

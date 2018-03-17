@@ -10,13 +10,14 @@ import { CartBoxComponent } from './cart-box/cart-box.component';
 
 import { CartService } from '../services/cart.service';
 import { CartBoxTopComponent } from './cart-box-top/cart-box-top.component';
+import { BottomComponent } from './bottom/bottom.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   providers: [RouterModule, CartService],
-  exports: [ HeaderComponent, MenuRouterComponent, MenuRouterItemComponent ],
-  declarations: [HeaderComponent, MenuRouterComponent, MenuRouterItemComponent, UserBoxComponent, CartBoxComponent, CartBoxTopComponent]
+  exports: [ HeaderComponent, MenuRouterComponent, MenuRouterItemComponent, BottomComponent ],
+  declarations: [HeaderComponent, MenuRouterComponent, MenuRouterItemComponent, UserBoxComponent, CartBoxComponent, CartBoxTopComponent, BottomComponent]
 })
 export class CoreModule { }

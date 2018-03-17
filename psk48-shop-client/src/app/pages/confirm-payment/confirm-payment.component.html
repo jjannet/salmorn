@@ -12,9 +12,9 @@
           <div class="row">
             <div class="form-control">
               <i>Order code
-                <label class="error-message"  [hidden]="(orderCode.valid || !orderCode.touched) && !f1.submitted">(ไม่สามารถเป็นค่าว่างได้)</label>
+                <label class="error-message" [hidden]="(orderCode.valid || !orderCode.touched) && !f1.submitted">(ไม่สามารถเป็นค่าว่างได้)</label>
               </i>
-              <input type="text" name="orderCode" [(ngModel)]="payment.orderCode"  #orderCode="ngModel" required />
+              <input type="text" name="orderCode" [(ngModel)]="payment.orderCode" #orderCode="ngModel" required />
             </div>
           </div>
           <div class="row">
@@ -24,12 +24,12 @@
           </div>
         </div>
       </form>
-      <form #f2="ngForm"  (ngSubmit)="confirm(f2)">
+      <form #f2="ngForm" (ngSubmit)="confirm(f2)">
         <div class="form-box" *ngIf="isSetOrderCode">
           <div class="form-title">รายละเอียดการจ่ายเงิน</div>
           <div class="row">
             <div class="form-control">
-              <i>Order code 
+              <i>Order code
               </i>
               <input type="text" name="orderCode" [ngModel]="payment.orderCode" disabled />
             </div>
@@ -44,17 +44,18 @@
           <div class="row">
             <div class="form-control">
               <i>จำนวนเงินที่โอน
-                <label class="error-message"   [hidden]="payment.money > 0" >(ต้องมีค่ามากกว่า 0)</label> 
+                <label class="error-message" [hidden]="payment.money > 0">(ต้องมีค่ามากกว่า 0)</label>
               </i>
-              <input type="number" name="money" [(ngModel)]="payment.money"  #money2="ngModel" min="1" required  OnlyNumber="true" />
+              <input type="number" name="money" [(ngModel)]="payment.money" #money2="ngModel" min="1" required OnlyNumber="true" />
             </div>
           </div>
           <div class="row">
             <div class="form-control">
               <i>วันที่โอนเงิน
-                <label class="error-message"   [hidden]="(payDate2.valid || !payDate2.touched) && !f2.submitted" >(ไม่สามารถเป็นค่าว่างได้)</label> 
+                <label class="error-message" [hidden]="(payDate2.valid || !payDate2.touched) && !f2.submitted">(ไม่สามารถเป็นค่าว่างได้)</label>
               </i>
-              <input type="date" name="payDate" [(ngModel)]="payDate"  #payDate2="ngModel" required />
+              <input type="date" name="payDate" [(ngModel)]="payDate" #payDate2="ngModel" required />
+              <!-- <app-jj-date-picker [(date)]="payDate" [title]="''"></app-jj-date-picker> -->
             </div>
           </div>
           <div class="row">
@@ -85,9 +86,9 @@
           </div>
           <div class="row" *ngIf="payment.file != null">
             <div class="form-control">
-                <i>หลักฐานการโอนเงิน
-                  </i>
-              <img [src]="payment?.file.fileName" >
+              <i>หลักฐานการโอนเงิน
+              </i>
+              <img [src]="payment?.file.fileName">
             </div>
           </div>
           <div class="row">
@@ -97,6 +98,20 @@
           </div>
         </div>
       </form>
+    </div>
+  </div>
+
+
+  <div class="checkout-box">
+    <div class="checkout-form">
+      <div class="form-box">
+        <div class="form-title">วิธีการชำระเงิน</div>
+        <div class="row">
+          <div class="col-lg-12">
+            <img class="payment-img" src="../contents/images/promt-pay-psk-48.png" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

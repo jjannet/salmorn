@@ -20,3 +20,14 @@ C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\obj\Releas
 C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\obj\Release\netstandard2.0\salmorn.IServices.AssemblyInfo.cs
 C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\obj\Release\netstandard2.0\salmorn.IServices.dll
 C:\Projects\My Projects\GitHubs\Salmorn\salmorn-web\salmorn.IServices\obj\Release\netstandard2.0\salmorn.IServices.pdb
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\bin\Release\netstandard2.0\salmorn.IServices.deps.json
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\bin\Release\netstandard2.0\salmorn.IServices.dll
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\bin\Release\netstandard2.0\salmorn.IServices.pdb
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\bin\Release\netstandard2.0\salmorn.Models.dll
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\bin\Release\netstandard2.0\salmorn.Models.pdb
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\obj\Release\netstandard2.0\salmorn.IServices.csprojResolveAssemblyReference.cache
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\obj\Release\netstandard2.0\salmorn.IServices.csproj.CoreCompileInputs.cache
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\obj\Release\netstandard2.0\salmorn.IServices.AssemblyInfoInputs.cache
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\obj\Release\netstandard2.0\salmorn.IServices.AssemblyInfo.cs
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\obj\Release\netstandard2.0\salmorn.IServices.dll
+C:\Projects\My Project\Salmorn\salmorn-web\salmorn.IServices\obj\Release\netstandard2.0\salmorn.IServices.pdb

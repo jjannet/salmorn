@@ -38,6 +38,10 @@ img {
     max-width: 100%;
 }
 
+img.payment-img {
+    margin: 0px auto;
+}
+
 .form-box{
     display: block;
     padding: 20px;

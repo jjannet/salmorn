@@ -43,6 +43,10 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(['goods']);
   }
 
+  gotoConfirmPayment(){
+    this.route.navigate(['confirm-payment']);
+  }
+
   getImageUrl() {
     return "url(" + this.images[this.index] + ")";
   }

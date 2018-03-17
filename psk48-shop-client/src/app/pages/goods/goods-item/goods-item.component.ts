@@ -50,6 +50,7 @@ export class GoodsItemComponent implements OnInit {
     if (this.product.isPreOrder) {
       if(this.product.preStart > new Date()) return false;
       if(this.product.preEnd != null && this.product.preEnd < new Date()) return false;
+      if(this.product.stockQrty > 0 && (this.product.stockQrty - this.product.orderQty) <= 0) return false;
       return true;
     } else {
       return true;

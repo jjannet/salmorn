@@ -258,6 +258,38 @@
         }
 
 
+        @media (max-width: 900px) {
+            .cart-box {
+                width: 50px;
+                padding: 5px;
+            }
+
+            .cart-box > .cart-icon > i {
+                font-size: 24px;
+                color: #fff;
+                /*text-shadow: -2px 0 #fff, 0 2px #fff, 2px 0 #fff, 0 -2px #fff;*/
+            }
+    
+            .cart-box > .cart-icon > label {
+                top: -4px;
+                right: -4px;
+                width: 10px;
+                height: 10px;
+                padding: 5px;
+                color: #fff;
+                font-weight: bold;
+                cursor: pointer;
+                font-size: 14px;
+            }
+        }
+        
+        @media (min-width: 900px) {
+           
+        }
+        
+        @media (min-width: 1200px) {
+           
+        }
 
 
 /*- - - - - - - - -User box - - - -- - - -*/

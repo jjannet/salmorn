@@ -25,6 +25,8 @@ namespace salmorn.Services.Masters
                                   join y in this.db.FileUploads on x.fileId equals y.id
                                   where x.productId == product.id
                                   select y).ToList();
+
+                product.orderQty = this.db.Orders.Where(m => m.productId == id && m.isPay == true).Select(m => m.qty).Sum();
             }
 
             return product;
@@ -42,6 +44,8 @@ namespace salmorn.Services.Masters
                                       join y in this.db.FileUploads on x.fileId equals y.id
                                       where x.productId == product.id
                                       select y).ToList();
+
+                    product.orderQty = this.db.Orders.Where(m => m.productId == product.id && m.isPay == true).Select(m => m.qty).Sum();
                 }
             }
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using salmorn.IServices.Transactions;
 using salmorn.IServices.Commons;
+using salmorn.IServices.Masters;
 
 namespace salmorn.Services.Transactions
 {
@@ -12,11 +13,13 @@ namespace salmorn.Services.Transactions
     {
         private DBContext db;
         private IEmailSender _emailSender { get; }
+        private IProductServices _productService { get; }
 
-        public OrderService(DBContext db, IEmailSender emailSender)
+        public OrderService(DBContext db, IEmailSender emailSender, IProductServices productService)
         {
             this.db = db;
             this._emailSender = emailSender;
+            this._productService = productService;
         }
 
         public Order getOrderByCode(string orderCode)
@@ -77,13 +80,15 @@ namespace salmorn.Services.Transactions
                 string orderCode = getOrderCode();
                 for (int i = 0; i < orders.Count; i++)
                 {
-                    var product = this.db.Products.FirstOrDefault(m => m.id == orders[i].product.id);
+                    var product = this._productService.getProduct(orders[i].product.id);// this.db.Products.FirstOrDefault(m => m.id == orders[i].product.id);
                     if (product == null) return null;
                     if (product.isPreOrder == true)
                     {
                         if (product.preStart > DateTime.Now) return null;
                         if (product.preEnd == null || product.preEnd < DateTime.Now) return null;
                     }
+
+                    if (product.stockQrty > 0 && (product.stockQrty - product.orderQty) <= 0) return null;
 
                     orders[i] = genOrderForInsert(orders[i]);
                     orders[i].code = orderCode;
@@ -161,7 +166,7 @@ namespace salmorn.Services.Transactions
         {
             try
             {
-                this._emailSender.SendEmailAsync(orders.First().email, "รายการสั่งซื้อสินค้า Salmorn", genereateEmailBody(orders));
+                this._emailSender.SendEmailAsync(orders.First().email, "รายการสั่งซื้อสินค้าจาก PaiSueKong", genereateEmailBody(orders));
             }
             catch (Exception ex)
             {
@@ -223,7 +228,7 @@ namespace salmorn.Services.Transactions
             body.Append(" ");
             body.Append("    <div style='display: block; width: 500px; margin-left: auto; margin-right: auto; padding: 20px; border: 1px solid #ff7777; background-color: #fefefe; text-align: center; '> ");
             body.Append("        <img src='https://storage.googleapis.com/web-contents-jj/logo-red.png' style='display: block; width: 150px; margin-left: auto; margin-right: auto; margin-bottom: 30px; ' /> ");
-            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>ขอบคุณที่มาเป็นส่วนหนึ่งของ Salmorn ด้วยการสั่งซื้อสินค้าจากเรา</label> ");
+            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>ขอบคุณที่มาเป็นส่วนหนึ่งในโปรเจคการทำเพื่อน้อง ด้วยการสั่งซื้อสินค้าจากเรา</label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>รหัสการสั่งซื้อสินค้าของคุณคือ</label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; font-size: 30px; color: #ff7777; margin-top: 50px; margin-bottom: 50px;  ' >" + order.code + "</label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px; margin-top: 10px; '><b>นัดรับสินค้าที่: " + order.product.pickupAt + "</b></label> ");
@@ -236,11 +241,16 @@ namespace salmorn.Services.Transactions
                                             + " บาท</label> ");
             }
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >รวมราคาสินค้า: " + order.totalProductPrice.ToString("#,##0") + " บาท</label> ");
-            if (order.isShipping)
+            if (order.isShipping == false)
                 body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >ค่าจัดส่ง: " + order.shippingPrice.ToString("#,##0") + " บาท</label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >รวมราคาทั้งสิ้น: " + order.totalPrice.ToString("#,##0") + " บาท</label> ");
-            body.Append("        <a href='" + "http://shop.psk48.com/confirm-payment/res/" + order.code + "' style='display: block; margin-left: auto; margin-right: auto; padding: 10px 20px; color: white; font-size: 20px; background-color: #ff7777; border: 1px solid #6eb1ce; margin-top: 30px; cursor: pointer; transition: 0.2s background-color; text-decoration: none; border-radius: 4px; '>คลิกที่นี่เพื่อยืนยันการจ่ายเงิน</a> ");
+            body.Append("        <a href='" + "http://www.paisuekong.com/confirm-payment/res/" + order.code + "' style='display: block; margin-left: auto; margin-right: auto; padding: 10px 20px; color: white; font-size: 20px; background-color: #ff7777; border: 1px solid #6eb1ce; margin-top: 30px; cursor: pointer; transition: 0.2s background-color; text-decoration: none; border-radius: 4px; '>คลิกที่นี่เพื่อยืนยันการจ่ายเงิน</a> ");
             body.Append("    </div> ");
+
+            body.Append(" <div style='display: block; width: 500px; margin-left: auto; margin-right: auto; margin-top:20px; padding: 20px; border: 1px solid #ff7777; background-color: #fefefe; text-align: center; '> ");
+            body.Append(" 	<label style='font-weight: bold; font-size: 20px;'>วิธีการชำระเงิน</label> ");
+            body.Append(" 	<img src='https://storage.googleapis.com/web-contents-jj/promt-pay-psk-48.png' style='width: 100%;' /> ");
+            body.Append(" </div> ");
 
             body.Append(" </body> ");
             body.Append(" </html>");
