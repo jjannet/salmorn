@@ -231,7 +231,8 @@ namespace salmorn.Services.Transactions
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>ขอบคุณที่มาเป็นส่วนหนึ่งในโปรเจคการทำเพื่อน้อง ด้วยการสั่งซื้อสินค้าจากเรา</label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>รหัสการสั่งซื้อสินค้าของคุณคือ</label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; font-size: 30px; color: #ff7777; margin-top: 50px; margin-bottom: 50px;  ' >" + order.code + "</label> ");
-            body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px; margin-top: 10px; '><b>นัดรับสินค้าที่: " + order.product.pickupAt + "</b></label> ");
+            if (order.isShipping == false)
+                body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px; margin-top: 10px; '><b>นัดรับสินค้าที่: " + order.product.pickupAt + "</b></label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; '>สินค้าที่สั่งซื้อ</label> ");
 
             foreach (var o in orders)
@@ -241,7 +242,7 @@ namespace salmorn.Services.Transactions
                                             + " บาท</label> ");
             }
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >รวมราคาสินค้า: " + order.totalProductPrice.ToString("#,##0") + " บาท</label> ");
-            if (order.isShipping == false)
+            if (order.isShipping)
                 body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >ค่าจัดส่ง: " + order.shippingPrice.ToString("#,##0") + " บาท</label> ");
             body.Append("        <label style='display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; color: red; ' >รวมราคาทั้งสิ้น: " + order.totalPrice.ToString("#,##0") + " บาท</label> ");
             body.Append("        <a href='" + "http://www.paisuekong.com/confirm-payment/res/" + order.code + "' style='display: block; margin-left: auto; margin-right: auto; padding: 10px 20px; color: white; font-size: 20px; background-color: #ff7777; border: 1px solid #6eb1ce; margin-top: 30px; cursor: pointer; transition: 0.2s background-color; text-decoration: none; border-radius: 4px; '>คลิกที่นี่เพื่อยืนยันการจ่ายเงิน</a> ");
