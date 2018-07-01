@@ -28,8 +28,14 @@ namespace APPWAR
             services.AddDbContext<DBContext>(options => options.UseSqlServer(Configuration["Data:ConnectionString"]));
             services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
 
+            services.AddTransient<IEmailSender, AuthMessageSender>();
 
             services.AddTransient<IOrderService, OrderService>();
+
+            services.Configure<IISOptions>(options =>
+            {
+                options.ForwardClientCertificate = false;
+            });
 
             services.AddMvc();
         }
@@ -47,6 +53,7 @@ namespace APPWAR
                 app.UseExceptionHandler("/Error");
             }
 
+            app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
 
             app.UseMvc();

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AppWarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="T_Order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="numTicket" Type="Int32" Nullable="false" />
+    <Property Name="identNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="isSendPaySlip" Type="Boolean" />
+    <Property Name="sendPaySlipDate" Type="DateTime" Precision="3" />
+    <Property Name="isApprovePayment" Type="Boolean" />
+    <Property Name="approvePaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="approvePaymentBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="slipPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_Slip">
+    <Key>
+      <PropertyRef Name="orderNo" />
+      <PropertyRef Name="seq" />
+    </Key>
+    <Property Name="orderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="seq" Type="Int32" Nullable="false" />
+    <Property Name="slipPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="isApprove" Type="Boolean" Nullable="false" />
+    <Property Name="uploadDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T_Order" EntityType="Self.T_Order" />
+    <EntitySet Name="T_Slip" EntityType="Self.T_Slip" />
+  </EntityContainer>
+</Schema>

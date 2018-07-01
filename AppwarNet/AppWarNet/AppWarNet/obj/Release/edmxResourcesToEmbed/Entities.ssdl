@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AppWarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="T_Order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="numTicket" Type="int" Nullable="false" />
+    <Property Name="identNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="createDate" Type="datetime" Nullable="false" />
+    <Property Name="isSendPaySlip" Type="bit" />
+    <Property Name="sendPaySlipDate" Type="datetime" />
+    <Property Name="isApprovePayment" Type="bit" />
+    <Property Name="approvePaymentDate" Type="datetime" />
+    <Property Name="approvePaymentBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="slipPath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="T_Slip">
+    <Key>
+      <PropertyRef Name="orderNo" />
+      <PropertyRef Name="seq" />
+    </Key>
+    <Property Name="orderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="seq" Type="int" Nullable="false" />
+    <Property Name="slipPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="isApprove" Type="bit" Nullable="false" />
+    <Property Name="uploadDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AppWarModelStoreContainer">
+    <EntitySet Name="T_Order" EntityType="Self.T_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Slip" EntityType="Self.T_Slip" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

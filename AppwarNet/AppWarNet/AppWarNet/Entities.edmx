@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AppWarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_Order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="orderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="numTicket" Type="int" Nullable="false" />
+          <Property Name="identNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="createDate" Type="datetime" Nullable="false" />
+          <Property Name="isSendPaySlip" Type="bit" />
+          <Property Name="sendPaySlipDate" Type="datetime" />
+          <Property Name="isApprovePayment" Type="bit" />
+          <Property Name="approvePaymentDate" Type="datetime" />
+          <Property Name="approvePaymentBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="slipPath" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="T_Slip">
+          <Key>
+            <PropertyRef Name="orderNo" />
+            <PropertyRef Name="seq" />
+          </Key>
+          <Property Name="orderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="seq" Type="int" Nullable="false" />
+          <Property Name="slipPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="isApprove" Type="bit" Nullable="false" />
+          <Property Name="uploadDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="AppWarModelStoreContainer">
+          <EntitySet Name="T_Order" EntityType="Self.T_Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Slip" EntityType="Self.T_Slip" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AppWarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_Order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="numTicket" Type="Int32" Nullable="false" />
+          <Property Name="identNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="isSendPaySlip" Type="Boolean" />
+          <Property Name="sendPaySlipDate" Type="DateTime" Precision="3" />
+          <Property Name="isApprovePayment" Type="Boolean" />
+          <Property Name="approvePaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="approvePaymentBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="slipPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_Slip">
+          <Key>
+            <PropertyRef Name="orderNo" />
+            <PropertyRef Name="seq" />
+          </Key>
+          <Property Name="orderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="seq" Type="Int32" Nullable="false" />
+          <Property Name="slipPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isApprove" Type="Boolean" Nullable="false" />
+          <Property Name="uploadDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_Order" EntityType="Self.T_Order" />
+          <EntitySet Name="T_Slip" EntityType="Self.T_Slip" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AppWarModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="T_Order">
+            <EntityTypeMapping TypeName="AppWarModel.T_Order">
+              <MappingFragment StoreEntitySet="T_Order">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="orderNo" ColumnName="orderNo" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="numTicket" ColumnName="numTicket" />
+                <ScalarProperty Name="identNo" ColumnName="identNo" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="isSendPaySlip" ColumnName="isSendPaySlip" />
+                <ScalarProperty Name="sendPaySlipDate" ColumnName="sendPaySlipDate" />
+                <ScalarProperty Name="isApprovePayment" ColumnName="isApprovePayment" />
+                <ScalarProperty Name="approvePaymentDate" ColumnName="approvePaymentDate" />
+                <ScalarProperty Name="approvePaymentBy" ColumnName="approvePaymentBy" />
+                <ScalarProperty Name="slipPath" ColumnName="slipPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Slip">
+            <EntityTypeMapping TypeName="AppWarModel.T_Slip">
+              <MappingFragment StoreEntitySet="T_Slip">
+                <ScalarProperty Name="orderNo" ColumnName="orderNo" />
+                <ScalarProperty Name="seq" ColumnName="seq" />
+                <ScalarProperty Name="slipPath" ColumnName="slipPath" />
+                <ScalarProperty Name="isApprove" ColumnName="isApprove" />
+                <ScalarProperty Name="uploadDate" ColumnName="uploadDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

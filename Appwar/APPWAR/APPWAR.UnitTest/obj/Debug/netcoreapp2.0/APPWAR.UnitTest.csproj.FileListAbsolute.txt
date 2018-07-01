@@ -14,3 +14,20 @@ C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcorea
 C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcoreapp2.0\APPWAR.UnitTest.AssemblyInfo.cs
 C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcoreapp2.0\APPWAR.UnitTest.dll
 C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcoreapp2.0\APPWAR.UnitTest.pdb
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\bin\Debug\netcoreapp2.0\APPWAR.UnitTest.deps.json
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\bin\Debug\netcoreapp2.0\APPWAR.UnitTest.runtimeconfig.json
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\bin\Debug\netcoreapp2.0\APPWAR.UnitTest.runtimeconfig.dev.json
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\bin\Debug\netcoreapp2.0\APPWAR.UnitTest.dll
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\bin\Debug\netcoreapp2.0\APPWAR.UnitTest.pdb
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\bin\Debug\netcoreapp2.0\APPWAR.dll
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\bin\Debug\netcoreapp2.0\APPWAR.pdb
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcoreapp2.0\APPWAR.UnitTest.csprojAssemblyReference.cache
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcoreapp2.0\APPWAR.UnitTest.csproj.CoreCompileInputs.cache
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcoreapp2.0\APPWAR.UnitTest.AssemblyInfoInputs.cache
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcoreapp2.0\APPWAR.UnitTest.AssemblyInfo.cs
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcoreapp2.0\APPWAR.UnitTest.csproj.CopyComplete
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcoreapp2.0\APPWAR.UnitTest.dll
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR.UnitTest\obj\Debug\netcoreapp2.0\APPWAR.UnitTest.pdb

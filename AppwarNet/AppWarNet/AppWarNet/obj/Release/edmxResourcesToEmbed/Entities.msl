@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AppWarModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="T_Order">
+      <EntityTypeMapping TypeName="AppWarModel.T_Order">
+        <MappingFragment StoreEntitySet="T_Order">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orderNo" ColumnName="orderNo" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="numTicket" ColumnName="numTicket" />
+          <ScalarProperty Name="identNo" ColumnName="identNo" />
+          <ScalarProperty Name="createDate" ColumnName="createDate" />
+          <ScalarProperty Name="isSendPaySlip" ColumnName="isSendPaySlip" />
+          <ScalarProperty Name="sendPaySlipDate" ColumnName="sendPaySlipDate" />
+          <ScalarProperty Name="isApprovePayment" ColumnName="isApprovePayment" />
+          <ScalarProperty Name="approvePaymentDate" ColumnName="approvePaymentDate" />
+          <ScalarProperty Name="approvePaymentBy" ColumnName="approvePaymentBy" />
+          <ScalarProperty Name="slipPath" ColumnName="slipPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Slip">
+      <EntityTypeMapping TypeName="AppWarModel.T_Slip">
+        <MappingFragment StoreEntitySet="T_Slip">
+          <ScalarProperty Name="orderNo" ColumnName="orderNo" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="slipPath" ColumnName="slipPath" />
+          <ScalarProperty Name="isApprove" ColumnName="isApprove" />
+          <ScalarProperty Name="uploadDate" ColumnName="uploadDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

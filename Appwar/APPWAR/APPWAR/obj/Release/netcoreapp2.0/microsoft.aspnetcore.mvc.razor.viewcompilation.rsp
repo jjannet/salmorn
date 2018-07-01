@@ -1,0 +1,12 @@
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=APPWAR
+--content-root=C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR
+--file=C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\Pages\About.cshtml
+--file=C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\Pages\Contact.cshtml
+--file=C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\Pages\Error.cshtml
+--file=C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\Pages\Index.cshtml
+--file=C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\Pages\_Layout.cshtml
+--file=C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\Pages\_ValidationScriptsPartial.cshtml
+--file=C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\Pages\_ViewImports.cshtml
+--file=C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\Pages\_ViewStart.cshtml

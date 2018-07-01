@@ -19,7 +19,9 @@ namespace APPWAR
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseKestrel()
                 .Build();
     }
 }

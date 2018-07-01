@@ -1,0 +1,11 @@
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\bin\Release\netcoreapp2.0\APPWAR.deps.json
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\bin\Release\netcoreapp2.0\APPWAR.runtimeconfig.json
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\bin\Release\netcoreapp2.0\APPWAR.runtimeconfig.dev.json
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\bin\Release\netcoreapp2.0\APPWAR.dll
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\bin\Release\netcoreapp2.0\APPWAR.pdb
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\obj\Release\netcoreapp2.0\APPWAR.csprojAssemblyReference.cache
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\obj\Release\netcoreapp2.0\APPWAR.csproj.CoreCompileInputs.cache
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\obj\Release\netcoreapp2.0\APPWAR.AssemblyInfoInputs.cache
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\obj\Release\netcoreapp2.0\APPWAR.AssemblyInfo.cs
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\obj\Release\netcoreapp2.0\APPWAR.dll
+C:\Projects\GitHubs\Salmorn\Appwar\APPWAR\APPWAR\obj\Release\netcoreapp2.0\APPWAR.pdb
