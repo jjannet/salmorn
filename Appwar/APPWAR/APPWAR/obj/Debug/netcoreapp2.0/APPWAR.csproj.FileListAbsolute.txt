@@ -1,0 +1,11 @@
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\bin\Debug\netcoreapp2.0\APPWAR.deps.json
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\bin\Debug\netcoreapp2.0\APPWAR.runtimeconfig.json
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\bin\Debug\netcoreapp2.0\APPWAR.runtimeconfig.dev.json
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\bin\Debug\netcoreapp2.0\APPWAR.dll
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\bin\Debug\netcoreapp2.0\APPWAR.pdb
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\obj\Debug\netcoreapp2.0\APPWAR.csprojResolveAssemblyReference.cache
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\obj\Debug\netcoreapp2.0\APPWAR.csproj.CoreCompileInputs.cache
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\obj\Debug\netcoreapp2.0\APPWAR.AssemblyInfoInputs.cache
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\obj\Debug\netcoreapp2.0\APPWAR.AssemblyInfo.cs
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\obj\Debug\netcoreapp2.0\APPWAR.dll
+C:\Projects\My Projects\Salmorn\Appwar\APPWAR\APPWAR\obj\Debug\netcoreapp2.0\APPWAR.pdb

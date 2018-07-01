@@ -1,0 +1,348 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!--Main Slider-->
+<section class="rotating-words full-screen center-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-1"></div>
+            <div class="col-md-8 col-sm-10">
+                <div class="center-item text-center padding">
+                    <h2 class="text-capitalize top50 bottom35  whitecolor">
+                        
+                        <span class="font-xlight block" id="presentWriting">Patchanan's fan club present</span>
+                        <span class="block fontbold">
+                            กิจกรรมร่วมชมภาพยนต์ 
+                            <img class="appwar" src="~/images/appwar.jpg" />
+                            
+                        </span>
+                    </h2>
+                    <a href="#orderSeat" class="button btnwhite pagescroll" id="our-process">สั่งซื้อบัตรเข้างาน</a>
+                    <a href="#confirmPayment" class="button btnwhite pagescroll" id="btnGotoBooking">ยืนยันการจ่ายเงิน</a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-1"></div>
+        </div>
+    </div>
+</section>
+<!--Main Slider ends -->
+
+
+
+<!--half img section-->
+<div id="twocopies">
+    <section class="half-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 nopadding">
+                    <div class="image img-container">
+                        <img alt="" src="images/split-img1.jpg" class="equalheight">
+                    </div>
+                </div>
+                <div class="col-md-6 nopadding">
+                    <div class="split-box text-center center-block container-padding equalheight">
+                        <div class="heading-title padding">
+                            <span class=" wow fadeIn" data-wow-delay="300ms">Services We Offer</span>
+                            <h2 class="darkcolor bottom20 wow fadeIn" data-wow-delay="350ms">Creative Designs</h2>
+                            <p class="heading_space wow fadeIn" data-wow-delay="400ms">Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed suscipit. Vestibulum auctor nunc vitae diam eleifend, in maximus metus sollicitudin. Quisque vitae sodales lectus. Nam porttitor justo sed mi finibus, vel tristique risus faucibus.  Fusce faucibus nulla at viverra condimentum. </p>
+                            <a href="#portfolio_top" class="button btnprimary pagescroll wow fadeInUp" data-wow-delay="450ms">Design Works</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="half-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 nopadding">
+                    <div class="split-box text-center center-block container-padding equalheight">
+                        <div class="heading-title padding">
+                            <span class=" wow fadeIn" data-wow-delay="300ms">Services We Offer</span>
+                            <h2 class="darkcolor bottom20 wow fadeIn" data-wow-delay="350ms">SEO Marketing</h2>
+                            <p class="heading_space wow fadeIn" data-wow-delay="400ms">Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed suscipit. Vestibulum auctor nunc vitae diam eleifend, in maximus metus sollicitudin. Quisque vitae sodales lectus. Nam porttitor justo sed mi finibus, vel tristique risus faucibus.</p>
+                            <a href="#our-team" class="button btnsecondary pagescroll wow fadeInUp" data-wow-delay="450ms">SEO Team</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 nopadding">
+                    <div class="image img-container">
+                        <img alt="" src="images/split-img2.jpg" class="equalheight">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!--half img section ends-->
+<!-- WOrk Process-->
+<section id="orderSeat" class="padding gradient_bg_default" ng-controller="OrderController" ng-init="init()">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+                <div class="heading-title wow fadeInUp" data-wow-delay="300ms">
+                    <h2 class="whitecolor">สั่งซื้อบัตรเข้างาน</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card" style="max-width: 700px; margin: auto;">
+                    <div class="card-body">
+                        <form id="orderSeatForm" name="orderForm" ng-submit="submit(this);">
+                            <div class="form-group">
+                                <label>ชื่อ <i class="error">#</i></label>
+                                <input type="text" name="firstName" class="form-control" maxlength="150" ng-model="order.firstName" required />
+                                <label class="error" ng-show="(orderForm.$submitted || orderForm.firstName.$touched) && orderForm.firstName.$error.required">กรุณากรอกข้อมูล</label>
+                            </div>
+                            <div class="form-group">
+                                <label>นามสกุล <i class="error">#</i></label>
+                                <input type="text" name="lastName" class="form-control" maxlength="150" ng-model="order.lastName" required />
+                                <label class="error" ng-show="(orderForm.$submitted || orderForm.lastName.$touched) && orderForm.lastName.$error.required">กรุณากรอกข้อมูล</label>
+                            </div>
+                            <div class="form-group">
+                                <label>เบอร์โทร <i class="error">#</i></label>
+                                <input type="text" name="tel" class="form-control" maxlength="50" ng-model="order.tel" required />
+                                <label class="error" ng-show="(orderForm.$submitted || orderForm.tel.$touched) && orderForm.tel.$error.required">กรุณากรอกข้อมูล</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Email address <i class="error">#</i></label>
+                                <input type="email" name="email" class="form-control" maxlength="250" ng-model="order.email" required >
+                                <label class="error" ng-show="(orderForm.$submitted || orderForm.email.$touched) && orderForm.email.$error.required">กรุณากรอกข้อมูล</label>
+                            </div>
+                            <div class="form-group">
+                                <label>จำนวนบัตร <i class="error">#</i></label>
+                                <input type="number" name="numTicket" class="form-control" ng-model="order.numTicket" required min="1" />
+                                <label class="error" ng-show="(orderForm.$submitted || orderForm.numTicket.$touched) 
+                                       && (orderForm.numTicket.$error.required || orderForm.numTicket.$error.number || orderForm.numTicket.$valid == false)">ต้องเป็นตัวเลขและมีค่ามากกว่า 0</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="isRead" class="form-check-input" id="cbOrder" ng-model="isRead" >
+                                <label class="form-check-label" for="cbOrder" style="font-weight: bold; margin: 20px auto;  color: crimson">ระบบจะจองจำนวนที่นั่งหลังจากการยืนยันการจ่ายเงินถูก Approve แล้วเท่านั้น <i class="error">#</i></label>
+                            </div>
+                            <button type="submit" ng-disabled="isRead == false"  id="btnSubmitOrder" class="btn btn-info">สั่งซื้อที่นั่ง</button>
+                        </form>
+
+                        <div class="order">
+                            <div class="order-no">
+                                {{}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center" style="margin-top: 10px;">
+                <a href="#confirmPayment" class="button btnwhite pagescroll" id="btnGotoBooking">ยืนยันการจ่ายเงิน</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--WOrk Process ends-->                                                                                                                           <!--Mobile Apps ends-->
+<!-- Counters -->
+<section id="funfacts" class="padding_top fact-iconic gradient_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-12 margin_bottom whitecolor text-md-left text-center wow fadeInUp" data-wow-delay="300ms">
+                <h3 class="bottom25">จำนวนบัตร</h3>
+            </div>
+            <div class="col-md-7 col-sm-12 text-center">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 icon-counters whitecolor margin_bottom wow fadeInUp" data-wow-delay="350ms">
+                        <div class="counters">
+                            <span class="count_nums" data-to="2500" data-speed="2500"> </span> 
+                        </div>
+                        <p class="title">จำนวนบัตรทั้งหมด</p>
+                    </div>
+                    <div class="col-md-4 col-sm-4 icon-counters whitecolor margin_bottom wow fadeInUp" data-wow-delay="400ms">
+                        <div class="counters">
+                            <span class="count_nums" data-to="9500" data-speed="2500"> </span> 
+                        </div>
+                        <p class="title">จำนวนที่่ถูกจองไปแล้ว</p>
+                    </div>
+                    <div class="col-md-4 col-sm-4 icon-counters whitecolor margin_bottom wow fadeInUp" data-wow-delay="450ms">
+                        <div class="counters" >
+                            <span class="count_nums" data-to="6000" data-speed="2500"> </span> 
+                        </div>
+                        <p class="title">จำนวนที่เหลือ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Counters ends-->
+<!-- Pricing Tables -->
+<section id="confirmPayment" class="padding bglight">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 col-sm-12 text-center">
+                <div class="heading-title wow fadeInUp" data-wow-delay="300ms">
+                    <h2 class="darkcolor bottom30">ยืนยันการจ่ายเงิน</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card" style="max-width: 700px; margin: auto;">
+                    <div class="card-body">
+                        
+                        <form>
+                            <div class="form-group">
+                                <label>หมายเลข order</label>
+                                <input type="text" class="form-control" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Slip การโอนเงิน</label>
+                                <input type="file" class="form-control" />
+                            </div>
+
+                            <div class="form-group text-center">
+                                <img src="~/images/promt-pay-psk-48.png" style="margin: auto; max-width: 100%;" />
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="cbConfirmPayment">
+                                <label class="form-check-label" for="cbConfirmPayment">ถ้าหากการชำระเงินได้ถูกยืนยันว่าถูกต้อง ระบบจะส่ง Email ไปแจ้งอีกครั้ง</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-warning">ยืนยันการจ่ายเงิน</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Pricing Tables ends-->
+<!-- Contact US -->
+<section id="contactus" class="padding_top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="heading-title heading_space wow fadeInUp" data-wow-delay="300ms">
+                    <span>Lets Get In Touch</span>
+                    <h2 class="darkcolor">Contact XeOne</h2>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 margin_bottom wow fadeInUp" data-wow-delay="350ms">
+                <p>West is not just about graphic design; it's more than that. We offer integral communication services, and we're responsible for our process and results. We thank each client and their projects.</p>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 our-address top40">
+                        <h5 class="bottom25">Our Address</h5>
+                        <p class="bottom15">123 Stree New York City , United States Of America. </p>
+                        <a class="pickus" href="#." data-text="Get Directions">Get Directions</a>
+                    </div>
+                    <div class="col-md-6 col-sm-6 our-address top40">
+                        <h5 class="bottom25">Our Phone</h5>
+                        <p class="bottom15">
+                            Office Telephone : 001 01085379709 <span class="block">
+                                Mobile : 001 63165370895
+                            </span>
+                        </p>
+                        <a class="pickus" href="#." data-text="Call Us">Call Us</a>
+                    </div>
+                    <div class="col-md-6 col-sm-6 our-address top40">
+                        <h5 class="bottom25">Our Email</h5>
+                        <p class="bottom15">Main Email : admin@website.com <span class="block">Inquiries : email@website.com</span> </p>
+                        <a class="pickus" href="#." data-text="Send a Message">Send a Message</a>
+                    </div>
+                    <div class="col-md-6 col-sm-6 our-address top40">
+                        <h5 class="bottom25">Our Support</h5>
+                        <p class="bottom15">Main Support : info@website.com <span>Sales : support@website</span> </p>
+                        <a class="pickus" href="#." data-text="Open a Ticket">Open a Ticket</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 margin_bottom">
+                <form class="getin_form wow fadeInUp" data-wow-delay="400ms" onsubmit="return false;">
+                    <div class="row">
+
+                        <div class="col-sm-12" id="result"></div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group bottom35">
+                                <input class="form-control" type="text" placeholder="First Name:" required id="first_name" name="first_name">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group bottom35">
+                                <input class="form-control" type="text" placeholder="Last Name:" required id="last_name" name="last_name">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group bottom35">
+                                <input class="form-control" type="email" placeholder="Email:" required id="email" name="email">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group bottom35">
+                                <input class="form-control" type="tel" placeholder="Phone:" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-group bottom35">
+                                <textarea class="form-control" placeholder="Message" id="message" name="message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <button type="submit" class="button btnprimary" id="submit_btn">submit request</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Location Map here-->
+    <div id="map-container"></div>
+</section>
+<!--Contact US Ends-->
+
+
+<style>
+    #presentWriting {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    img.appwar {
+        display: block;
+        width: 150px;
+        margin: auto;
+        margin-top: 10px;
+        border: 2px solid #fff;
+    }
+
+    div.form-check > input[type=checkbox] {
+        display: none;
+    }
+    .form-check {
+        margin-bottom: 20px;
+    }
+    /*.form-check label::before {
+        left: 10px;
+    }*/
+
+    .form-check-label {
+        position: relative;
+        padding-left: 5px;
+    }
+    label.error, i.error {
+        color: red;
+    }
+</style>
+
+
+@section Scripts {
+<script type="text/javascript" src="~/controllers/index-controller.js"></script>
+<script type="text/javascript" src="~/controllers/order-controller.js"></script>
+}
+

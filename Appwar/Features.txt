@@ -1,0 +1,13 @@
+
+
+1. web view detail of event
+	- booking seat
+	- upload payment slip
+2. admin
+	- check booking items
+	- confirm payment slip
+3. email
+	- send after booking seat and send booking no and link to upload payment slip
+	- send after upload payment slip
+	- send after booking is confirm by admin
+	
